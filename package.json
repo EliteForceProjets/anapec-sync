@@ -9,6 +9,6 @@
     "start": "node scraper_anapec.mjs && node sync_weekly.mjs"
   },
   "dependencies": {
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^24.40.0"
   }
 }
