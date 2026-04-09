@@ -2,7 +2,9 @@ name: ANAPEC → Monday Sync
 
 on:
   schedule:
+    # Chaque dimanche à 8h00 Maroc (UTC+1 = 7h UTC)
     - cron: '0 7 * * 0'
+  
   workflow_dispatch:
     inputs:
       reason:
@@ -13,7 +15,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     
     steps:
       - name: 📥 Récupérer le code
@@ -27,22 +29,6 @@ jobs:
 
       - name: 📦 Installer les dépendances
         run: npm ci
-
-      - name: 🌐 Installer Chromium pour Puppeteer
-        run: npx puppeteer browsers install chrome
-
-      - name: 🔌 Tester connectivité ANAPEC
-        run: |
-          echo "Test ping ANAPEC..."
-          curl -v --max-time 30 -L "https://www.anapec.org/sigec-app-rv/" \
-            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-            -o /dev/null -w "HTTP Status: %{http_code}\nTime: %{time_total}s\n" || echo "Curl failed"
-
-      - name: 🔍 Scraper ANAPEC
-        env:
-          ANAPEC_EMAIL: ${{ secrets.ANAPEC_EMAIL }}
-          ANAPEC_PASSWORD: ${{ secrets.ANAPEC_PASSWORD }}
-        run: node scraper_anapec.mjs
 
       - name: 📤 Synchroniser vers Monday.com via Lambda
         env:
