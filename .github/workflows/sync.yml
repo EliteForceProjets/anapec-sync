@@ -1,0 +1,53 @@
+name: ANAPEC → Monday Sync
+
+on:
+  schedule:
+    # Chaque dimanche à 8h00 (heure Maroc = UTC+1, donc 7h00 UTC)
+    - cron: '0 7 * * 0'
+  
+  # Permettre le déclenchement manuel depuis GitHub
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Raison du déclenchement manuel'
+        required: false
+        default: 'Sync manuelle'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Installer les dépendances
+        run: npm ci
+
+      - name: 🌐 Installer Chromium pour Puppeteer
+        run: npx puppeteer browsers install chrome
+
+      - name: 🔍 Scraper ANAPEC
+        env:
+          ANAPEC_EMAIL: ${{ secrets.ANAPEC_EMAIL }}
+          ANAPEC_PASSWORD: ${{ secrets.ANAPEC_PASSWORD }}
+        run: node scraper_anapec.mjs
+
+      - name: 📤 Synchroniser vers Monday.com via Lambda
+        env:
+          LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
+        run: node sync_weekly.mjs
+
+      - name: 📊 Afficher le rapport
+        if: always()
+        run: |
+          if [ -f sync_log.txt ]; then
+            echo "=== JOURNAL DE SYNCHRONISATION ==="
+            cat sync_log.txt
+          fi

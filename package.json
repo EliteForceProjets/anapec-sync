@@ -1,0 +1,14 @@
+{
+  "name": "anapec-sync",
+  "version": "1.0.0",
+  "description": "Synchronisation automatique ANAPEC → Monday.com",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scraper_anapec.mjs",
+    "sync": "node sync_weekly.mjs",
+    "start": "node scraper_anapec.mjs && node sync_weekly.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
