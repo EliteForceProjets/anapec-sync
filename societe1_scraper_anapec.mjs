@@ -1,22 +1,19 @@
 // ============================================================
 // scraper_anapec.mjs - Scraping automatique ANAPEC
-// Supporte multi-sociétés via variables d'environnement
+// Compatible GitHub Actions (Linux) + PC Windows
 // ============================================================
 
 import puppeteer from 'puppeteer';
-import { writeFileSync, readFileSync, existsSync, statSync, mkdirSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, statSync } from 'fs';
 import { join } from 'path';
 
-const IS_GITHUB  = process.env.GITHUB_ACTIONS === 'true';
-const EMAIL      = process.env.ANAPEC_EMAIL    || 'grupoteyez@gmail.com';
-const PASSWORD   = process.env.ANAPEC_PASSWORD || '123456';
-const OUT_DIR    = process.env.ANAPEC_OUT_DIR  || (IS_GITHUB ? '.' : 'C:\\anapec');
-const HOME_URL   = 'https://www.anapec.org/sigec-app-rv/';
-const BASE_URL   = 'https://www.anapec.org/sigec-app-rv/fr/entreprises';
-const LOG_FILE   = join(IS_GITHUB ? '.' : 'C:\\anapec', 'sync_log.txt');
-
-// Créer le dossier si inexistant
-if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
+const IS_GITHUB = process.env.GITHUB_ACTIONS === 'true';
+const OUT_DIR   = IS_GITHUB ? '.' : 'C:\\anapec';
+const EMAIL     = process.env.ANAPEC_EMAIL    || 'grupoteyez@gmail.com';
+const PASSWORD  = process.env.ANAPEC_PASSWORD || '123456';
+const HOME_URL  = 'https://www.anapec.org/sigec-app-rv/';
+const BASE_URL  = 'https://www.anapec.org/sigec-app-rv/fr/entreprises';
+const LOG_FILE  = join(OUT_DIR, 'sync_log.txt');
 
 function log(msg) {
   const line = `[${new Date().toLocaleString('fr-FR')}] ${msg}`;
@@ -28,7 +25,8 @@ function log(msg) {
 }
 
 async function main() {
-  log(`=== Scraping ANAPEC: ${EMAIL} → ${OUT_DIR} ===`);
+  log('=== Début scraping ANAPEC ===');
+  log(`Environnement: ${IS_GITHUB ? 'GitHub Actions' : 'PC Windows'}`);
 
   const launchOptions = IS_GITHUB ? {
     headless: true,
@@ -54,10 +52,10 @@ async function main() {
     await page.goto(HOME_URL, { waitUntil: 'networkidle2', timeout: 60000 });
     await new Promise(r => setTimeout(r, 4000));
 
-    // Radio Employeur
     try {
       await page.waitForSelector('#radio_1', { timeout: 5000 });
       await page.click('#radio_1');
+      log('Radio Employeur cliqué');
     } catch(e) {
       await page.evaluate(() => {
         const all = document.querySelectorAll('input[type="radio"]');
@@ -66,19 +64,17 @@ async function main() {
     }
     await new Promise(r => setTimeout(r, 2000));
 
-    // Email
     const userSel = '#user, input[name="data[cherch_empl][identifiant]"], input[name="data[Entreprise][identifiant]"]';
     await page.waitForSelector(userSel, { visible: true, timeout: 10000 });
     await page.click(userSel, { clickCount: 3 });
     await page.type(userSel, EMAIL, { delay: 50 });
 
-    // Password
     const passSel = '#pass, input[name="data[cherch_empl][mot_pass]"], input[name="data[Entreprise][mot_pass]"]';
     await page.waitForSelector(passSel, { visible: true, timeout: 5000 });
     await page.click(passSel, { clickCount: 3 });
     await page.type(passSel, PASSWORD, { delay: 50 });
+    log('Formulaire rempli');
 
-    log('Connexion...');
     await Promise.all([
       page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 30000 }).catch(() => {}),
       page.keyboard.press('Enter')
@@ -98,7 +94,6 @@ async function main() {
     }
     log('✅ Connecté !');
 
-    // Page contrats
     await page.goto(`${BASE_URL}/visualiser_contrat`, { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(r => setTimeout(r, 2000));
     await page.waitForSelector('table', { timeout: 15000 }).catch(() => {});
@@ -133,7 +128,7 @@ async function main() {
 
     if (contracts.length === 0) {
       writeFileSync(join(OUT_DIR, 'debug_contrats.html'), await page.content(), 'utf8');
-      log('❌ 0 contrats');
+      log('❌ 0 contrats trouvés');
       process.exit(1);
     }
 
@@ -141,13 +136,14 @@ async function main() {
     writeFileSync(join(OUT_DIR, 'contrats.json'), JSON.stringify(contractsClean, null, 2), 'utf8');
     log('✅ contrats.json sauvegardé');
 
-    // Scraper détails
     let scraped = 0, skipped = 0, errors = 0;
+
     for (const contract of contracts) {
       const detailId = contract.detail_id || contract.ref.match(/(\d{7,})/)?.[1];
       if (!detailId) continue;
 
       const outFile = join(OUT_DIR, `ci_${detailId}.html`);
+
       if (existsSync(outFile)) {
         const age = (Date.now() - statSync(outFile).mtimeMs) / 3600000;
         if (age < 168) { log(`⏭ ci_${detailId}.html`); skipped++; continue; }
@@ -165,7 +161,7 @@ async function main() {
       }
     }
 
-    log(`=== Terminé: ${scraped} nouveaux, ${skipped} existants, ${errors} erreurs ===`);
+    log(`=== Scraping terminé: ${scraped} nouveaux, ${skipped} existants, ${errors} erreurs ===`);
 
   } finally {
     await browser.close();

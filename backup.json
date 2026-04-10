@@ -1,0 +1,16 @@
+{
+  "errors": [
+    {
+      "message": "Cannot query field \"title\" on type \"ColumnValue\". Did you mean \"type\"?",
+      "locations": [
+        {
+          "line": 1,
+          "column": 95
+        }
+      ]
+    }
+  ],
+  "extensions": {
+    "request_id": "ddac72c8-fee9-9902-a248-6652f86f89fa"
+  }
+}

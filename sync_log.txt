@@ -1,0 +1,362 @@
+[08/04/2026 16:49:16] ========================================
+[08/04/2026 16:49:17] === Début synchronisation hebdomadaire ===
+[08/04/2026 16:49:17] 10 contrats dans contrats.json
+[08/04/2026 16:49:17] 10 fichiers détails trouvés
+[08/04/2026 16:49:18] 10 items existants dans Monday
+[08/04/2026 16:49:18] ↻ Mis à jour: AI0304261103942/1
+[08/04/2026 16:49:19] ↻ Mis à jour: AI0304261103931/1
+[08/04/2026 16:49:20] ↻ Mis à jour: AI0204261103436/1
+[08/04/2026 16:49:21] ↻ Mis à jour: AI3103261102396/1
+[08/04/2026 16:49:22] ↻ Mis à jour: AI3103261102303/1
+[08/04/2026 16:49:23] ↻ Mis à jour: AI3103261102293/1
+[08/04/2026 16:49:24] ↻ Mis à jour: AI3103261102281/1
+[08/04/2026 16:49:25] ↻ Mis à jour: AI3003261101999/1
+[08/04/2026 16:49:26] ↻ Mis à jour: AI3003261101984/1
+[08/04/2026 16:49:27] ↻ Mis à jour: AI3003261101714/1
+[08/04/2026 16:49:27] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[08/04/2026 16:49:27] ========================================
+[08/04/2026 17:00:22] ========================================
+[08/04/2026 17:00:22] === Début synchronisation hebdomadaire ===
+[08/04/2026 17:00:22] 10 contrats dans contrats.json
+[08/04/2026 17:00:22] 10 fichiers détails trouvés
+[08/04/2026 17:00:23] 10 items existants dans Monday
+[08/04/2026 17:00:23] ↻ Mis à jour: AI0304261103942/1
+[08/04/2026 17:00:24] ↻ Mis à jour: AI0304261103931/1
+[08/04/2026 17:00:25] ↻ Mis à jour: AI0204261103436/1
+[08/04/2026 17:00:26] ↻ Mis à jour: AI3103261102396/1
+[08/04/2026 17:00:27] ↻ Mis à jour: AI3103261102303/1
+[08/04/2026 17:00:29] ↻ Mis à jour: AI3103261102293/1
+[08/04/2026 17:00:30] ↻ Mis à jour: AI3103261102281/1
+[08/04/2026 17:00:31] ↻ Mis à jour: AI3003261101999/1
+[08/04/2026 17:00:32] ↻ Mis à jour: AI3003261101984/1
+[08/04/2026 17:00:32] ↻ Mis à jour: AI3003261101714/1
+[08/04/2026 17:00:33] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[08/04/2026 17:00:33] ========================================
+[08/04/2026 17:44:21] ========================================
+[08/04/2026 17:44:21] === Début synchronisation hebdomadaire ===
+[08/04/2026 17:44:21] 10 contrats dans contrats.json
+[08/04/2026 17:44:21] 10 fichiers détails trouvés
+[08/04/2026 17:44:30] 10 items existants dans Monday
+[08/04/2026 17:44:31] ↻ Mis à jour: AI0304261103942/1
+[08/04/2026 17:44:32] ↻ Mis à jour: AI0304261103931/1
+[08/04/2026 17:44:33] ↻ Mis à jour: AI0204261103436/1
+[08/04/2026 17:44:33] ↻ Mis à jour: AI3103261102396/1
+[08/04/2026 17:44:34] ↻ Mis à jour: AI3103261102303/1
+[08/04/2026 17:44:35] ↻ Mis à jour: AI3103261102293/1
+[08/04/2026 17:44:36] ↻ Mis à jour: AI3103261102281/1
+[08/04/2026 17:44:37] ↻ Mis à jour: AI3003261101999/1
+[08/04/2026 17:44:38] ↻ Mis à jour: AI3003261101984/1
+[08/04/2026 17:44:39] ↻ Mis à jour: AI3003261101714/1
+[08/04/2026 17:44:40] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[08/04/2026 17:44:40] ========================================
+[08/04/2026 17:51:22] ========================================
+[08/04/2026 17:51:22] === Début synchronisation hebdomadaire ===
+[08/04/2026 17:51:22] 10 contrats dans contrats.json
+[08/04/2026 17:51:22] 10 fichiers détails trouvés
+[08/04/2026 17:51:23] 10 items existants dans Monday
+[08/04/2026 17:51:24] ↻ Mis à jour: AI0304261103942/1
+[08/04/2026 17:51:25] ↻ Mis à jour: AI0304261103931/1
+[08/04/2026 17:51:26] ↻ Mis à jour: AI0204261103436/1
+[08/04/2026 17:51:27] ↻ Mis à jour: AI3103261102396/1
+[08/04/2026 17:51:28] ↻ Mis à jour: AI3103261102303/1
+[08/04/2026 17:51:30] ↻ Mis à jour: AI3103261102293/1
+[08/04/2026 17:51:31] ↻ Mis à jour: AI3103261102281/1
+[08/04/2026 17:51:32] ↻ Mis à jour: AI3003261101999/1
+[08/04/2026 17:51:33] ↻ Mis à jour: AI3003261101984/1
+[08/04/2026 17:51:35] ↻ Mis à jour: AI3003261101714/1
+[08/04/2026 17:51:35] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[08/04/2026 17:51:35] ========================================
+[09/04/2026 10:12:04] ========================================
+[09/04/2026 10:12:04] === Début synchronisation hebdomadaire ===
+[09/04/2026 10:12:04] === Pipeline: PC → Lambda → Monday.com ===
+[09/04/2026 10:12:04] 10 contrats dans contrats.json
+[09/04/2026 10:12:04] 10 fichiers détails trouvés
+[09/04/2026 10:12:04] 10 contrats prêts à synchroniser
+[09/04/2026 10:12:04] Envoi de 10 contrats vers Lambda...
+[09/04/2026 10:12:04] Lot 1/1 (10 contrats)...
+[09/04/2026 10:12:20]   ✅ Lot 1: +0 créés, ↻10 mis à jour, ✗0 erreurs
+[09/04/2026 10:12:20] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[09/04/2026 10:12:20] ========================================
+[09/04/2026 10:17:03] ========================================
+[09/04/2026 10:17:03] === Début synchronisation hebdomadaire ===
+[09/04/2026 10:17:03] === Pipeline: PC → Lambda → Monday.com ===
+[09/04/2026 10:17:03] 10 contrats dans contrats.json
+[09/04/2026 10:17:03] 10 fichiers détails trouvés
+[09/04/2026 10:17:03] 10 contrats prêts à synchroniser
+[09/04/2026 10:17:03] Envoi de 10 contrats vers Lambda...
+[09/04/2026 10:17:03] Lot 1/1 (10 contrats)...
+[09/04/2026 10:17:19]   ✅ Lot 1: +0 créés, ↻10 mis à jour, ✗0 erreurs
+[09/04/2026 10:17:19] === FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs ===
+[09/04/2026 10:17:19] ========================================
+[09/04/2026 10:53:56] === Début scraping ANAPEC ===
+[09/04/2026 10:53:57] Connexion à ANAPEC...
+[09/04/2026 10:54:08] ERREUR CRITIQUE: Waiting for selector `input[type="email"], input[name="email"], input[id*="email"]` failed
+[09/04/2026 11:08:45] === Début scraping ANAPEC ===
+[09/04/2026 11:08:46] Chargement page principale ANAPEC...
+[09/04/2026 11:08:48] Page chargée: https://www.anapec.org/sigec-app-rv/
+[09/04/2026 11:08:48] Email rempli: false
+[09/04/2026 11:08:48] Password rempli: false
+[09/04/2026 11:09:04] Après connexion: https://www.anapec.org/sigec-app-rv/
+[09/04/2026 11:09:04] ❌ Connexion échouée ! Page sauvegardée dans debug_after_login.html
+[09/04/2026 11:09:04] Tentative accès direct...
+[09/04/2026 11:09:11] Page contrats: https://www.anapec.org/sigec-app-rv/fr/entreprises/visualiser_contrat
+[09/04/2026 11:09:26] Avertissement: tableau non trouvé
+[09/04/2026 11:09:26] 0 contrats trouvés
+[09/04/2026 11:09:26] Page sauvegardée dans debug_contrats.html pour inspection
+[09/04/2026 11:28:36] === Début scraping ANAPEC ===
+[09/04/2026 11:28:37] Chargement page principale ANAPEC...
+[09/04/2026 11:28:39] Page chargée: https://www.anapec.org/sigec-app-rv/
+[09/04/2026 11:28:39] Email rempli: false
+[09/04/2026 11:28:39] Password rempli: false
+[09/04/2026 11:28:54] Après connexion: https://www.anapec.org/sigec-app-rv/
+[09/04/2026 11:28:54] ❌ Connexion échouée ! Page sauvegardée dans debug_after_login.html
+[09/04/2026 11:28:54] Tentative accès direct...
+[09/04/2026 11:28:55] Page contrats: https://www.anapec.org/sigec-app-rv/fr/entreprises/visualiser_contrat
+[09/04/2026 11:29:10] Avertissement: tableau non trouvé
+[09/04/2026 11:29:10] 0 contrats trouvés
+[09/04/2026 11:29:10] Page sauvegardée dans debug_contrats.html pour inspection
+[09/04/2026 11:39:23] === Début scraping ANAPEC ===
+[09/04/2026 11:39:24] Chargement page ANAPEC...
+[09/04/2026 11:39:29] Radio Employeur sélectionné
+[09/04/2026 11:39:29] Formulaire rempli, connexion...
+[09/04/2026 11:39:51] URL après connexion: https://www.anapec.org/sigec-app-rv/
+[09/04/2026 11:39:51] ❌ Connexion échouée - sauvegarde debug...
+[09/04/2026 11:39:51] Vérifiez debug_login.html
+[09/04/2026 12:01:28] === Début scraping ANAPEC ===
+[09/04/2026 12:01:29] Chargement page ANAPEC...
+[09/04/2026 12:01:33] Radio Employeur sélectionné
+[09/04/2026 12:01:43] Champs remplis
+[09/04/2026 12:01:43] Vérif: user=VIDE, pass=VIDE, radio=undefined
+[09/04/2026 12:01:44] ERREUR CRITIQUE: No element found for selector: #pass
+[09/04/2026 12:04:59] === Début scraping ANAPEC ===
+[09/04/2026 12:05:00] Chargement page ANAPEC...
+[09/04/2026 12:05:04] Inputs disponibles: []
+[09/04/2026 12:05:04] Radio cliqué via evaluate
+[09/04/2026 12:05:05] Inputs après radio: []
+[09/04/2026 12:05:15] ⚠️ #user non trouvé après attente
+[09/04/2026 12:05:16] ERREUR CRITIQUE: No element found for selector: #user
+[09/04/2026 12:14:08] === Début scraping ANAPEC ===
+[09/04/2026 12:14:09] Chargement page ANAPEC...
+[09/04/2026 12:14:19] Inputs: [{"type":"text","id":"ChercheurMotclee","name":"motclee","visible":true},{"type":"hidden","id":"ChercheurAppcle","name":"appcle","visible":false},{"type":"text","id":"testinput","name":"entreprise","visible":true},{"type":"text","id":"ref","name":"ref","visible":true},{"type":"hidden","id":"ChercheurDeconnexion","name":"deconnexion","visible":false},{"type":"submit","id":"submit_ref","name":"","visible":true},{"type":"submit","id":"btn_voter","name":"btn_voter","visible":true},{"type":"radio","id":"rdio","name":"rdio","visible":true},{"type":"radio","id":"radio_1","name":"rdio","visible":true},{"type":"hidden","id":"typo","name":"","visible":false},{"type":"text","id":"user","name":"data[cherch_empl][identifiant]","visible":true},{"type":"text","id":"pass","name":"data[cherch_empl][mot_pass]","visible":true},{"type":"button","id":"btn_insc","name":"txt","visible":true},{"type":"button","id":"btn_insc_entreprise","name":"txt","visible":true}]
+[09/04/2026 12:14:19] Radio Employeur cliqué
+[09/04/2026 12:14:21] Inputs visibles après radio: [{"type":"text","id":"","name":"txt","visible":true},{"type":"text","id":"ChercheurMotclee","name":"motclee","visible":true},{"type":"text","id":"testinput","name":"entreprise","visible":true},{"type":"submit","id":"","name":"","visible":true},{"type":"text","id":"ref","name":"ref","visible":true},{"type":"submit","id":"submit_ref","name":"","visible":true},{"type":"radio","id":"","name":"rd_sondage","visible":true},{"type":"radio","id":"","name":"rd_sondage","visible":true},{"type":"radio","id":"","name":"rd_sondage","visible":true},{"type":"radio","id":"","name":"rd_sondage","visible":true},{"type":"radio","id":"","name":"rd_sondage","visible":true},{"type":"submit","id":"btn_voter","name":"btn_voter","visible":true},{"type":"radio","id":"rdio","name":"rdio","visible":true},{"type":"radio","id":"radio_1","name":"rdio","visible":true},{"type":"text","id":"user","name":"data[Entreprise][identifiant]","visible":true},{"type":"text","id":"pass","name":"data[Entreprise][mot_pass]","visible":true},{"type":"submit","id":"","name":"","visible":true},{"type":"checkbox","id":"","name":"data[User][remember_me]","visible":true},{"type":"button","id":"btn_insc","name":"txt","visible":true},{"type":"button","id":"btn_insc_entreprise","name":"txt","visible":true},{"type":"radio","id":"","name":"rd_newsletter","visible":true},{"type":"radio","id":"","name":"rd_newsletter","visible":true},{"type":"text","id":"","name":"txt","visible":true},{"type":"text","id":"","name":"txt","visible":true},{"type":"submit","id":"","name":"txt","visible":true},{"type":"text","id":"","name":"NomPrenom","visible":true},{"type":"text","id":"","name":"mEmail","visible":true},{"type":"text","id":"","name":"yEmail","visible":true},{"type":"submit","id":"","name":"txt4","visible":true}]
+[09/04/2026 12:14:23] Email tapé
+[09/04/2026 12:14:23] Password tapé
+[09/04/2026 12:14:23] Screenshot: before_submit.png
+[09/04/2026 12:14:27] URL: https://www.anapec.org/sigec-app-rv/entreprises
+[09/04/2026 12:14:27] ✅ Connecté !
+[09/04/2026 12:14:31] 10 contrats trouvés
+[09/04/2026 12:14:31] ✅ contrats.json sauvegardé
+[09/04/2026 12:14:31] ⏭ ci_1567973.html
+[09/04/2026 12:14:31] ⏭ ci_1567961.html
+[09/04/2026 12:14:31] ⏭ ci_1566826.html
+[09/04/2026 12:14:31] ⏭ ci_1564903.html
+[09/04/2026 12:14:31] ⏭ ci_1564768.html
+[09/04/2026 12:14:31] ⏭ ci_1564759.html
+[09/04/2026 12:14:31] ⏭ ci_1564737.html
+[09/04/2026 12:14:31] ⏭ ci_1564323.html
+[09/04/2026 12:14:31] ⏭ ci_1564313.html
+[09/04/2026 12:14:31] ⏭ ci_1563863.html
+[09/04/2026 12:14:31] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[09/04/2026 17:12:08] ╔══════════════════════════════════════════╗
+[09/04/2026 17:12:08] ║  PIPELINE COMPLET ANAPEC → Monday.com   ║
+[09/04/2026 17:12:08] ╚══════════════════════════════════════════╝
+[09/04/2026 17:12:08] 
+[09/04/2026 17:12:08] ━━━ ÉTAPE 1 : Scraping ANAPEC ━━━━━━━━━━━━
+[09/04/2026 17:12:08] === Début scraping ANAPEC ===
+[09/04/2026 17:12:08] Environnement: PC Windows
+[09/04/2026 17:12:09] Chargement page ANAPEC...
+[09/04/2026 17:12:16] Radio Employeur cliqué
+[09/04/2026 17:12:20] Formulaire rempli
+[09/04/2026 17:12:25] ✅ Connecté !
+[09/04/2026 17:12:28] 10 contrats trouvés
+[09/04/2026 17:12:28] ✅ contrats.json sauvegardé
+[09/04/2026 17:12:28] ⏭ ci_1567973.html
+[09/04/2026 17:12:28] ⏭ ci_1567961.html
+[09/04/2026 17:12:28] ⏭ ci_1566826.html
+[09/04/2026 17:12:28] ⏭ ci_1564903.html
+[09/04/2026 17:12:28] ⏭ ci_1564768.html
+[09/04/2026 17:12:28] ⏭ ci_1564759.html
+[09/04/2026 17:12:28] ⏭ ci_1564737.html
+[09/04/2026 17:12:28] ⏭ ci_1564323.html
+[09/04/2026 17:12:28] ⏭ ci_1564313.html
+[09/04/2026 17:12:28] ⏭ ci_1563863.html
+[09/04/2026 17:12:28] === Scraping terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[09/04/2026 17:12:29] ✅ Scraping terminé
+[09/04/2026 17:12:29] 
+[09/04/2026 17:12:29] ━━━ ÉTAPE 2 : Push données vers GitHub ━━━
+[09/04/2026 17:12:31] ✅ Données pushées vers GitHub
+[09/04/2026 17:12:31] 
+[09/04/2026 17:12:31] ━━━ ÉTAPE 3 : Sync vers Monday via Lambda ━
+[09/04/2026 17:12:31] 10 contrats dans contrats.json
+[09/04/2026 17:12:31] 10 fichiers détails
+[09/04/2026 17:12:31] Envoi de 10 contrats vers Lambda...
+[09/04/2026 17:12:31] Lot 1/1...
+[09/04/2026 17:12:45]   ✅ +0 créés, ↻10 mis à jour
+[09/04/2026 17:12:45] 
+[09/04/2026 17:12:45] ╔══════════════════════════════════════════╗
+[09/04/2026 17:12:45] ║  FIN: +0 créés, ↻10 mis à jour, ✗0 erreurs  ║
+[09/04/2026 17:12:45] ╚══════════════════════════════════════════╝
+[10/04/2026 11:22:17] 
+╔══════════════════════════════════════════════════╗
+[10/04/2026 11:22:17] ║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║
+[10/04/2026 11:22:17] ╚══════════════════════════════════════════════════╝
+[10/04/2026 11:22:17] 
+━━━ GRUPO_TEYEZ (grupoteyez@gmail.com) ━━━
+[10/04/2026 11:22:17]   Scraping ANAPEC...
+[10/04/2026 11:22:17] === Scraping ANAPEC: grupoteyez@gmail.com → C:\anapec\GRUPO_TEYEZ ===
+[10/04/2026 11:22:18] Chargement page ANAPEC...
+[10/04/2026 11:22:31] Connexion...
+[10/04/2026 11:22:36] ✅ Connecté !
+[10/04/2026 11:22:40] 10 contrats trouvés
+[10/04/2026 11:22:40] ✅ contrats.json sauvegardé
+[10/04/2026 11:22:41] ✅ ci_1567973.html
+[10/04/2026 11:22:44] ✅ ci_1567961.html
+[10/04/2026 11:22:46] ✅ ci_1566826.html
+[10/04/2026 11:22:48] ✅ ci_1564903.html
+[10/04/2026 11:22:50] ✅ ci_1564768.html
+[10/04/2026 11:22:52] ✅ ci_1564759.html
+[10/04/2026 11:22:55] ✅ ci_1564737.html
+[10/04/2026 11:22:57] ✅ ci_1564323.html
+[10/04/2026 11:22:59] ✅ ci_1564313.html
+[10/04/2026 11:23:01] ✅ ci_1563863.html
+[10/04/2026 11:23:02] === Terminé: 10 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:23:03]   ✅ Scraping terminé
+[10/04/2026 11:23:03]   10 contrats trouvés
+[10/04/2026 11:23:03]   Envoi de 10 contrats vers Lambda (GRUPO_TEYEZ)...
+[10/04/2026 11:23:17]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[10/04/2026 11:23:19] 
+━━━ SIGARMOR (sigarmorgroup@gmail.com) ━━━
+[10/04/2026 11:23:19]   Scraping ANAPEC...
+[10/04/2026 11:23:19] === Scraping ANAPEC: sigarmorgroup@gmail.com → C:\anapec\SIGARMOR ===
+[10/04/2026 11:23:20] Chargement page ANAPEC...
+[10/04/2026 11:23:39] Connexion...
+[10/04/2026 11:23:44] ✅ Connecté !
+[10/04/2026 11:23:47] 10 contrats trouvés
+[10/04/2026 11:23:47] ✅ contrats.json sauvegardé
+[10/04/2026 11:23:49] ✅ ci_1562940.html
+[10/04/2026 11:23:51] ✅ ci_1554916.html
+[10/04/2026 11:23:54] ✅ ci_1551240.html
+[10/04/2026 11:23:56] ✅ ci_1551238.html
+[10/04/2026 11:23:58] ✅ ci_1539936.html
+[10/04/2026 11:24:00] ✅ ci_1539857.html
+[10/04/2026 11:24:03] ✅ ci_1388571.html
+[10/04/2026 11:24:05] ✅ ci_1358437.html
+[10/04/2026 11:24:07] ✅ ci_1358222.html
+[10/04/2026 11:24:10] ✅ ci_1350653.html
+[10/04/2026 11:24:11] === Terminé: 10 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:24:11]   ✅ Scraping terminé
+[10/04/2026 11:24:11]   10 contrats trouvés
+[10/04/2026 11:24:11]   Envoi de 10 contrats vers Lambda (SIGARMOR)...
+[10/04/2026 11:24:25]   ✅ +10 créés, ↻0 mis à jour, ✗0 erreurs
+[10/04/2026 11:24:27] 
+━━━ EIM (ecoleimanagement@gmail.com) ━━━
+[10/04/2026 11:24:27]   Scraping ANAPEC...
+[10/04/2026 11:24:27] === Scraping ANAPEC: ecoleimanagement@gmail.com → C:\anapec\EIM ===
+[10/04/2026 11:24:28] Chargement page ANAPEC...
+[10/04/2026 11:24:41] Connexion...
+[10/04/2026 11:24:48] ❌ Connexion échouée
+[10/04/2026 11:24:49]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[10/04/2026 11:24:49]   Tentative avec données existantes...
+[10/04/2026 11:24:49]   ❌ contrats.json introuvable pour EIM
+[10/04/2026 11:24:51] 
+━━━ KIRKOS (groupekirkos@gmail.com) ━━━
+[10/04/2026 11:24:51]   Scraping ANAPEC...
+[10/04/2026 11:24:51] === Scraping ANAPEC: groupekirkos@gmail.com → C:\anapec\KIRKOS ===
+[10/04/2026 11:24:52] Chargement page ANAPEC...
+[10/04/2026 11:25:09] Connexion...
+[10/04/2026 11:25:15] ✅ Connecté !
+[10/04/2026 11:25:19] 10 contrats trouvés
+[10/04/2026 11:25:19] ✅ contrats.json sauvegardé
+[10/04/2026 11:25:20] ✅ ci_1573519.html
+[10/04/2026 11:25:23] ✅ ci_1573186.html
+[10/04/2026 11:25:25] ✅ ci_1573174.html
+[10/04/2026 11:25:27] ✅ ci_1573173.html
+[10/04/2026 11:25:29] ✅ ci_1573171.html
+[10/04/2026 11:25:32] ✅ ci_1573169.html
+[10/04/2026 11:25:34] ✅ ci_1572705.html
+[10/04/2026 11:25:37] ✅ ci_1572479.html
+[10/04/2026 11:25:39] ✅ ci_1567224.html
+[10/04/2026 11:25:41] ✅ ci_1567203.html
+[10/04/2026 11:25:42] === Terminé: 10 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:25:43]   ✅ Scraping terminé
+[10/04/2026 11:25:43]   10 contrats trouvés
+[10/04/2026 11:25:43]   Envoi de 10 contrats vers Lambda (KIRKOS)...
+[10/04/2026 11:25:57]   ✅ +10 créés, ↻0 mis à jour, ✗0 erreurs
+[10/04/2026 11:25:59] 
+━━━ KIRKOS_GUARD (groupekirkosguarduim@gmail.com) ━━━
+[10/04/2026 11:25:59]   Scraping ANAPEC...
+[10/04/2026 11:25:59] === Scraping ANAPEC: groupekirkosguarduim@gmail.com → C:\anapec\KIRKOS_GUARD ===
+[10/04/2026 11:26:00] Chargement page ANAPEC...
+[10/04/2026 11:26:16] Connexion...
+[10/04/2026 11:26:22] ✅ Connecté !
+[10/04/2026 11:26:26] 10 contrats trouvés
+[10/04/2026 11:26:26] ✅ contrats.json sauvegardé
+[10/04/2026 11:26:27] ✅ ci_1573507.html
+[10/04/2026 11:26:30] ✅ ci_1573187.html
+[10/04/2026 11:26:32] ✅ ci_1573185.html
+[10/04/2026 11:26:34] ✅ ci_1573179.html
+[10/04/2026 11:26:36] ✅ ci_1573176.html
+[10/04/2026 11:26:39] ✅ ci_1573175.html
+[10/04/2026 11:26:41] ✅ ci_1573172.html
+[10/04/2026 11:26:43] ✅ ci_1572674.html
+[10/04/2026 11:26:45] ✅ ci_1572611.html
+[10/04/2026 11:26:48] ✅ ci_1572601.html
+[10/04/2026 11:26:49] === Terminé: 10 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:26:49]   ✅ Scraping terminé
+[10/04/2026 11:26:49]   10 contrats trouvés
+[10/04/2026 11:26:49]   Envoi de 10 contrats vers Lambda (KIRKOS_GUARD)...
+[10/04/2026 11:27:03]   ✅ +10 créés, ↻0 mis à jour, ✗0 erreurs
+[10/04/2026 11:27:05] 
+━━━ NEISS (neissinvest@gmail.com) ━━━
+[10/04/2026 11:27:05]   Scraping ANAPEC...
+[10/04/2026 11:27:06] === Scraping ANAPEC: neissinvest@gmail.com → C:\anapec\NEISS ===
+[10/04/2026 11:27:06] Chargement page ANAPEC...
+[10/04/2026 11:27:23] Connexion...
+[10/04/2026 11:27:29] ✅ Connecté !
+[10/04/2026 11:27:32] 10 contrats trouvés
+[10/04/2026 11:27:32] ✅ contrats.json sauvegardé
+[10/04/2026 11:27:35] ✅ ci_1572499.html
+[10/04/2026 11:27:37] ✅ ci_1560042.html
+[10/04/2026 11:27:40] ✅ ci_1560040.html
+[10/04/2026 11:27:42] ✅ ci_1560039.html
+[10/04/2026 11:27:45] ✅ ci_1560038.html
+[10/04/2026 11:27:47] ✅ ci_1560037.html
+[10/04/2026 11:27:49] ✅ ci_1560036.html
+[10/04/2026 11:27:52] ✅ ci_1560035.html
+[10/04/2026 11:27:54] ✅ ci_1560033.html
+[10/04/2026 11:27:56] ✅ ci_1560032.html
+[10/04/2026 11:27:57] === Terminé: 10 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:27:58]   ✅ Scraping terminé
+[10/04/2026 11:27:58]   10 contrats trouvés
+[10/04/2026 11:27:58]   Envoi de 10 contrats vers Lambda (NEISS)...
+[10/04/2026 11:28:11]   ✅ +10 créés, ↻0 mis à jour, ✗0 erreurs
+[10/04/2026 11:28:13] 
+━━━ NORIA_BIANCA (yelgartili@groupekirkos.ma) ━━━
+[10/04/2026 11:28:13]   Scraping ANAPEC...
+[10/04/2026 11:28:13] === Scraping ANAPEC: yelgartili@groupekirkos.ma → C:\anapec\NORIA_BIANCA ===
+[10/04/2026 11:28:14] Chargement page ANAPEC...
+[10/04/2026 11:28:30] Connexion...
+[10/04/2026 11:28:36] ✅ Connecté !
+[10/04/2026 11:28:39] 1 contrats trouvés
+[10/04/2026 11:28:39] ✅ contrats.json sauvegardé
+[10/04/2026 11:28:43] ✅ ci_1490723.html
+[10/04/2026 11:28:44] === Terminé: 1 nouveaux, 0 existants, 0 erreurs ===
+[10/04/2026 11:28:44]   ✅ Scraping terminé
+[10/04/2026 11:28:44]   1 contrats trouvés
+[10/04/2026 11:28:44]   Envoi de 1 contrats vers Lambda (NORIA_BIANCA)...
+[10/04/2026 11:28:47]   ✅ +1 créés, ↻0 mis à jour, ✗0 erreurs
+[10/04/2026 11:28:49] 
+━━━ CQ_SERVICE (info.cqservice@gmail.com) ━━━
+[10/04/2026 11:28:49]   Scraping ANAPEC...
+[10/04/2026 11:28:49] === Scraping ANAPEC: info.cqservice@gmail.com → C:\anapec\CQ_SERVICE ===
+[10/04/2026 11:28:50] Chargement page ANAPEC...
+[10/04/2026 11:29:05] Connexion...
+[10/04/2026 11:29:10] ✅ Connecté !
+[10/04/2026 11:29:13] 0 contrats trouvés
+[10/04/2026 11:29:13] ❌ 0 contrats
+[10/04/2026 11:29:14]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[10/04/2026 11:29:14]   Tentative avec données existantes...
+[10/04/2026 11:29:14]   ❌ contrats.json introuvable pour CQ_SERVICE
+[10/04/2026 11:29:16] 
+━━━ Push données vers GitHub ━━━

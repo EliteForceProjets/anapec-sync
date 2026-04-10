@@ -1,0 +1,82 @@
+[
+  {
+    "ref": "NO2703261101262/1",
+    "date_sig": "03/04/2026",
+    "date_fin": "28/01/2028",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BK687946"
+  },
+  {
+    "ref": "AI1003261096338/1",
+    "date_sig": "10/03/2026",
+    "date_fin": "10/03/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BK95439"
+  },
+  {
+    "ref": "NO0403261093717/1",
+    "date_sig": "05/03/2026",
+    "date_fin": "04/03/2028",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BW9439"
+  },
+  {
+    "ref": "NO0403261093716/1",
+    "date_sig": "05/03/2026",
+    "date_fin": "04/03/2028",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BF11239"
+  },
+  {
+    "ref": "AI1202261086508/1",
+    "date_sig": "13/02/2026",
+    "date_fin": "13/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BK603001"
+  },
+  {
+    "ref": "AI1202261086452/1",
+    "date_sig": "13/02/2026",
+    "date_fin": "13/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BK252366"
+  },
+  {
+    "ref": "AI060325991464/1",
+    "date_sig": "07/03/2025",
+    "date_fin": "07/03/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "TA162894"
+  },
+  {
+    "ref": "AI101224971091/1",
+    "date_sig": "12/12/2024",
+    "date_fin": "12/12/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BL168986"
+  },
+  {
+    "ref": "AI101224970902/1",
+    "date_sig": "12/12/2024",
+    "date_fin": "12/12/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BF10516"
+  },
+  {
+    "ref": "AI151124965387/1",
+    "date_sig": "15/11/2024",
+    "date_fin": "01/11/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BH375488"
+  }
+]

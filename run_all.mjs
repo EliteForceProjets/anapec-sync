@@ -1,17 +1,26 @@
 // ============================================================
-// run_all.mjs - Script principal complet
-// 1. Scrape ANAPEC
-// 2. Push données vers GitHub
-// 3. Envoie vers Lambda → Monday.com
+// run_all.mjs - Pipeline complet pour les 8 sociétés
 // ============================================================
 
 import { execSync } from 'child_process';
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-const OUT_DIR    = 'C:\\anapec';
 const LAMBDA_URL = 'https://cel7jflv4gclxqw2ozvr2b46ku0dsczq.lambda-url.eu-north-1.on.aws/';
-const LOG_FILE   = join(OUT_DIR, 'sync_log.txt');
+const BASE_DIR   = 'C:\\anapec';
+const LOG_FILE   = join(BASE_DIR, 'sync_log.txt');
+
+// ── Configuration des 8 sociétés ─────────────────────────────
+const SOCIETES = [
+  { nom: 'GRUPO_TEYEZ',  email: 'grupoteyez@gmail.com',            password: '123456' },
+  { nom: 'SIGARMOR',     email: 'sigarmorgroup@gmail.com',          password: '123456' },
+  { nom: 'EIM',          email: 'ecoleimanagement@gmail.com',       password: '123456' },
+  { nom: 'KIRKOS',       email: 'groupekirkos@gmail.com',           password: '123456' },
+  { nom: 'KIRKOS_GUARD', email: 'groupekirkosguarduim@gmail.com',   password: '123456' },
+  { nom: 'NEISS',        email: 'neissinvest@gmail.com',            password: '123456' },
+  { nom: 'NORIA_BIANCA', email: 'yelgartili@groupekirkos.ma',       password: '123456' },
+  { nom: 'CQ_SERVICE',   email: 'info.cqservice@gmail.com',         password: '123456' },
+];
 
 function log(msg) {
   const line = `[${new Date().toLocaleString('fr-FR')}] ${msg}`;
@@ -61,91 +70,74 @@ function parseDetail(html) {
   };
 }
 
-async function sendToLambda(contracts) {
-  log(`Envoi de ${contracts.length} contrats vers Lambda...`);
-  const BATCH_SIZE = 50;
-  let totalCreated = 0, totalUpdated = 0, totalErrors = 0;
-
-  for (let i = 0; i < contracts.length; i += BATCH_SIZE) {
-    const batch = contracts.slice(i, i + BATCH_SIZE);
-    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(contracts.length / BATCH_SIZE);
-    log(`Lot ${batchNum}/${totalBatches}...`);
-
-    try {
-      const res = await fetch(LAMBDA_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contracts: batch })
-      });
-      const data = await res.json();
-      if (res.ok && data.stats) {
-        totalCreated += data.stats.created || 0;
-        totalUpdated += data.stats.updated || 0;
-        totalErrors  += data.stats.errors  || 0;
-        log(`  ✅ +${data.stats.created} créés, ↻${data.stats.updated} mis à jour`);
-      } else {
-        log(`  ❌ ${JSON.stringify(data)}`);
-        totalErrors += batch.length;
-      }
-    } catch(e) {
-      log(`  ❌ ${e.message}`);
-      totalErrors += batch.length;
+async function sendToLambda(contracts, societe) {
+  log(`  Envoi de ${contracts.length} contrats vers Lambda (${societe})...`);
+  try {
+    const res = await fetch(LAMBDA_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contracts, societe })
+    });
+    const data = await res.json();
+    if (res.ok && data.stats) {
+      log(`  ✅ +${data.stats.created} créés, ↻${data.stats.updated} mis à jour, ✗${data.stats.errors} erreurs`);
+      return data.stats;
+    } else {
+      log(`  ❌ Erreur Lambda: ${JSON.stringify(data)}`);
+      return { created: 0, updated: 0, errors: contracts.length };
     }
-
-    if (i + BATCH_SIZE < contracts.length) await new Promise(r => setTimeout(r, 1000));
+  } catch(e) {
+    log(`  ❌ Exception: ${e.message}`);
+    return { created: 0, updated: 0, errors: contracts.length };
   }
-  return { created: totalCreated, updated: totalUpdated, errors: totalErrors };
 }
 
-async function main() {
-  log('╔══════════════════════════════════════════╗');
-  log('║  PIPELINE COMPLET ANAPEC → Monday.com   ║');
-  log('╚══════════════════════════════════════════╝');
+async function processSociete(societe) {
+  const societeDir = join(BASE_DIR, societe.nom);
 
-  // ── ÉTAPE 1 : Scraping ANAPEC ─────────────────────────────
-  log('');
-  log('━━━ ÉTAPE 1 : Scraping ANAPEC ━━━━━━━━━━━━');
+  // Créer dossier société si inexistant
+  if (!existsSync(societeDir)) mkdirSync(societeDir, { recursive: true });
+
+  log(`\n━━━ ${societe.nom} (${societe.email}) ━━━`);
+
+  // ── Scraping ──────────────────────────────────────────────
+  log(`  Scraping ANAPEC...`);
   try {
-    execSync('node C:\\anapec\\scraper_anapec.mjs', { stdio: 'inherit', timeout: 300000 });
-    log('✅ Scraping terminé');
+    // Passer les credentials comme variables d'environnement
+    const env = {
+      ...process.env,
+      ANAPEC_EMAIL:    societe.email,
+      ANAPEC_PASSWORD: societe.password,
+      ANAPEC_OUT_DIR:  societeDir
+    };
+    execSync(`node C:\\anapec\\scraper_anapec.mjs`, {
+      stdio: 'inherit',
+      timeout: 300000,
+      env
+    });
+    log(`  ✅ Scraping terminé`);
   } catch(e) {
-    log(`❌ Erreur scraping: ${e.message}`);
-    log('Tentative avec données existantes...');
+    log(`  ❌ Erreur scraping: ${e.message.substring(0, 100)}`);
+    log(`  Tentative avec données existantes...`);
   }
 
-  // ── ÉTAPE 2 : Push vers GitHub ────────────────────────────
-  log('');
-  log('━━━ ÉTAPE 2 : Push données vers GitHub ━━━');
-  try {
-    const date = new Date().toLocaleString('fr-FR');
-    execSync(`cd C:\\anapec && git add contrats.json ci_*.html && git commit -m "Données ANAPEC - ${date}" && git push origin main`, 
-      { stdio: 'inherit', timeout: 60000 });
-    log('✅ Données pushées vers GitHub');
-  } catch(e) {
-    log(`⚠️ Git push: ${e.message.substring(0, 100)}`);
-    log('Continuation avec sync Lambda...');
-  }
-
-  // ── ÉTAPE 3 : Préparer et envoyer à Lambda ────────────────
-  log('');
-  log('━━━ ÉTAPE 3 : Sync vers Monday via Lambda ━');
-
-  const jsonPath = join(OUT_DIR, 'contrats.json');
+  // ── Lire données ──────────────────────────────────────────
+  const jsonPath = join(societeDir, 'contrats.json');
   if (!existsSync(jsonPath)) {
-    log('❌ contrats.json introuvable !');
-    return;
+    log(`  ❌ contrats.json introuvable pour ${societe.nom}`);
+    return { created: 0, updated: 0, errors: 0 };
   }
 
   const baseContracts = JSON.parse(readFileSync(jsonPath, 'utf8'));
-  log(`${baseContracts.length} contrats dans contrats.json`);
+  log(`  ${baseContracts.length} contrats trouvés`);
 
-  const files = readdirSync(OUT_DIR).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
-  log(`${files.length} fichiers détails`);
+  if (baseContracts.length === 0) return { created: 0, updated: 0, errors: 0 };
 
+  // ── Fusionner avec détails ────────────────────────────────
+  const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
   const detailMap = {};
   for (const file of files) {
-    const html = readFileSync(join(OUT_DIR, file), 'utf8');
+    const html = readFileSync(join(societeDir, file), 'utf8');
     const detail = parseDetail(html);
     const refMatch = html.replace(/<[^>]+>/g,' ').match(/([AI]?\d{10,}\/\d+)/);
     let ref = refMatch?.[1] || '';
@@ -157,21 +149,50 @@ async function main() {
   }
 
   const contracts = baseContracts.map(c => ({
-    ref:      c.ref      || '',
-    date_sig: c.date_sig || '',
-    date_fin: c.date_fin || '',
-    etat:     c.etat     || '',
-    type:     c.type     || '',
-    cin:      c.cin      || '',
+    ref: c.ref || '', date_sig: c.date_sig || '', date_fin: c.date_fin || '',
+    etat: c.etat || '', type: c.type || '', cin: c.cin || '',
     ...(detailMap[c.ref] || {})
   }));
 
-  const stats = await sendToLambda(contracts);
+  // ── Envoyer à Lambda ──────────────────────────────────────
+  return await sendToLambda(contracts, societe.nom);
+}
 
-  log('');
-  log('╔══════════════════════════════════════════╗');
-  log(`║  FIN: +${stats.created} créés, ↻${stats.updated} mis à jour, ✗${stats.errors} erreurs  ║`);
-  log('╚══════════════════════════════════════════╝');
+async function main() {
+  log('\n╔══════════════════════════════════════════════════╗');
+  log('║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║');
+  log('╚══════════════════════════════════════════════════╝');
+
+  let totalCreated = 0, totalUpdated = 0, totalErrors = 0;
+
+  for (const societe of SOCIETES) {
+    try {
+      const stats = await processSociete(societe);
+      totalCreated += stats.created || 0;
+      totalUpdated += stats.updated || 0;
+      totalErrors  += stats.errors  || 0;
+    } catch(e) {
+      log(`❌ ERREUR ${societe.nom}: ${e.message}`);
+      totalErrors++;
+    }
+    // Pause entre sociétés
+    await new Promise(r => setTimeout(r, 2000));
+  }
+
+  // ── Push vers GitHub ──────────────────────────────────────
+  log('\n━━━ Push données vers GitHub ━━━');
+  try {
+    const date = new Date().toLocaleString('fr-FR');
+    execSync(`cd C:\\anapec && git add -A && git commit -m "Données 8 sociétés - ${date}" && git push origin main`,
+      { stdio: 'inherit', timeout: 60000 });
+    log('✅ Données pushées vers GitHub');
+  } catch(e) {
+    log(`⚠️ Git: ${e.message.substring(0, 100)}`);
+  }
+
+  log('\n╔══════════════════════════════════════════════════╗');
+  log(`║  FIN: +${totalCreated} créés, ↻${totalUpdated} mis à jour, ✗${totalErrors} erreurs  ║`);
+  log('╚══════════════════════════════════════════════════╝\n');
 }
 
 main().catch(e => {

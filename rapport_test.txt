@@ -1,0 +1,8 @@
+=== RAPPORT PIPELINE ANAPEC → MONDAY ===
+Date: 09/04/2026 13:32:09
+Score: 4/4
+
+TEST 1 ✅ : 10 contrats dans contrats.json
+TEST 2 ✅ : 10 fichiers HTML, 3/3 parsés avec succès
+TEST 3 ✅ : Lambda OK - Synchronisation terminée
+TEST 4 ✅ : Pipeline complet - 10 mis à jour, 0 créés
