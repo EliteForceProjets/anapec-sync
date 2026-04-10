@@ -1,15 +1,27 @@
 // ============================================================
-// sync_weekly.mjs - Envoi contrats vers Lambda → Monday.com
-// Compatible GitHub Actions (Linux) + PC Windows
+// sync_weekly.mjs - Sync GitHub Actions → Lambda → Monday
+// Lit les données des 8 sociétés depuis GitHub et envoie à Lambda
 // ============================================================
 
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 const IS_GITHUB  = process.env.GITHUB_ACTIONS === 'true';
-const OUT_DIR    = IS_GITHUB ? '.' : 'C:\\anapec';
+const BASE_DIR   = IS_GITHUB ? '.' : 'C:\\anapec';
 const LAMBDA_URL = process.env.LAMBDA_URL || 'https://cel7jflv4gclxqw2ozvr2b46ku0dsczq.lambda-url.eu-north-1.on.aws/';
-const LOG_FILE   = join(OUT_DIR, 'sync_log.txt');
+const LOG_FILE   = join(BASE_DIR, 'sync_log.txt');
+
+// 8 sociétés
+const SOCIETES = [
+  'GRUPO_TEYEZ',
+  'SIGARMOR',
+  'EIM',
+  'KIRKOS',
+  'KIRKOS_GUARD',
+  'NEISS',
+  'NORIA_BIANCA',
+  'CQ_SERVICE'
+];
 
 function log(msg) {
   const line = `[${new Date().toLocaleString('fr-FR')}] ${msg}`;
@@ -59,94 +71,88 @@ function parseDetail(html) {
   };
 }
 
-async function sendToLambda(contracts) {
-  log(`Envoi de ${contracts.length} contrats vers Lambda...`);
-  const BATCH_SIZE = 50;
-  let totalCreated = 0, totalUpdated = 0, totalErrors = 0;
-
-  for (let i = 0; i < contracts.length; i += BATCH_SIZE) {
-    const batch = contracts.slice(i, i + BATCH_SIZE);
-    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(contracts.length / BATCH_SIZE);
-    log(`Lot ${batchNum}/${totalBatches} (${batch.length} contrats)...`);
-
-    try {
-      const res = await fetch(LAMBDA_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contracts: batch })
-      });
-      const data = await res.json();
-      if (res.ok && data.stats) {
-        totalCreated += data.stats.created || 0;
-        totalUpdated += data.stats.updated || 0;
-        totalErrors  += data.stats.errors  || 0;
-        log(`  ✅ Lot ${batchNum}: +${data.stats.created} créés, ↻${data.stats.updated} mis à jour`);
-      } else {
-        log(`  ❌ Lot ${batchNum}: ${JSON.stringify(data)}`);
-        totalErrors += batch.length;
-      }
-    } catch(e) {
-      log(`  ❌ Lot ${batchNum}: ${e.message}`);
-      totalErrors += batch.length;
+async function sendToLambda(contracts, societe) {
+  try {
+    const res = await fetch(LAMBDA_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contracts, societe })
+    });
+    const data = await res.json();
+    if (res.ok && data.stats) {
+      return data.stats;
     }
-
-    if (i + BATCH_SIZE < contracts.length) await new Promise(r => setTimeout(r, 1000));
+    log(`  ❌ Lambda erreur: ${JSON.stringify(data)}`);
+    return { created: 0, updated: 0, errors: contracts.length };
+  } catch(e) {
+    log(`  ❌ Exception: ${e.message}`);
+    return { created: 0, updated: 0, errors: contracts.length };
   }
-  return { created: totalCreated, updated: totalUpdated, errors: totalErrors };
+}
+
+async function processSociete(nom) {
+  const societeDir = join(BASE_DIR, nom);
+  const jsonPath   = join(societeDir, 'contrats.json');
+
+  log(`\n━━━ ${nom} ━━━`);
+
+  if (!existsSync(jsonPath)) {
+    log(`  ⚠️ contrats.json introuvable — ignoré`);
+    return { created: 0, updated: 0, errors: 0 };
+  }
+
+  const baseContracts = JSON.parse(readFileSync(jsonPath, 'utf8'));
+  log(`  ${baseContracts.length} contrats`);
+
+  if (baseContracts.length === 0) return { created: 0, updated: 0, errors: 0 };
+
+  // Fusionner avec détails
+  const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
+  const detailMap = {};
+  for (const file of files) {
+    const html = readFileSync(join(societeDir, file), 'utf8');
+    const detail = parseDetail(html);
+    const refMatch = html.replace(/<[^>]+>/g,' ').match(/([AI]?\d{10,}\/\d+)/);
+    let ref = refMatch?.[1] || '';
+    if (ref.match(/^I\d/)) ref = 'A' + ref;
+    if (ref) {
+      detailMap[ref] = detail;
+      detailMap[ref.replace(/^A/,'')] = detail;
+    }
+  }
+
+  const contracts = baseContracts.map(c => ({
+    ref: c.ref || '', date_sig: c.date_sig || '', date_fin: c.date_fin || '',
+    etat: c.etat || '', type: c.type || '', cin: c.cin || '',
+    ...(detailMap[c.ref] || {})
+  }));
+
+  const stats = await sendToLambda(contracts, nom);
+  log(`  ✅ +${stats.created} créés, ↻${stats.updated} mis à jour, ✗${stats.errors} erreurs`);
+  return stats;
 }
 
 async function main() {
-  log('========================================');
-  log('=== Sync ANAPEC → Lambda → Monday.com ===');
+  log('╔══════════════════════════════════════════════════╗');
+  log('║  SYNC GitHub Actions → Lambda → Monday.com      ║');
+  log('╚══════════════════════════════════════════════════╝');
 
-  try {
-    const jsonPath = join(OUT_DIR, 'contrats.json');
-    if (!existsSync(jsonPath)) {
-      log('ERREUR: contrats.json introuvable !');
-      process.exit(1);
-    }
+  let totalCreated = 0, totalUpdated = 0, totalErrors = 0;
 
-    const baseContracts = JSON.parse(readFileSync(jsonPath, 'utf8'));
-    log(`${baseContracts.length} contrats dans contrats.json`);
-
-    const files = readdirSync(OUT_DIR).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
-    log(`${files.length} fichiers détails trouvés`);
-
-    const detailMap = {};
-    for (const file of files) {
-      const html = readFileSync(join(OUT_DIR, file), 'utf8');
-      const detail = parseDetail(html);
-      const refMatch = html.replace(/<[^>]+>/g,' ').match(/([AI]?\d{10,}\/\d+)/);
-      let ref = refMatch?.[1] || '';
-      if (ref.match(/^I\d/)) ref = 'A' + ref;
-      if (ref) {
-        detailMap[ref] = detail;
-        detailMap[ref.replace(/^A/,'')] = detail;
-      }
-    }
-
-    const contracts = baseContracts.map(c => ({
-      ref:      c.ref      || '',
-      date_sig: c.date_sig || '',
-      date_fin: c.date_fin || '',
-      etat:     c.etat     || '',
-      type:     c.type     || '',
-      cin:      c.cin      || '',
-      ...(detailMap[c.ref] || {})
-    }));
-
-    log(`${contracts.length} contrats prêts`);
-
-    const stats = await sendToLambda(contracts);
-
-    log(`=== FIN: +${stats.created} créés, ↻${stats.updated} mis à jour, ✗${stats.errors} erreurs ===`);
-    log('========================================');
-
-  } catch(error) {
-    log(`ERREUR CRITIQUE: ${error.message}`);
-    process.exit(1);
+  for (const nom of SOCIETES) {
+    const stats = await processSociete(nom);
+    totalCreated += stats.created || 0;
+    totalUpdated += stats.updated || 0;
+    totalErrors  += stats.errors  || 0;
+    await new Promise(r => setTimeout(r, 1000));
   }
+
+  log('\n╔══════════════════════════════════════════════════╗');
+  log(`║  FIN: +${totalCreated} créés, ↻${totalUpdated} mis à jour, ✗${totalErrors} erreurs  ║`);
+  log('╚══════════════════════════════════════════════════╝');
 }
 
-main();
+main().catch(e => {
+  log(`ERREUR CRITIQUE: ${e.message}`);
+  process.exit(1);
+});
