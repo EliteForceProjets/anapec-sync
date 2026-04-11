@@ -1040,3 +1040,173 @@
 [11/04/2026 12:32:26]   ❌ contrats.json introuvable pour CQ_SERVICE
 [11/04/2026 12:32:28] 
 ━━━ Push données vers GitHub ━━━
+[11/04/2026 12:32:30] ⚠️ Git: Command failed: cd C:\anapec && git add -A && git commit -m "Données 8 sociétés - 11/04/2026 12:32:2
+[11/04/2026 12:32:30] 
+╔══════════════════════════════════════════════════╗
+[11/04/2026 12:32:30] ║  FIN: +0 créés, ↻51 mis à jour, ✗0 erreurs  ║
+[11/04/2026 12:32:30] ╚══════════════════════════════════════════════════╝
+
+[11/04/2026 12:52:01] 
+╔══════════════════════════════════════════════════╗
+[11/04/2026 12:52:01] ║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║
+[11/04/2026 12:52:01] ║  VERSION: Bilingue Arabe + Français              ║
+[11/04/2026 12:52:01] ╚══════════════════════════════════════════════════╝
+[11/04/2026 12:52:01] 
+━━━ GRUPO_TEYEZ (grupoteyez@gmail.com) ━━━
+[11/04/2026 12:52:01]   Scraping ANAPEC...
+[11/04/2026 12:52:02] === Scraping ANAPEC: grupoteyez@gmail.com → C:\anapec\GRUPO_TEYEZ ===
+[11/04/2026 12:52:03] Chargement page ANAPEC...
+[11/04/2026 12:52:15] Connexion...
+[11/04/2026 12:52:20] ✅ Connecté !
+[11/04/2026 12:52:24] 10 contrats trouvés
+[11/04/2026 12:52:24] ✅ contrats.json sauvegardé
+[11/04/2026 12:52:24] ⏭ ci_1567973.html
+[11/04/2026 12:52:24] ⏭ ci_1567961.html
+[11/04/2026 12:52:24] ⏭ ci_1566826.html
+[11/04/2026 12:52:24] ⏭ ci_1564903.html
+[11/04/2026 12:52:24] ⏭ ci_1564768.html
+[11/04/2026 12:52:24] ⏭ ci_1564759.html
+[11/04/2026 12:52:24] ⏭ ci_1564737.html
+[11/04/2026 12:52:24] ⏭ ci_1564323.html
+[11/04/2026 12:52:24] ⏭ ci_1564313.html
+[11/04/2026 12:52:24] ⏭ ci_1563863.html
+[11/04/2026 12:52:24] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[11/04/2026 12:52:25]   ✅ Scraping terminé
+[11/04/2026 12:52:25]   10 contrats trouvés
+[11/04/2026 12:52:25]   Envoi de 10 contrats vers Lambda (GRUPO_TEYEZ)...
+[11/04/2026 12:52:38]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[11/04/2026 12:52:40] 
+━━━ SIGARMOR (sigarmorgroup@gmail.com) ━━━
+[11/04/2026 12:52:40]   Scraping ANAPEC...
+[11/04/2026 12:52:41] === Scraping ANAPEC: sigarmorgroup@gmail.com → C:\anapec\SIGARMOR ===
+[11/04/2026 12:52:42] Chargement page ANAPEC...
+[11/04/2026 12:52:54] Connexion...
+[11/04/2026 12:52:59] ✅ Connecté !
+[11/04/2026 12:53:02] 10 contrats trouvés
+[11/04/2026 12:53:02] ✅ contrats.json sauvegardé
+[11/04/2026 12:53:02] ⏭ ci_1562940.html
+[11/04/2026 12:53:02] ⏭ ci_1554916.html
+[11/04/2026 12:53:02] ⏭ ci_1551240.html
+[11/04/2026 12:53:02] ⏭ ci_1551238.html
+[11/04/2026 12:53:02] ⏭ ci_1539936.html
+[11/04/2026 12:53:02] ⏭ ci_1539857.html
+[11/04/2026 12:53:02] ⏭ ci_1388571.html
+[11/04/2026 12:53:02] ⏭ ci_1358437.html
+[11/04/2026 12:53:02] ⏭ ci_1358222.html
+[11/04/2026 12:53:02] ⏭ ci_1350653.html
+[11/04/2026 12:53:02] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[11/04/2026 12:53:03]   ✅ Scraping terminé
+[11/04/2026 12:53:03]   10 contrats trouvés
+[11/04/2026 12:53:03]   Envoi de 10 contrats vers Lambda (SIGARMOR)...
+[11/04/2026 12:53:17]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[11/04/2026 12:53:19] 
+━━━ EIM (ecoleimanagement@gmail.com) ━━━
+[11/04/2026 12:53:19]   Scraping ANAPEC...
+[11/04/2026 12:53:19] === Scraping ANAPEC: ecoleimanagement@gmail.com → C:\anapec\EIM ===
+[11/04/2026 12:53:21] Chargement page ANAPEC...
+[11/04/2026 12:53:33] Connexion...
+[11/04/2026 12:53:40] ❌ Connexion échouée
+[11/04/2026 12:53:41]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[11/04/2026 12:53:41]   Tentative avec données existantes...
+[11/04/2026 12:53:41]   ❌ contrats.json introuvable pour EIM
+[11/04/2026 12:53:43] 
+━━━ KIRKOS (groupekirkos@gmail.com) ━━━
+[11/04/2026 12:53:43]   Scraping ANAPEC...
+[11/04/2026 12:53:43] === Scraping ANAPEC: groupekirkos@gmail.com → C:\anapec\KIRKOS ===
+[11/04/2026 12:53:44] Chargement page ANAPEC...
+[11/04/2026 12:53:57] Connexion...
+[11/04/2026 12:54:02] ✅ Connecté !
+[11/04/2026 12:54:05] 10 contrats trouvés
+[11/04/2026 12:54:05] ✅ contrats.json sauvegardé
+[11/04/2026 12:54:05] ⏭ ci_1573519.html
+[11/04/2026 12:54:05] ⏭ ci_1573186.html
+[11/04/2026 12:54:05] ⏭ ci_1573174.html
+[11/04/2026 12:54:05] ⏭ ci_1573173.html
+[11/04/2026 12:54:05] ⏭ ci_1573171.html
+[11/04/2026 12:54:05] ⏭ ci_1573169.html
+[11/04/2026 12:54:05] ⏭ ci_1572705.html
+[11/04/2026 12:54:05] ⏭ ci_1572479.html
+[11/04/2026 12:54:05] ⏭ ci_1567224.html
+[11/04/2026 12:54:05] ⏭ ci_1567203.html
+[11/04/2026 12:54:05] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[11/04/2026 12:54:06]   ✅ Scraping terminé
+[11/04/2026 12:54:06]   10 contrats trouvés
+[11/04/2026 12:54:06]   Envoi de 10 contrats vers Lambda (KIRKOS)...
+[11/04/2026 12:54:18]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[11/04/2026 12:54:20] 
+━━━ KIRKOS_GUARD (groupekirkosguarduim@gmail.com) ━━━
+[11/04/2026 12:54:20]   Scraping ANAPEC...
+[11/04/2026 12:54:21] === Scraping ANAPEC: groupekirkosguarduim@gmail.com → C:\anapec\KIRKOS_GUARD ===
+[11/04/2026 12:54:22] Chargement page ANAPEC...
+[11/04/2026 12:54:35] Connexion...
+[11/04/2026 12:54:40] ✅ Connecté !
+[11/04/2026 12:54:43] 10 contrats trouvés
+[11/04/2026 12:54:43] ✅ contrats.json sauvegardé
+[11/04/2026 12:54:43] ⏭ ci_1573507.html
+[11/04/2026 12:54:43] ⏭ ci_1573187.html
+[11/04/2026 12:54:43] ⏭ ci_1573185.html
+[11/04/2026 12:54:43] ⏭ ci_1573179.html
+[11/04/2026 12:54:43] ⏭ ci_1573176.html
+[11/04/2026 12:54:43] ⏭ ci_1573175.html
+[11/04/2026 12:54:43] ⏭ ci_1573172.html
+[11/04/2026 12:54:43] ⏭ ci_1572674.html
+[11/04/2026 12:54:43] ⏭ ci_1572611.html
+[11/04/2026 12:54:43] ⏭ ci_1572601.html
+[11/04/2026 12:54:43] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[11/04/2026 12:54:44]   ✅ Scraping terminé
+[11/04/2026 12:54:44]   10 contrats trouvés
+[11/04/2026 12:54:44]   Envoi de 10 contrats vers Lambda (KIRKOS_GUARD)...
+[11/04/2026 12:54:57]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[11/04/2026 12:54:59] 
+━━━ NEISS (neissinvest@gmail.com) ━━━
+[11/04/2026 12:54:59]   Scraping ANAPEC...
+[11/04/2026 12:54:59] === Scraping ANAPEC: neissinvest@gmail.com → C:\anapec\NEISS ===
+[11/04/2026 12:55:00] Chargement page ANAPEC...
+[11/04/2026 12:55:13] Connexion...
+[11/04/2026 12:55:18] ✅ Connecté !
+[11/04/2026 12:55:22] 10 contrats trouvés
+[11/04/2026 12:55:22] ✅ contrats.json sauvegardé
+[11/04/2026 12:55:22] ⏭ ci_1572499.html
+[11/04/2026 12:55:22] ⏭ ci_1560042.html
+[11/04/2026 12:55:22] ⏭ ci_1560040.html
+[11/04/2026 12:55:22] ⏭ ci_1560039.html
+[11/04/2026 12:55:22] ⏭ ci_1560038.html
+[11/04/2026 12:55:22] ⏭ ci_1560037.html
+[11/04/2026 12:55:22] ⏭ ci_1560036.html
+[11/04/2026 12:55:22] ⏭ ci_1560035.html
+[11/04/2026 12:55:22] ⏭ ci_1560033.html
+[11/04/2026 12:55:22] ⏭ ci_1560032.html
+[11/04/2026 12:55:22] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[11/04/2026 12:55:23]   ✅ Scraping terminé
+[11/04/2026 12:55:23]   10 contrats trouvés
+[11/04/2026 12:55:23]   Envoi de 10 contrats vers Lambda (NEISS)...
+[11/04/2026 12:55:35]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[11/04/2026 12:55:37] 
+━━━ NORIA_BIANCA (yelgartili@groupekirkos.ma) ━━━
+[11/04/2026 12:55:37]   Scraping ANAPEC...
+[11/04/2026 12:55:38] === Scraping ANAPEC: yelgartili@groupekirkos.ma → C:\anapec\NORIA_BIANCA ===
+[11/04/2026 12:55:39] Chargement page ANAPEC...
+[11/04/2026 12:55:52] Connexion...
+[11/04/2026 12:55:57] ✅ Connecté !
+[11/04/2026 12:56:00] 1 contrats trouvés
+[11/04/2026 12:56:00] ✅ contrats.json sauvegardé
+[11/04/2026 12:56:00] ⏭ ci_1490723.html
+[11/04/2026 12:56:00] === Terminé: 0 nouveaux, 1 existants, 0 erreurs ===
+[11/04/2026 12:56:01]   ✅ Scraping terminé
+[11/04/2026 12:56:02]   1 contrats trouvés
+[11/04/2026 12:56:02]   Envoi de 1 contrats vers Lambda (NORIA_BIANCA)...
+[11/04/2026 12:56:04]   ✅ +0 créés, ↻1 mis à jour, ✗0 erreurs
+[11/04/2026 12:56:06] 
+━━━ CQ_SERVICE (info.cqservice@gmail.com) ━━━
+[11/04/2026 12:56:06]   Scraping ANAPEC...
+[11/04/2026 12:56:06] === Scraping ANAPEC: info.cqservice@gmail.com → C:\anapec\CQ_SERVICE ===
+[11/04/2026 12:56:07] Chargement page ANAPEC...
+[11/04/2026 12:56:19] Connexion...
+[11/04/2026 12:56:24] ✅ Connecté !
+[11/04/2026 12:56:28] 0 contrats trouvés
+[11/04/2026 12:56:28] ❌ 0 contrats
+[11/04/2026 12:56:28]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[11/04/2026 12:56:28]   Tentative avec données existantes...
+[11/04/2026 12:56:28]   ❌ contrats.json introuvable pour CQ_SERVICE
+[11/04/2026 12:56:30] 
+━━━ Push données vers GitHub ━━━

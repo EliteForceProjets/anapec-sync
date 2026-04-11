@@ -278,12 +278,14 @@ async function processSociete(societe) {
   for (const file of files) {
     const html = readFileSync(join(societeDir, file), 'utf8');
     const detail = parseDetail(html);
-    const refMatch = html.replace(/<[^>]+>/g,' ').match(/([AI]?\d{10,}\/\d+)/);
+    const refMatch = html.replace(/<[^>]+>/g,' ').match(/([A-Z]{0,3}\d{8,}\/\d+)/);
     let ref = refMatch?.[1] || '';
     if (ref.match(/^I\d/)) ref = 'A' + ref;
     if (ref) {
       detailMap[ref] = detail;
       detailMap[ref.replace(/^A/,'')] = detail;
+      if (ref.startsWith('NO')) detailMap[ref.slice(2)] = detail;
+      if (ref.startsWith('NI')) detailMap[ref.slice(2)] = detail;
     }
   }
 
