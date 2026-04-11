@@ -100,10 +100,15 @@ function parseDetail(html) {
         return m?.[1] || '';
       })(),
       salaire: (() => {
-        const m = text.match(/indemnit[eé][^(]*\(([^)]+)\)/i)
-                 || text.match(/fix[eé]\s+[àa]\s+([\d\s.,]+)\s*DH/i)
-                 || text.match(/(\d[\d\s,.]+)\s*DH/i);
-        if (m) return m[1].replace(/[^\d]/g, '');
+        // Priorité 1 : "fixé à 2500 DH" → 2500
+        const m1 = text.match(/fix[eé]\s+[àa]\s+([\d\s.,]+)\s*DH/i);
+        if (m1) return m1[1].replace(/[^\d]/g, '');
+        // Priorité 2 : "dont le montant est fixé à 2500 DH"
+        const m2 = text.match(/montant[^0-9]*([\d]{3,6})\s*DH/i);
+        if (m2) return m2[1];
+        // Priorité 3 : "indemnité de 2500 DH" (pas les plages "entre X et Y")
+        const m3 = text.match(/indemnit[eé][^(entre)]*?(\d{3,6})\s*DH(?!\s*\()/i);
+        if (m3) return m3[1];
         return '';
       })(),
     };
