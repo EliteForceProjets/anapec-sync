@@ -274,11 +274,15 @@ async function processSociete(societe) {
 
   // ── Fusionner avec détails ────────────────────────────────
   const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
-  const detailMap = {};
+  const detailMap = {};   // clé = ref
+  const cinMap = {};      // clé = CIN (fallback)
   for (const file of files) {
     const html = readFileSync(join(societeDir, file), 'utf8');
     const detail = parseDetail(html);
-    const refMatch = html.replace(/<[^>]+>/g,' ').match(/([A-Z]{0,3}\d{8,}\/\d+)/);
+    const cleanText = html.replace(/<[^>]+>/g,' ');
+
+    // Mapping par REF
+    const refMatch = cleanText.match(/([A-Z]{0,3}\d{8,}\/\d+)/);
     let ref = refMatch?.[1] || '';
     if (ref.match(/^I\d/)) ref = 'A' + ref;
     if (ref) {
@@ -287,12 +291,17 @@ async function processSociete(societe) {
       if (ref.startsWith('NO')) detailMap[ref.slice(2)] = detail;
       if (ref.startsWith('NI')) detailMap[ref.slice(2)] = detail;
     }
+
+    // Mapping par CIN (fallback pour fichiers verrouillés ou ref introuvable)
+    const cinMatch = cleanText.match(/([A-Z]{1,2}\d{5,8})/);
+    if (cinMatch?.[1]) cinMap[cinMatch[1]] = detail;
   }
 
   const contracts = baseContracts.map(c => ({
     ref: c.ref || '', date_sig: c.date_sig || '', date_fin: c.date_fin || '',
     etat: c.etat || '', type: c.type || '', cin: c.cin || '',
-    ...(detailMap[c.ref] || {})
+    // Priorité 1: match par ref, Priorité 2: match par CIN
+    ...(detailMap[c.ref] || cinMap[c.cin] || {})
   }));
 
   // ── Envoyer à Lambda ──────────────────────────────────────
