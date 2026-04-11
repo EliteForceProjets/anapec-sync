@@ -170,15 +170,41 @@ function parseDetail(html) {
       rc:         find(/رقم القيد في السجل التجاري[^:\n]*:\s*(\d+)/),
       cnss_empl:  find(/رقم الانخراط[^:\n]*:\s*(\d+)/),
       forme_jur:  find(/النظام القانوني[^:\n]*:\s*([^\n]{3,60})/),
-      nom_agent:  find(/الاسم العائلي[^:\n]*:\s*([^\n]{2,40})/),
-      prenom:     find(/الاسم الشخصي[^:\n]*:\s*([^\n]{2,40})/),
+      nom_agent: (() => {
+        const s1 = find(/الاسم العائلي[^:\n]*:\s*([^\n]{2,40})/);
+        if (s1) return s1;
+        const s2 = text.match(/الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/);
+        if (s2) { const p = s2[1].trim().split(/\s+/); return p[0] || ''; }
+        return '';
+      })(),
+      prenom: (() => {
+        const s1 = find(/الاسم الشخصي[^:\n]*:\s*([^\n]{2,40})/);
+        if (s1) return s1;
+        const s2 = text.match(/الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/);
+        if (s2) { const p = s2[1].trim().split(/\s+/); return p.length > 1 ? p.slice(1).join(' ') : ''; }
+        return '';
+      })(),
       nationalite:find(/الجنسية[^:\n]*:\s*([^\n]{3,30})/),
       cin:        text.match(/\b([A-Z]{1,2}\d{5,8})\b/)?.[1] || '',
       cnss_agent: find(/رقم التسجيل بالصندوق[^:\n]*:\s*(\d{6,12})/),
       niveau:     find(/المستوى التعليمي[^:\n]*:\s*([^\n]{3,60})/),
-      poste:      find(/المهنة[^:\n]*:\s*([^\n]{3,60})/),
+      poste: (() => {
+        const s1 = find(/المهنة[^:\n]*:\s*([^\n]{3,60})/);
+        if (s1) return s1;
+        const s2 = text.match(/([A-Z]{4,}(?:\s+(?:DE|DU|DES|LE|LA|LES|D))?(?:\s+[A-Z]{3,}){0,3})/);
+        if (s2) return s2[1].trim();
+        return '';
+      })(),
       duree:      find(/المدة[^:\n]*:\s*(\d+)/),
-      salaire:    find(/الأجر[^:\n]*:\s*([\d\s.,]+)/),
+      salaire: (() => {
+        const s1 = find(/الأجر[^:\n]*:\s*([\d\s.,]+)/);
+        if (s1) return s1.replace(/[^\d]/g, '');
+        const s2 = text.match(/(\d{3,6}(?:\.\d{1,2})?)\s*درهم/);
+        if (s2) return s2[1].replace(/[^\d]/g, '');
+        const s3 = text.match(/تخويله[^\d]*(\d{3,6})/);
+        if (s3) return s3[1];
+        return '';
+      })(),
     };
   }
 }
