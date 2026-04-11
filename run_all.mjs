@@ -171,17 +171,40 @@ function parseDetail(html) {
       cnss_empl:  find(/رقم الانخراط[^:\n]*:\s*(\d+)/),
       forme_jur:  find(/النظام القانوني[^:\n]*:\s*([^\n]{3,60})/),
       nom_agent: (() => {
+        // Structure 1: الاسم العائلي séparé
         const s1 = find(/الاسم العائلي[^:\n]*:\s*([^\n]{2,40})/);
         if (s1) return s1;
-        const s2 = text.match(/الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/);
-        if (s2) { const p = s2[1].trim().split(/\s+/); return p[0] || ''; }
+        // Structure 2: الاسم المالي والشخصي (nom complet)
+        // Cherche tout ce qui ressemble à ce pattern avec variations d'encodage
+        const patterns = [
+          /الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/,
+          /الاسم[^:\n]{0,20}والشخصي\s*:\s*([^\n]{2,60})/,
+          /الاسم[^:\n]{0,30}:\s*([\u0600-\u06FF\s]{3,40})/,
+        ];
+        for (const p of patterns) {
+          const m = text.match(p);
+          if (m?.[1]?.trim()) {
+            const parts = m[1].trim().split(/\s+/);
+            return parts[0] || '';
+          }
+        }
         return '';
       })(),
       prenom: (() => {
         const s1 = find(/الاسم الشخصي[^:\n]*:\s*([^\n]{2,40})/);
         if (s1) return s1;
-        const s2 = text.match(/الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/);
-        if (s2) { const p = s2[1].trim().split(/\s+/); return p.length > 1 ? p.slice(1).join(' ') : ''; }
+        const patterns = [
+          /الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/,
+          /الاسم[^:\n]{0,20}والشخصي\s*:\s*([^\n]{2,60})/,
+          /الاسم[^:\n]{0,30}:\s*([\u0600-\u06FF\s]{3,40})/,
+        ];
+        for (const p of patterns) {
+          const m = text.match(p);
+          if (m?.[1]?.trim()) {
+            const parts = m[1].trim().split(/\s+/);
+            return parts.length > 1 ? parts.slice(1).join(' ') : '';
+          }
+        }
         return '';
       })(),
       nationalite:find(/الجنسية[^:\n]*:\s*([^\n]{3,30})/),
@@ -189,20 +212,36 @@ function parseDetail(html) {
       cnss_agent: find(/رقم التسجيل بالصندوق[^:\n]*:\s*(\d{6,12})/),
       niveau:     find(/المستوى التعليمي[^:\n]*:\s*([^\n]{3,60})/),
       poste: (() => {
+        // Chercher المهنة
         const s1 = find(/المهنة[^:\n]*:\s*([^\n]{3,60})/);
         if (s1) return s1;
-        const s2 = text.match(/([A-Z]{4,}(?:\s+(?:DE|DU|DES|LE|LA|LES|D))?(?:\s+[A-Z]{3,}){0,3})/);
-        if (s2) return s2[1].trim();
+        // Chercher تعيينه/تعيين في منصب
+        const s2 = find(/تعيين[^\n]*?:\s*([^\n]{3,60})/);
+        if (s2) return s2;
+        // Chercher العمل كـ (poste après العمل)
+        const s3 = text.match(/العمل[^\n]*?(AGENT[^\n,.]{3,40}|HOTESSE[^\n,.]{3,40}|CHARGE[^\n,.]{3,40}|TECHNICIEN[^\n,.]{3,40})/i);
+        if (s3) return s3[1].trim();
+        // Chercher le poste en majuscules APRÈS les balises de contrat (pas dans le JS)
+        // On cherche dans la section engagements seulement
+        const engIdx = text.indexOf('ENGAGEMENTS');
+        if (engIdx > 0) {
+          const engText = text.slice(engIdx, engIdx + 2000);
+          const s4 = engText.match(/([A-Z]{5,}(?:\s+(?:DE|DU|D|AU|AUX))?(?:\s+[A-Z]{3,}){0,3})/);
+          if (s4) return s4[1].trim();
+        }
         return '';
       })(),
       duree:      find(/المدة[^:\n]*:\s*(\d+)/),
       salaire: (() => {
         const s1 = find(/الأجر[^:\n]*:\s*([\d\s.,]+)/);
         if (s1) return s1.replace(/[^\d]/g, '');
-        const s2 = text.match(/(\d{3,6}(?:\.\d{1,2})?)\s*درهم/);
-        if (s2) return s2[1].replace(/[^\d]/g, '');
-        const s3 = text.match(/تخويله[^\d]*(\d{3,6})/);
-        if (s3) return s3[1];
+        // منحة بحد أعلى XXXX درهم
+        const s2 = text.match(/بحد أعلى\s*(\d{3,6})\s*درهم/);
+        if (s2) return s2[1];
+        const s3 = text.match(/(\d{3,6}(?:\.\d{1,2})?)\s*درهم/);
+        if (s3) return s3[1].replace(/[^\d]/g, '');
+        const s4 = text.match(/تخويله[^\d]*(\d{3,6})/);
+        if (s4) return s4[1];
         return '';
       })(),
     };
