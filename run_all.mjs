@@ -62,53 +62,99 @@ function parseDetail(html) {
   };
 
   if (isFrench) {
-    // ── Parsing FRANÇAIS ──────────────────────────────────────
+    // ── Parsing FRANÇAIS - basé sur structure HTML réelle ANAPEC ─
     return {
-      agence:     find(/Agence\s*:\s*([^\n]{3,60})/i, /AGENCE\s*:\s*([^\n]{3,60})/i),
-      nom_entrep: find(
-        /Nom\s+ou\s+raison\s+sociale\s*:\s*([^\n]{3,80})/i,
-        /Raison\s+sociale\s*:\s*([^\n]{3,80})/i,
-        /Employeur\s*:\s*([^\n]{3,80})/i
-      ),
-      secteur:    find(/Secteur\s+d['']activit[eé]\s*:\s*([^\n]{3,80})/i, /Secteur\s*:\s*([^\n]{3,80})/i),
-      adresse:    find(/Adresse\s*:\s*([^\n]{5,150})/i),
-      telephone:  find(/T[eé]l[^\n:]*:\s*([\d\s\/+]{8,20})/i, /T[eé]l[eé]phone\s*:\s*([\d\s\/+]{8,20})/i, /(0[567]\d{8})/),
-      rc:         find(/N°?\s+du\s+registre\s+du\s+[Cc]ommerce\s*:\s*(\d+)/i, /R\.C\s*:\s*(\d+)/i),
-      cnss_empl:  find(/N°?\s+d['']affiliation\s+[àa]\s+la\s+C\.N\.S\.S\s*:\s*(\d+)/i, /Affiliation\s+CNSS\s*:\s*(\d+)/i),
-      forme_jur:  find(/Statut\s+juridique\s*:\s*([^\n]{3,60})/i, /Forme\s+juridique\s*:\s*([^\n]{3,60})/i),
+      // "Agence : NOUACER"
+      agence: find(/Agence\s*:\s*([^\n<]{3,60})/i),
+
+      // "Nom ou raison sociale : SIGARMOR"
+      nom_entrep: find(/Nom\s+ou\s+raison\s+sociale\s*[:\u00a0]+\s*([^\n<]{2,80})/i),
+
+      // "Secteur d'activité : Services fournis..."
+      secteur: find(/Secteur\s+d.activit[eé]\s*:\s*([^\n<]{3,80})/i),
+
+      // "Adresse : PLATEAU N°52..."
+      adresse: find(/Adresse\s*:\s*([^\n<]{5,150})/i),
+
+      // "Tél + Fax : 0662054325/0662054325"
+      telephone: (() => {
+        const m = text.match(/T[eé]l[^:\n]*:\s*([\d\/\s+.]{7,30})/i);
+        if (m) {
+          const nums = m[1].match(/(0\d{9})/g);
+          return nums ? nums[0] : m[1].trim();
+        }
+        return text.match(/(0[567]\d{8})/)?.[1] || '';
+      })(),
+
+      // "N° du registre du Commerce :523361"
+      rc: find(/registre\s+du\s+[Cc]ommerce\s*:\s*(\d+)/i),
+
+      // "N° d'affiliation à la C.N.S.S. :2850723"
+      cnss_empl: find(/affiliation\s+.+C\.N\.S\.S[^:]*:\s*(\d+)/i),
+
+      // "Statut juridique :Société à responsabilité limitée"
+      forme_jur: find(/Statut\s+juridique\s*:\s*([^\n<]{3,60})/i),
+
+      // "Nom et prénom : AIT FERAOUNE GHIZLAN" → nom = AIT FERAOUNE
       nom_agent: (() => {
-        const m = text.match(/Nom\s+et\s+pr[eé]nom\s*:\s*([A-ZÉÈÊÀÂÙÛÎÔÄËÏÖÜ][^\n]{3,60})/i);
-        if (m) return m[1].trim().split(/\s+/)[0];
-        return find(/Stagiaire\s*[:\-]\s*([A-ZÉÈÊÀÂÙÛÎÔÄËÏÖÜ][^\n,]{1,40})/i);
+        const m = text.match(/Nom\s+et\s+pr[eé]nom\s*[:\u00a0]+\s*([A-Z][A-Z\s]{1,40}?)\s{2,}([A-Z][^\n<]{1,40})/);
+        if (m) return m[1].trim();
+        // fallback : tout avant le dernier mot
+        const m2 = text.match(/Nom\s+et\s+pr[eé]nom\s*[:\u00a0]+\s*([A-Z][^\n<]{3,60})/i);
+        if (m2) {
+          const parts = m2[1].trim().split(/\s+/);
+          return parts.length > 1 ? parts.slice(0, -1).join(' ') : parts[0];
+        }
+        return '';
       })(),
+
+      // "Nom et prénom : AIT FERAOUNE GHIZLAN" → prénom = GHIZLAN
       prenom: (() => {
-        const m = text.match(/Nom\s+et\s+pr[eé]nom\s*:\s*([A-ZÉÈÊÀÂÙÛÎÔÄËÏÖÜ\s]{4,60})/i);
-        if (m) { const p = m[1].trim().split(/\s+/); return p.length > 1 ? p.slice(1).join(' ') : ''; }
-        return find(/Pr[eé]nom\s*:\s*([^\n]{2,40})/i);
+        const m = text.match(/Nom\s+et\s+pr[eé]nom\s*[:\u00a0]+\s*([A-Z][A-Z\s]{1,40}?)\s{2,}([A-Z][^\n<]{1,40})/);
+        if (m) return m[2].trim();
+        const m2 = text.match(/Nom\s+et\s+pr[eé]nom\s*[:\u00a0]+\s*([A-Z][^\n<]{3,60})/i);
+        if (m2) {
+          const parts = m2[1].trim().split(/\s+/);
+          return parts.length > 1 ? parts[parts.length - 1] : '';
+        }
+        return '';
       })(),
-      nationalite: find(/Nationalit[eé]\s*:\s*([^\n]{3,30})/i),
+
+      // "Nationalité : Marocaine"
+      nationalite: find(/Nationalit[eé]\s*:\s*([^\n<]{3,30})/i),
+
+      // "N° CIN/Carte de séjour : BK687946"
       cin: (() => {
-        const m = text.match(/(?:CIN|Carte\s+de\s+s[eé]jour)\s*:\s*([A-Z]{1,2}\d{5,8})/i)
+        const m = text.match(/CIN[^:]*:\s*([A-Z]{1,2}\d{5,8})/i)
                  || text.match(/\b([A-Z]{1,2}\d{5,8})\b/);
         return m?.[1] || '';
       })(),
-      cnss_agent:  find(/N°?\s+d['']immatriculation\s+[àa]\s+la\s+C\.N\.S\.S\s*:\s*(\d{6,12})/i, /Immatriculation\s+CNSS\s*:\s*(\d{6,12})/i),
-      niveau:      find(/Niveau\s+d['']instruction[^:\n]*:\s*([^\n]{3,80})/i, /Dipl[oô]me[^:\n]*:\s*([^\n]{3,80})/i),
-      poste:       find(/[Aa]ffecter\s+au\s+poste\s+de\s+([^\n.]{3,80})/i, /[Pp]oste\s*:\s*([^\n]{3,60})/i),
+
+      // "N° d'immatriculation à la C.N.S.S : 157128513"
+      cnss_agent: find(/immatriculation\s+.+C\.N\.S\.S[^:]*:\s*(\d{6,12})/i),
+
+      // "Niveau d'instruction(diplôme le plus élevé) : Baccalauréat - Contrôleur..."
+      niveau: find(/Niveau\s+d.instruction[^:]*:\s*([^\n<]{3,80})/i),
+
+      // "l'affecter au poste de travail chargée d'appel d'offre"
+      poste: find(/affecter\s+au\s+poste\s+de\s+(?:travail\s+)?([^\n.<]{3,80})/i),
+
+      // "Pour une durée de (1) 21 mois, 26 jours (24 mois non renouvelables)"
+      // → extraire 21 (premier nombre = durée réelle)
       duree: (() => {
-        const m = text.match(/dur[eé]e\s+de[^:]*?(\d+)\s+mois/i) || text.match(/(\d+)\s+mois/i);
+        const m = text.match(/dur[eé]e\s+de[^0-9]*(\d+)\s+mois/i);
         return m?.[1] || '';
       })(),
+
+      // "montant est fixé à 2500 DH (entre 1600 et 6000 DH)"
+      // → extraire 2500 uniquement (avant la parenthèse)
       salaire: (() => {
-        // Priorité 1 : "fixé à 2500 DH" → 2500
-        const m1 = text.match(/fix[eé]\s+[àa]\s+([\d\s.,]+)\s*DH/i);
-        if (m1) return m1[1].replace(/[^\d]/g, '');
-        // Priorité 2 : "dont le montant est fixé à 2500 DH"
-        const m2 = text.match(/montant[^0-9]*([\d]{3,6})\s*DH/i);
+        // Pattern exact : "fixé à XXXX DH"
+        const m1 = text.match(/fix[eé]\s+[àa]\s+(\d[\d\s]*)\s*DH/i);
+        if (m1) return m1[1].replace(/\s/g, '');
+        // Pattern : "montant ... XXXX DH (" - prend le nombre juste avant DH (
+        const m2 = text.match(/(\d{3,6})\s*DH\s*\(/i);
         if (m2) return m2[1];
-        // Priorité 3 : "indemnité de 2500 DH" (pas les plages "entre X et Y")
-        const m3 = text.match(/indemnit[eé][^(entre)]*?(\d{3,6})\s*DH(?!\s*\()/i);
-        if (m3) return m3[1];
         return '';
       })(),
     };
