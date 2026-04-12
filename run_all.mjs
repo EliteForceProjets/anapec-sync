@@ -171,21 +171,23 @@ function parseDetail(html) {
       cnss_empl:  find(/رقم الانخراط[^:\n]*:\s*(\d+)/),
       forme_jur:  find(/النظام القانوني[^:\n]*:\s*([^\n]{3,60})/),
       nom_agent: (() => {
-        // Structure 1: الاسم العائلي séparé
+        // Structure normale: الاسم العائلي
         const s1 = find(/الاسم العائلي[^:\n]*:\s*([^\n]{2,40})/);
         if (s1) return s1;
-        // Structure 2: الاسم المالي والشخصي (nom complet)
-        // Cherche tout ce qui ressemble à ce pattern avec variations d'encodage
-        const patterns = [
-          /الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/,
-          /الاسم[^:\n]{0,20}والشخصي\s*:\s*([^\n]{2,60})/,
-          /الاسم[^:\n]{0,30}:\s*([\u0600-\u06FF\s]{3,40})/,
-        ];
-        for (const p of patterns) {
-          const m = text.match(p);
-          if (m?.[1]?.trim()) {
-            const parts = m[1].trim().split(/\s+/);
-            return parts[0] || '';
+        // Structure nom complet: الاسم المالي والشخصي
+        const s2 = find(/الاسم المالي والشخصي[^:\n]*:\s*([^\n]{2,60})/);
+        if (s2) { return s2.trim().split(/\s+/)[0] || ''; }
+        // Structure inversée (RTL visual): chercher par context CIN
+        // Le nom apparaît 1-2 lignes après "المتدرب" dans le texte
+        const cinMatch = text.match(/\b([A-Z]{1,2}\d{5,8})\b/);
+        if (cinMatch) {
+          const cinIdx = text.indexOf(cinMatch[1]);
+          const before = text.slice(Math.max(0, cinIdx-500), cinIdx);
+          // Chercher le dernier mot arabe significatif avant le CIN
+          const arabicWords = before.match(/[\u0600-\u06FF]{3,}/g);
+          if (arabicWords && arabicWords.length >= 2) {
+            // Prendre les 2 derniers mots arabes (nom + prénom inversés)
+            return arabicWords[arabicWords.length-2] || '';
           }
         }
         return '';
@@ -193,16 +195,16 @@ function parseDetail(html) {
       prenom: (() => {
         const s1 = find(/الاسم الشخصي[^:\n]*:\s*([^\n]{2,40})/);
         if (s1) return s1;
-        const patterns = [
-          /الاسم المالي والشخصي\s*:\s*([^\n]{2,60})/,
-          /الاسم[^:\n]{0,20}والشخصي\s*:\s*([^\n]{2,60})/,
-          /الاسم[^:\n]{0,30}:\s*([\u0600-\u06FF\s]{3,40})/,
-        ];
-        for (const p of patterns) {
-          const m = text.match(p);
-          if (m?.[1]?.trim()) {
-            const parts = m[1].trim().split(/\s+/);
-            return parts.length > 1 ? parts.slice(1).join(' ') : '';
+        const s2 = find(/الاسم المالي والشخصي[^:\n]*:\s*([^\n]{2,60})/);
+        if (s2) { const p = s2.trim().split(/\s+/); return p.length > 1 ? p.slice(1).join(' ') : ''; }
+        // Structure inversée: dernier mot arabe avant CIN
+        const cinMatch = text.match(/\b([A-Z]{1,2}\d{5,8})\b/);
+        if (cinMatch) {
+          const cinIdx = text.indexOf(cinMatch[1]);
+          const before = text.slice(Math.max(0, cinIdx-500), cinIdx);
+          const arabicWords = before.match(/[\u0600-\u06FF]{3,}/g);
+          if (arabicWords && arabicWords.length >= 1) {
+            return arabicWords[arabicWords.length-1] || '';
           }
         }
         return '';
