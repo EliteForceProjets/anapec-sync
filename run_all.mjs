@@ -34,7 +34,9 @@ function log(msg) {
 
 // ── CORRECTION PRINCIPALE: parseDetail bilingue ──────────────
 function parseDetail(html) {
-  const text = html
+  // Détecter si c'est du texte pur (innerText) ou du HTML
+  const isPlainText = !html.includes('<html') && !html.includes('<body') && !html.includes('<script');
+  const text = isPlainText ? html.replace(/[ \t]+/g, ' ').replace(/\r\n/g, '\n') : html
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
