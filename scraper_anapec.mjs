@@ -155,7 +155,7 @@ async function main() {
 
       try {
         await page.goto(`${BASE_URL}/edition_ci/${detailId}`, { waitUntil: 'networkidle2', timeout: 20000 });
-        writeFileSync(outFile, await page.content(), 'utf8');
+        writeFileSync(outFile, await page.evaluate(() => document.body.innerText), 'utf8');
         log(`✅ ci_${detailId}.html`);
         scraped++;
         await new Promise(r => setTimeout(r, 1000));
