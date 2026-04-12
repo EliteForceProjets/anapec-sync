@@ -383,15 +383,20 @@ async function processSociete(societe) {
     };
     // Nettoyer poste si texte générique arabe
     const badPostes = ['من جهة أخرى', 'من جهة', 'تم الاتفاق', 'الالتزامات', 'المتدرب'];
-    if (merged.poste && badPostes.some(b => merged.poste.includes(b))) {
+    const posteIsInvalid = !merged.poste || badPostes.some(b => merged.poste.includes(b));
+    if (posteIsInvalid) {
       merged.poste = '';
       // Re-chercher le poste directement dans le fichier contenant ce CIN
       for (const f of files) {
         try {
           const h = readFileSync(join(societeDir, f), 'utf8');
           if (!h.includes(c.cin)) continue;
-          const pm = h.match(/AGENT DE GARDIENNAGE/i) || h.match(/HOTESSE D[''']ACCUEIL/i) ||
-                     h.match(/TECHNICIEN[^\n]{0,30}/i) || h.match(/CHARGE[E]?[^\n]{0,30}/i);
+          const pm = h.match(/AGENT\s+DE\s+GARDIENNAGE/i) ||
+                     h.match(/HOTESSE\s+D[''\u2019]ACCUEIL/i) ||
+                     h.match(/HOTESSE\s+DACCUEIL/i) ||
+                     h.match(/TECHNICIEN[^\n]{0,40}/i) ||
+                     h.match(/CHARGE[E]?\s+D[^\n]{0,40}/i) ||
+                     h.match(/AGENT\s+[A-Z]{3,}[^\n]{0,30}/i);
           if (pm) { merged.poste = pm[0].trim(); break; }
         } catch {}
       }
