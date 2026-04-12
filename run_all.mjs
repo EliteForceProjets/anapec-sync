@@ -375,12 +375,40 @@ async function processSociete(societe) {
     if (cinMatch?.[1]) cinMap[cinMatch[1]] = detail;
   }
 
-  const contracts = baseContracts.map(c => ({
-    ref: c.ref || '', date_sig: c.date_sig || '', date_fin: c.date_fin || '',
-    etat: c.etat || '', type: c.type || '', cin: c.cin || '',
-    // Priorité 1: match par ref, Priorité 2: match par CIN
-    ...(detailMap[c.ref] || cinMap[c.cin] || {})
-  }));
+  const contracts = baseContracts.map(c => {
+    const merged = {
+      ref: c.ref || '', date_sig: c.date_sig || '', date_fin: c.date_fin || '',
+      etat: c.etat || '', type: c.type || '', cin: c.cin || '',
+      ...(detailMap[c.ref] || cinMap[c.cin] || {})
+    };
+    // Nettoyer poste si texte générique arabe
+    const badPostes = ['من جهة أخرى', 'من جهة', 'تم الاتفاق', 'الالتزامات', 'المتدرب'];
+    if (merged.poste && badPostes.some(b => merged.poste.includes(b))) {
+      merged.poste = '';
+      // Re-chercher le poste directement dans le fichier contenant ce CIN
+      for (const f of files) {
+        try {
+          const h = readFileSync(join(societeDir, f), 'utf8');
+          if (!h.includes(c.cin)) continue;
+          const pm = h.match(/AGENT DE GARDIENNAGE/i) || h.match(/HOTESSE D[''']ACCUEIL/i) ||
+                     h.match(/TECHNICIEN[^\n]{0,30}/i) || h.match(/CHARGE[E]?[^\n]{0,30}/i);
+          if (pm) { merged.poste = pm[0].trim(); break; }
+        } catch {}
+      }
+    }
+    // Nettoyer salaire si 0 ou vide - re-chercher
+    if (!merged.salaire || merged.salaire === '0') {
+      for (const f of files) {
+        try {
+          const h = readFileSync(join(societeDir, f), 'utf8');
+          if (!h.includes(c.cin)) continue;
+          const sm = h.match(/بحد أعلى\s*(\d{3,6})/) || h.match(/(\d{3,6})\s*درهم/);
+          if (sm) { merged.salaire = sm[1]; break; }
+        } catch {}
+      }
+    }
+    return merged;
+  });
 
   // ── Envoyer à Lambda ──────────────────────────────────────
   return await sendToLambda(contracts, societe.nom);
