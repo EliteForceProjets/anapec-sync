@@ -171,23 +171,22 @@ function parseDetail(html) {
       cnss_empl:  find(/رقم الانخراط[^:\n]*:\s*(\d+)/),
       forme_jur:  find(/النظام القانوني[^:\n]*:\s*([^\n]{3,60})/),
       nom_agent: (() => {
-        // Structure normale: الاسم العائلي
+        // Structure 1: الاسم العائلي
         const s1 = find(/الاسم العائلي[^:\n]*:\s*([^\n]{2,40})/);
         if (s1) return s1;
-        // Structure nom complet: الاسم المالي والشخصي
+        // Structure 2: الاسم المالي والشخصي
         const s2 = find(/الاسم المالي والشخصي[^:\n]*:\s*([^\n]{2,60})/);
-        if (s2) { return s2.trim().split(/\s+/)[0] || ''; }
-        // Structure inversée (RTL visual): chercher par context CIN
-        // Le nom apparaît 1-2 lignes après "المتدرب" dans le texte
+        if (s2) return s2.trim().split(/\s+/)[0] || '';
+        // Structure 3: texte RTL inversé - inverser le mot arabe trouvé
         const cinMatch = text.match(/\b([A-Z]{1,2}\d{5,8})\b/);
         if (cinMatch) {
           const cinIdx = text.indexOf(cinMatch[1]);
-          const before = text.slice(Math.max(0, cinIdx-500), cinIdx);
-          // Chercher le dernier mot arabe significatif avant le CIN
+          const before = text.slice(Math.max(0, cinIdx-300), cinIdx);
           const arabicWords = before.match(/[\u0600-\u06FF]{3,}/g);
           if (arabicWords && arabicWords.length >= 2) {
-            // Prendre les 2 derniers mots arabes (nom + prénom inversés)
-            return arabicWords[arabicWords.length-2] || '';
+            // Inverser le mot RTL pour obtenir le vrai nom
+            const reversed = arabicWords[arabicWords.length-2].split('').reverse().join('');
+            return reversed;
           }
         }
         return '';
@@ -197,14 +196,14 @@ function parseDetail(html) {
         if (s1) return s1;
         const s2 = find(/الاسم المالي والشخصي[^:\n]*:\s*([^\n]{2,60})/);
         if (s2) { const p = s2.trim().split(/\s+/); return p.length > 1 ? p.slice(1).join(' ') : ''; }
-        // Structure inversée: dernier mot arabe avant CIN
         const cinMatch = text.match(/\b([A-Z]{1,2}\d{5,8})\b/);
         if (cinMatch) {
           const cinIdx = text.indexOf(cinMatch[1]);
-          const before = text.slice(Math.max(0, cinIdx-500), cinIdx);
+          const before = text.slice(Math.max(0, cinIdx-300), cinIdx);
           const arabicWords = before.match(/[\u0600-\u06FF]{3,}/g);
           if (arabicWords && arabicWords.length >= 1) {
-            return arabicWords[arabicWords.length-1] || '';
+            const reversed = arabicWords[arabicWords.length-1].split('').reverse().join('');
+            return reversed;
           }
         }
         return '';
@@ -225,11 +224,21 @@ function parseDetail(html) {
         if (s3) return s3[1].trim();
         // Chercher le poste en majuscules APRÈS les balises de contrat (pas dans le JS)
         // On cherche dans la section engagements seulement
-        const engIdx = text.indexOf('ENGAGEMENTS');
-        if (engIdx > 0) {
-          const engText = text.slice(engIdx, engIdx + 2000);
-          const s4 = engText.match(/([A-Z]{5,}(?:\s+(?:DE|DU|D|AU|AUX))?(?:\s+[A-Z]{3,}){0,3})/);
-          if (s4) return s4[1].trim();
+        // Chercher AGENT/HOTESSE/TECHNICIEN dans tout le texte après le script JS
+        const bodyIdx = text.indexOf('Contrat');
+        const searchZone = bodyIdx > 0 ? text.slice(bodyIdx) : text;
+        const jobPatterns = [
+          /AGENT\s+DE\s+[A-Z]+(?:\s+[A-Z]+)*/i,
+          /HOTESSE\s+(?:D['\'']?[A-Z]+(?:\s+[A-Z]+)*)/i,
+          /TECHNICIEN\s+[A-Z]+(?:\s+[A-Z]+)*/i,
+          /CHARGE[E]?\s+(?:D['\'']?[A-Z]+(?:\s+[A-Z]+)*)/i,
+          /([A-Z]{5,}(?:\s+(?:DE|DU|D|AU|AUX|ET)\s+)?(?:[A-Z]{3,}\s*){0,3})/,
+        ];
+        for (const jp of jobPatterns) {
+          const m = searchZone.match(jp);
+          if (m && m[0].length > 4 && !m[0].includes('ENGAGEMENT') && !m[0].includes('CONVENTION')) {
+            return m[0].trim();
+          }
         }
         return '';
       })(),
