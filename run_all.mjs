@@ -46,16 +46,22 @@ function log(msg) {
 // Si pas de .printable → fallback sur le body sans scripts.
 // ─────────────────────────────────────────────────────────────
 function extractPrintable(html) {
-  // Stratégie 1 : extraire div.printable (section contrat ANAPEC)
-  const printableMatch = html.match(/<div[^>]*class=["'][^"']*printable[^"']*["'][^>]*>([\s\S]*?)<\/div>\s*<\/div>/i)
-                      || html.match(/<div[^>]*class=["'][^"']*printable[^"']*["'][^>]*>([\s\S]*)/i);
-  if (printableMatch) return printableMatch[1];
+  // Stratégie 1 : trouver <div class="printable"> via indexOf
+  // Le regex [\s\S]*? fermait trop tôt sur les gros fichiers
+  const tagMatch = html.match(/<div[^>]*class=["'][^"']*printable[^"']*["'][^>]*>/i);
+  if (tagMatch) {
+    const startIdx = html.indexOf(tagMatch[0]);
+    if (startIdx >= 0) {
+      const after = html.slice(startIdx + tagMatch[0].length);
+      // Prendre jusqu'à </body> ou fin
+      const endIdx = after.search(/<\/body>/i);
+      return endIdx > 0 ? after.slice(0, endIdx) : after;
+    }
+  }
 
-  // Stratégie 2 : extraire <body> sans les scripts
+  // Stratégie 2 : <body> sans scripts
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   const body = bodyMatch ? bodyMatch[1] : html;
-
-  // Retirer les scripts
   return body.replace(/<script[\s\S]*?<\/script>/gi, '');
 }
 
