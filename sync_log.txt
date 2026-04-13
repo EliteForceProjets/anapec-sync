@@ -5144,3 +5144,224 @@
 [13/04/2026 07:14:36]   ❌ contrats.json introuvable pour CQ_SERVICE
 [13/04/2026 07:14:38] 
 ━━━ Push données vers GitHub ━━━
+[13/04/2026 07:31:39] ✅ Données pushées vers GitHub
+[13/04/2026 07:31:39] 
+╔══════════════════════════════════════════════════╗
+[13/04/2026 07:31:39] ║  FIN: +0 créés, ↻51 mis à jour, ✗0 erreurs  ║
+[13/04/2026 07:31:39] ╚══════════════════════════════════════════════════╝
+
+[13/04/2026 07:38:29] 
+╔══════════════════════════════════════════════════╗
+[13/04/2026 07:38:29] ║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║
+[13/04/2026 07:38:29] ║  VERSION: Bilingue Arabe + Français v5           ║
+[13/04/2026 07:38:29] ╚══════════════════════════════════════════════════╝
+[13/04/2026 07:38:29] 
+━━━ GRUPO_TEYEZ (grupoteyez@gmail.com) ━━━
+[13/04/2026 07:38:29]   Scraping ANAPEC...
+[13/04/2026 07:38:30] === Scraping ANAPEC: grupoteyez@gmail.com → C:\anapec\GRUPO_TEYEZ ===
+[13/04/2026 07:38:31] Chargement page ANAPEC...
+[13/04/2026 07:38:52] Connexion...
+[13/04/2026 07:38:57] ✅ Connecté !
+[13/04/2026 07:39:01] 10 contrats trouvés
+[13/04/2026 07:39:01] ✅ contrats.json sauvegardé
+[13/04/2026 07:39:01] ⏭ ci_1567973.html
+[13/04/2026 07:39:01] ⏭ ci_1567961.html
+[13/04/2026 07:39:01] ⏭ ci_1566826.html
+[13/04/2026 07:39:01] ⏭ ci_1564903.html
+[13/04/2026 07:39:01] ⏭ ci_1564768.html
+[13/04/2026 07:39:01] ⏭ ci_1564759.html
+[13/04/2026 07:39:01] ⏭ ci_1564737.html
+[13/04/2026 07:39:01] ⏭ ci_1564323.html
+[13/04/2026 07:39:01] ⏭ ci_1564313.html
+[13/04/2026 07:39:01] ⏭ ci_1563863.html
+[13/04/2026 07:39:01] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[13/04/2026 07:39:02]   ✅ Scraping terminé
+[13/04/2026 07:39:02]   10 contrats trouvés
+[13/04/2026 07:39:02]   ✅ AI0304261103942/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI0304261103931/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI0204261103436/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3103261102396/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3103261102303/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3103261102293/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3103261102281/1: sal="1600" dur="12" poste="AGENT DE NOTTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3003261101999/1: sal="1600" dur="12" poste="AGENT DE NOTTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3003261101984/1: sal="1600" dur="12" poste="AGENT DE NOTTOYAGE"
+[13/04/2026 07:39:02]   ✅ AI3003261101714/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:39:02]   Envoi de 10 contrats vers Lambda (GRUPO_TEYEZ)...
+[13/04/2026 07:39:17]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[13/04/2026 07:39:19] 
+━━━ SIGARMOR (sigarmorgroup@gmail.com) ━━━
+[13/04/2026 07:39:20]   Scraping ANAPEC...
+[13/04/2026 07:39:20] === Scraping ANAPEC: sigarmorgroup@gmail.com → C:\anapec\SIGARMOR ===
+[13/04/2026 07:39:21] Chargement page ANAPEC...
+[13/04/2026 07:39:38] Connexion...
+[13/04/2026 07:39:43] ✅ Connecté !
+[13/04/2026 07:39:46] 10 contrats trouvés
+[13/04/2026 07:39:46] ✅ contrats.json sauvegardé
+[13/04/2026 07:39:46] ⏭ ci_1562940.html
+[13/04/2026 07:39:46] ⏭ ci_1554916.html
+[13/04/2026 07:39:46] ⏭ ci_1551240.html
+[13/04/2026 07:39:46] ⏭ ci_1551238.html
+[13/04/2026 07:39:46] ⏭ ci_1539936.html
+[13/04/2026 07:39:46] ⏭ ci_1539857.html
+[13/04/2026 07:39:46] ⏭ ci_1388571.html
+[13/04/2026 07:39:46] ⏭ ci_1358437.html
+[13/04/2026 07:39:46] ⏭ ci_1358222.html
+[13/04/2026 07:39:46] ⏭ ci_1350653.html
+[13/04/2026 07:39:46] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[13/04/2026 07:39:47]   ✅ Scraping terminé
+[13/04/2026 07:39:47]   10 contrats trouvés
+[13/04/2026 07:39:47]   ⚠️  NO2703261101262/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ✅ AI1003261096338/1: sal="3192.72" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:39:47]   ⚠️  NO0403261093717/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  NO0403261093716/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI1202261086508/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI1202261086452/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI060325991464/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI101224971091/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI101224970902/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   ⚠️  AI151124965387/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:39:47]   Envoi de 10 contrats vers Lambda (SIGARMOR)...
+[13/04/2026 07:40:01]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[13/04/2026 07:40:03] 
+━━━ EIM (ecoleimanagement@gmail.com) ━━━
+[13/04/2026 07:40:03]   Scraping ANAPEC...
+[13/04/2026 07:40:03] === Scraping ANAPEC: ecoleimanagement@gmail.com → C:\anapec\EIM ===
+[13/04/2026 07:40:04] Chargement page ANAPEC...
+[13/04/2026 07:40:22] Connexion...
+[13/04/2026 07:40:29] ❌ Connexion échouée
+[13/04/2026 07:40:29]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[13/04/2026 07:40:29]   Tentative avec données existantes...
+[13/04/2026 07:40:29]   ❌ contrats.json introuvable
+[13/04/2026 07:40:31] 
+━━━ KIRKOS (groupekirkos@gmail.com) ━━━
+[13/04/2026 07:40:31]   Scraping ANAPEC...
+[13/04/2026 07:40:32] === Scraping ANAPEC: groupekirkos@gmail.com → C:\anapec\KIRKOS ===
+[13/04/2026 07:40:33] Chargement page ANAPEC...
+[13/04/2026 07:40:49] Connexion...
+[13/04/2026 07:40:54] ✅ Connecté !
+[13/04/2026 07:40:58] 10 contrats trouvés
+[13/04/2026 07:40:58] ✅ contrats.json sauvegardé
+[13/04/2026 07:40:58] ⏭ ci_1573519.html
+[13/04/2026 07:40:58] ⏭ ci_1573186.html
+[13/04/2026 07:40:58] ⏭ ci_1573174.html
+[13/04/2026 07:40:58] ⏭ ci_1573173.html
+[13/04/2026 07:40:58] ⏭ ci_1573171.html
+[13/04/2026 07:40:58] ⏭ ci_1573169.html
+[13/04/2026 07:40:58] ⏭ ci_1572705.html
+[13/04/2026 07:40:58] ⏭ ci_1572479.html
+[13/04/2026 07:40:58] ⏭ ci_1567224.html
+[13/04/2026 07:40:58] ⏭ ci_1567203.html
+[13/04/2026 07:40:58] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[13/04/2026 07:40:59]   ✅ Scraping terminé
+[13/04/2026 07:40:59]   10 contrats trouvés
+[13/04/2026 07:40:59]   ⚠️  AI1004261107036/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:40:59]   ⚠️  AI0904261106879/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:40:59]   ✅ AI0904261106868/1: sal="1600" dur="12" poste="AGENT D'ENTRETIEN"
+[13/04/2026 07:40:59]   ✅ AI0904261106867/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:40:59]   ✅ AI0904261106865/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:40:59]   ✅ AI0904261106862/1: sal="1600" dur="12" poste="AGENT D'ENTRETIEN"
+[13/04/2026 07:40:59]   ✅ AI0904261106541/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:40:59]   ✅ AI0904261106384/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:40:59]   ✅ AI0204261103627/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:40:59]   ✅ AI0204261103624/1: sal="1600" dur="12" poste="AGENT DE NATTOYAGE"
+[13/04/2026 07:40:59]   Envoi de 10 contrats vers Lambda (KIRKOS)...
+[13/04/2026 07:41:14]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[13/04/2026 07:41:16] 
+━━━ KIRKOS_GUARD (groupekirkosguarduim@gmail.com) ━━━
+[13/04/2026 07:41:16]   Scraping ANAPEC...
+[13/04/2026 07:41:16] === Scraping ANAPEC: groupekirkosguarduim@gmail.com → C:\anapec\KIRKOS_GUARD ===
+[13/04/2026 07:41:17] Chargement page ANAPEC...
+[13/04/2026 07:41:36] Connexion...
+[13/04/2026 07:41:42] ✅ Connecté !
+[13/04/2026 07:41:45] 10 contrats trouvés
+[13/04/2026 07:41:45] ✅ contrats.json sauvegardé
+[13/04/2026 07:41:45] ⏭ ci_1573507.html
+[13/04/2026 07:41:45] ⏭ ci_1573187.html
+[13/04/2026 07:41:45] ⏭ ci_1573185.html
+[13/04/2026 07:41:46] ⏭ ci_1573179.html
+[13/04/2026 07:41:46] ⏭ ci_1573176.html
+[13/04/2026 07:41:46] ⏭ ci_1573175.html
+[13/04/2026 07:41:46] ⏭ ci_1573172.html
+[13/04/2026 07:41:46] ⏭ ci_1572674.html
+[13/04/2026 07:41:46] ⏭ ci_1572611.html
+[13/04/2026 07:41:46] ⏭ ci_1572601.html
+[13/04/2026 07:41:46] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[13/04/2026 07:41:47]   ✅ Scraping terminé
+[13/04/2026 07:41:47]   10 contrats trouvés
+[13/04/2026 07:41:47]   ✅ AI1004261107027/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ⚠️  AI0904261106880/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:41:47]   ✅ AI0904261106878/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ⚠️  AI0904261106875/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[13/04/2026 07:41:47]   ✅ AI0904261106871/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ✅ AI0904261106870/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ✅ AI0904261106866/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ✅ AI0904261106513/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ✅ AI0904261106476/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   ✅ AI0904261106467/1: sal="3160" dur="12" poste="AGENT DE GARDIENNAGE"
+[13/04/2026 07:41:47]   Envoi de 10 contrats vers Lambda (KIRKOS_GUARD)...
+[13/04/2026 07:42:00]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[13/04/2026 07:42:02] 
+━━━ NEISS (neissinvest@gmail.com) ━━━
+[13/04/2026 07:42:02]   Scraping ANAPEC...
+[13/04/2026 07:42:03] === Scraping ANAPEC: neissinvest@gmail.com → C:\anapec\NEISS ===
+[13/04/2026 07:42:04] Chargement page ANAPEC...
+[13/04/2026 07:42:21] Connexion...
+[13/04/2026 07:42:26] ✅ Connecté !
+[13/04/2026 07:42:30] 10 contrats trouvés
+[13/04/2026 07:42:30] ✅ contrats.json sauvegardé
+[13/04/2026 07:42:30] ⏭ ci_1572499.html
+[13/04/2026 07:42:30] ⏭ ci_1560042.html
+[13/04/2026 07:42:30] ⏭ ci_1560040.html
+[13/04/2026 07:42:30] ⏭ ci_1560039.html
+[13/04/2026 07:42:30] ⏭ ci_1560038.html
+[13/04/2026 07:42:30] ⏭ ci_1560037.html
+[13/04/2026 07:42:30] ⏭ ci_1560036.html
+[13/04/2026 07:42:30] ⏭ ci_1560035.html
+[13/04/2026 07:42:30] ⏭ ci_1560033.html
+[13/04/2026 07:42:30] ⏭ ci_1560032.html
+[13/04/2026 07:42:30] === Terminé: 0 nouveaux, 10 existants, 0 erreurs ===
+[13/04/2026 07:42:31]   ✅ Scraping terminé
+[13/04/2026 07:42:31]   10 contrats trouvés
+[13/04/2026 07:42:31]   ✅ AI0904261106389/1: sal="1600" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099705/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099703/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099702/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099701/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099700/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099699/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099698/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099696/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   ✅ AI1903261099695/1: sal="3192.24" dur="12" poste="AGENT DE NETTOYAGE"
+[13/04/2026 07:42:31]   Envoi de 10 contrats vers Lambda (NEISS)...
+[13/04/2026 07:42:44]   ✅ +0 créés, ↻10 mis à jour, ✗0 erreurs
+[13/04/2026 07:42:46] 
+━━━ NORIA_BIANCA (yelgartili@groupekirkos.ma) ━━━
+[13/04/2026 07:42:46]   Scraping ANAPEC...
+[13/04/2026 07:42:47] === Scraping ANAPEC: yelgartili@groupekirkos.ma → C:\anapec\NORIA_BIANCA ===
+[13/04/2026 07:42:48] Chargement page ANAPEC...
+[13/04/2026 07:43:04] Connexion...
+[13/04/2026 07:43:09] ✅ Connecté !
+[13/04/2026 07:43:12] 1 contrats trouvés
+[13/04/2026 07:43:12] ✅ contrats.json sauvegardé
+[13/04/2026 07:43:12] ⏭ ci_1490723.html
+[13/04/2026 07:43:12] === Terminé: 0 nouveaux, 1 existants, 0 erreurs ===
+[13/04/2026 07:43:13]   ✅ Scraping terminé
+[13/04/2026 07:43:13]   1 contrats trouvés
+[13/04/2026 07:43:13]   ✅ AL1011251052956/1: sal="2500" dur="12" poste="AGENT D'ENTRETIEN"
+[13/04/2026 07:43:13]   Envoi de 1 contrats vers Lambda (NORIA_BIANCA)...
+[13/04/2026 07:43:16]   ✅ +0 créés, ↻1 mis à jour, ✗0 erreurs
+[13/04/2026 07:43:18] 
+━━━ CQ_SERVICE (info.cqservice@gmail.com) ━━━
+[13/04/2026 07:43:18]   Scraping ANAPEC...
+[13/04/2026 07:43:18] === Scraping ANAPEC: info.cqservice@gmail.com → C:\anapec\CQ_SERVICE ===
+[13/04/2026 07:43:20] Chargement page ANAPEC...
+[13/04/2026 07:43:36] Connexion...
+[13/04/2026 07:43:41] ✅ Connecté !
+[13/04/2026 07:43:45] 0 contrats trouvés
+[13/04/2026 07:43:45] ❌ 0 contrats
+[13/04/2026 07:43:45]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[13/04/2026 07:43:45]   Tentative avec données existantes...
+[13/04/2026 07:43:45]   ❌ contrats.json introuvable
+[13/04/2026 07:43:47] 
+━━━ Push données vers GitHub ━━━
