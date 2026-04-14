@@ -98,12 +98,19 @@ async function main() {
     }
     log('✅ Connecté !');
 
-    // Page contrats
+    // Page contrats — PAGINATION ROBUSTE
+    // Lit le max visible dans la barre de pagination ANAPEC (ex: "1 2 3 ... 9 Suivant")
+    // S'arrête dès qu'une page retourne des doublons = ANAPEC a rebouclé
     await page.goto(`${BASE_URL}/visualiser_contrat`, { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(r => setTimeout(r, 2000));
     await page.waitForSelector('table', { timeout: 15000 }).catch(() => {});
 
-    const contracts = await page.evaluate(() => {
+    const allContracts = [];
+    const seenRefs = new Set();
+    let currentPage = 1;
+
+    // Fonction pour extraire les contrats de la page courante
+    const extractPageContracts = () => page.evaluate(() => {
       const rows = document.querySelectorAll('table tr');
       const result = [];
       rows.forEach(row => {
@@ -129,7 +136,48 @@ async function main() {
       return result;
     });
 
-    log(`${contracts.length} contrats trouvés`);
+    // Fonction pour détecter si le bouton "Suivant" existe sur la page
+    const hasSuivant = () => page.evaluate(() => {
+      const links = Array.from(document.querySelectorAll('a, span, li'));
+      return links.some(el => {
+        const text = el.innerText?.trim();
+        return text === 'Suivant' || text === '›' || text === 'suivant';
+      });
+    });
+
+    while (true) {
+      const pageContracts = await extractPageContracts();
+
+      if (pageContracts.length === 0) {
+        log(`  ⛔ Page ${currentPage}: aucun contrat → arrêt`);
+        break;
+      }
+
+      // Vérifier si TOUS les contrats de cette page sont déjà vus = boucle ANAPEC
+      const newContracts = pageContracts.filter(c => !seenRefs.has(c.ref));
+      if (newContracts.length === 0) {
+        log(`  ⛔ Page ${currentPage}: doublons → fin réelle de pagination`);
+        break;
+      }
+
+      newContracts.forEach(c => seenRefs.add(c.ref));
+      allContracts.push(...newContracts);
+
+      // Vérifier si bouton "Suivant" présent
+      const next = await hasSuivant();
+      log(`  📄 Page ${currentPage}: +${newContracts.length} contrats (total: ${allContracts.length}) ${next ? '→ suite' : '→ dernière page'}`);
+
+      if (!next) break;
+
+      // Aller à la page suivante
+      currentPage++;
+      await page.goto(`${BASE_URL}/visualiser_contrat/page:${currentPage}`,
+        { waitUntil: 'networkidle2', timeout: 30000 });
+      await new Promise(r => setTimeout(r, 1500));
+    }
+
+    const contracts = allContracts;
+    log(`${contracts.length} contrats trouvés (${currentPage} pages)`);
 
     if (contracts.length === 0) {
       writeFileSync(join(OUT_DIR, 'debug_contrats.html'), await page.content(), 'utf8');
@@ -150,12 +198,16 @@ async function main() {
       const outFile = join(OUT_DIR, `ci_${detailId}.html`);
       if (existsSync(outFile)) {
         const age = (Date.now() - statSync(outFile).mtimeMs) / 3600000;
-        if (age < 168) { log(`⏭ ci_${detailId}.html`); skipped++; continue; }
+        const size = statSync(outFile).size;
+        // Ignorer les fichiers valides (> 20KB et < 7 jours)
+        // Les fichiers < 20KB sont des pages vides (contrat non chargé) → re-télécharger
+        if (age < 168 && size >= 20000) { log(`⏭ ci_${detailId}.html`); skipped++; continue; }
+        if (size < 20000) log(`♻ ci_${detailId}.html (${size} bytes trop petit → re-téléchargement)`);
       }
 
       try {
         await page.goto(`${BASE_URL}/edition_ci/${detailId}`, { waitUntil: 'networkidle2', timeout: 20000 });
-        writeFileSync(outFile, await page.evaluate(() => document.body.innerText), 'utf8');
+        writeFileSync(outFile, await page.content(), 'utf8');  // HTML complet avec div.printable
         log(`✅ ci_${detailId}.html`);
         scraped++;
         await new Promise(r => setTimeout(r, 1000));

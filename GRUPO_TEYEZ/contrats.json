@@ -78,5 +78,309 @@
     "etat": "Validé & Signé",
     "type": "CI",
     "cin": "SH98950"
+  },
+  {
+    "ref": "AI3003261101702/1",
+    "date_sig": "07/04/2026",
+    "date_fin": "07/04/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "N162087"
+  },
+  {
+    "ref": "AI3003261101675/1",
+    "date_sig": "07/04/2026",
+    "date_fin": "07/04/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "EE424231"
+  },
+  {
+    "ref": "AI0503261094286/1",
+    "date_sig": "06/03/2026",
+    "date_fin": "11/11/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BH615082"
+  },
+  {
+    "ref": "AI0503261094258/1",
+    "date_sig": "06/03/2026",
+    "date_fin": "05/03/2028",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BF14532"
+  },
+  {
+    "ref": "AI1302261087217/1",
+    "date_sig": "13/02/2026",
+    "date_fin": "13/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "IA88052"
+  },
+  {
+    "ref": "AI0902261084245/1",
+    "date_sig": "12/02/2026",
+    "date_fin": "12/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "HH62106"
+  },
+  {
+    "ref": "AI0902261084234/1",
+    "date_sig": "09/02/2026",
+    "date_fin": "09/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "JD44308"
+  },
+  {
+    "ref": "AI0602261083692/1",
+    "date_sig": "09/02/2026",
+    "date_fin": "09/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "Q214338"
+  },
+  {
+    "ref": "AI0602261083676/1",
+    "date_sig": "09/02/2026",
+    "date_fin": "09/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BB245367"
+  },
+  {
+    "ref": "AI0602261083523/1",
+    "date_sig": "09/02/2026",
+    "date_fin": "09/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "HH221826"
+  },
+  {
+    "ref": "AI0602261083500/1",
+    "date_sig": "09/02/2026",
+    "date_fin": "09/02/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BK676440"
+  },
+  {
+    "ref": "AI1111251053126/1",
+    "date_sig": "12/11/2025",
+    "date_fin": "12/11/2027",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BL104741"
+  },
+  {
+    "ref": "AI1208251027517/1",
+    "date_sig": "15/09/2025",
+    "date_fin": "15/09/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BJ374945"
+  },
+  {
+    "ref": "AI120225985237/1",
+    "date_sig": "14/02/2025",
+    "date_fin": "29/11/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BH635726"
+  },
+  {
+    "ref": "AI131124964704/1",
+    "date_sig": "14/11/2024",
+    "date_fin": "14/11/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BA10214"
+  },
+  {
+    "ref": "AI111024955781/1",
+    "date_sig": "14/10/2024",
+    "date_fin": "14/10/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK715182"
+  },
+  {
+    "ref": "AI050924945483/1",
+    "date_sig": "10/09/2024",
+    "date_fin": "10/09/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BB47709"
+  },
+  {
+    "ref": "AI120824941385/1",
+    "date_sig": "13/08/2024",
+    "date_fin": "13/08/2026",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "BH640526"
+  },
+  {
+    "ref": "AI010824939365/1",
+    "date_sig": "12/08/2024",
+    "date_fin": "12/08/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH618960"
+  },
+  {
+    "ref": "AI010824939127/1",
+    "date_sig": "02/08/2024",
+    "date_fin": "02/08/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "U193937"
+  },
+  {
+    "ref": "AI150424916832/1",
+    "date_sig": "19/04/2024",
+    "date_fin": "19/04/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BW8788"
+  },
+  {
+    "ref": "AI140224904313/1",
+    "date_sig": "14/02/2024",
+    "date_fin": "13/02/2026",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "BK685050"
+  },
+  {
+    "ref": "AI140224904300/1",
+    "date_sig": "14/02/2024",
+    "date_fin": "13/02/2026",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "BK387064"
+  },
+  {
+    "ref": "AI130224904080/1",
+    "date_sig": "23/02/2024",
+    "date_fin": "22/02/2026",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "BJ457360"
+  },
+  {
+    "ref": "AI050224901691/1",
+    "date_sig": "07/02/2024",
+    "date_fin": "06/02/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "GA198505"
+  },
+  {
+    "ref": "AI011123881163/1",
+    "date_sig": "07/11/2023",
+    "date_fin": "06/11/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BJ466609"
+  },
+  {
+    "ref": "AI040423837803/1",
+    "date_sig": "10/04/2023",
+    "date_fin": "09/04/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK648496"
+  },
+  {
+    "ref": "AI100323833355/1",
+    "date_sig": "13/03/2023",
+    "date_fin": "12/03/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK671812"
+  },
+  {
+    "ref": "AI120123820467/1",
+    "date_sig": "13/01/2023",
+    "date_fin": "12/01/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK710997"
+  },
+  {
+    "ref": "AI071122807504/1",
+    "date_sig": "10/11/2022",
+    "date_fin": "09/11/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK286531"
+  },
+  {
+    "ref": "AI071122807491/1",
+    "date_sig": "10/11/2022",
+    "date_fin": "09/11/2024",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "HH24396"
+  },
+  {
+    "ref": "AI130622777294/1",
+    "date_sig": "13/06/2022",
+    "date_fin": "12/06/2024",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "BK699754"
+  },
+  {
+    "ref": "AI070622775585/1",
+    "date_sig": "13/06/2022",
+    "date_fin": "12/06/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "MD16440"
+  },
+  {
+    "ref": "AI130522770236/1",
+    "date_sig": "13/05/2022",
+    "date_fin": "12/05/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK614949"
+  },
+  {
+    "ref": "AI130522770208/1",
+    "date_sig": "13/05/2022",
+    "date_fin": "12/05/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH592836"
+  },
+  {
+    "ref": "AI060422763265/1",
+    "date_sig": "14/04/2022",
+    "date_fin": "13/04/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "DB27246"
+  },
+  {
+    "ref": "AI070322757376/1",
+    "date_sig": "14/03/2022",
+    "date_fin": "28/11/2023",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BB160764"
+  },
+  {
+    "ref": "AI140122746122/1",
+    "date_sig": "14/01/2022",
+    "date_fin": "14/01/2024",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "BE893604"
   }
 ]

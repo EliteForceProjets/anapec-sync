@@ -78,5 +78,117 @@
     "etat": "Validé & Signé",
     "type": "CI",
     "cin": "BH375488"
+  },
+  {
+    "ref": "AI070224902627/1",
+    "date_sig": "13/02/2024",
+    "date_fin": "12/02/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH616797"
+  },
+  {
+    "ref": "AI050224901639/1",
+    "date_sig": "13/02/2024",
+    "date_fin": "12/02/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "WB200638"
+  },
+  {
+    "ref": "AI090124897224/1",
+    "date_sig": "15/01/2024",
+    "date_fin": "14/01/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH644409"
+  },
+  {
+    "ref": "AI020124895814/1",
+    "date_sig": "13/03/2024",
+    "date_fin": "13/03/2026",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "CD379019"
+  },
+  {
+    "ref": "AI131023877038/1",
+    "date_sig": "13/10/2023",
+    "date_fin": "12/10/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH612649"
+  },
+  {
+    "ref": "AI050723855815/1",
+    "date_sig": "11/07/2023",
+    "date_fin": "10/07/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK711300"
+  },
+  {
+    "ref": "AI100323833312/1",
+    "date_sig": "13/03/2023",
+    "date_fin": "12/03/2025",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK700444"
+  },
+  {
+    "ref": "AI190123821666/1",
+    "date_sig": "03/02/2023",
+    "date_fin": "09/12/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "M595783"
+  },
+  {
+    "ref": "AI091122808185/1",
+    "date_sig": "10/11/2022",
+    "date_fin": "09/11/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BH591322"
+  },
+  {
+    "ref": "AI120922794504/1",
+    "date_sig": "15/09/2022",
+    "date_fin": "14/09/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BW12854"
+  },
+  {
+    "ref": "AI120822788746/1",
+    "date_sig": "12/08/2022",
+    "date_fin": "11/08/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BK691717"
+  },
+  {
+    "ref": "AI090222751814/1",
+    "date_sig": "10/02/2022",
+    "date_fin": "10/02/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "CD284069"
+  },
+  {
+    "ref": "AI070122744468/1",
+    "date_sig": "13/01/2022",
+    "date_fin": "13/01/2024",
+    "etat": "Recruté CDI",
+    "type": "CI",
+    "cin": "IB256284"
+  },
+  {
+    "ref": "AI070122744467/1",
+    "date_sig": "13/01/2022",
+    "date_fin": "13/01/2024",
+    "etat": "Resilié",
+    "type": "CI",
+    "cin": "BJ363574"
   }
 ]
