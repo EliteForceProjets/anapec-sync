@@ -206,11 +206,30 @@ async function main() {
       }
 
       try {
-        await page.goto(`${BASE_URL}/edition_ci/${detailId}`, { waitUntil: 'networkidle2', timeout: 20000 });
-        writeFileSync(outFile, await page.content(), 'utf8');  // HTML complet avec div.printable
-        log(`✅ ci_${detailId}.html`);
+        await page.goto(`${BASE_URL}/edition_ci/${detailId}`, { waitUntil: 'networkidle2', timeout: 30000 });
+        // Attendre que la div.printable contienne du contenu réel (pas juste le template vide)
+        // ANAPEC charge le contenu du contrat via JS après le chargement initial
+        try {
+          await page.waitForFunction(
+            () => {
+              const el = document.querySelector('.printable, .arriereprintable');
+              return el && el.innerHTML && el.innerHTML.length > 2000;
+            },
+            { timeout: 8000 }
+          );
+        } catch(e) {
+          // Si waitForFunction timeout → attendre quand même 2s
+          await new Promise(r => setTimeout(r, 2000));
+        }
+        const htmlContent = await page.content();
+        writeFileSync(outFile, htmlContent, 'utf8');
+        if (htmlContent.length < 20000) {
+          log(`⚠ ci_${detailId}.html (${htmlContent.length} bytes — contenu potentiellement incomplet)`);
+        } else {
+          log(`✅ ci_${detailId}.html`);
+        }
         scraped++;
-        await new Promise(r => setTimeout(r, 1000));
+        await new Promise(r => setTimeout(r, 500));
       } catch(e) {
         log(`❌ ${detailId}: ${e.message}`);
         errors++;
