@@ -1,0 +1,47 @@
+[14/04/2026 15:50:09] 
+╔══════════════════════════════════════════════════════╗
+[14/04/2026 15:50:09] ║   FUSION_TAB — Regroupement 8 sociétés → ANAPEC_GLOBAL ║
+[14/04/2026 15:50:09] ╚══════════════════════════════════════════════════════╝
+
+[14/04/2026 15:50:09] 
+━━━ GRUPO_TEYEZ ━━━
+[14/04/2026 15:50:09]   📋 GRUPO_TEYEZ: 48 contrats (29 complets, 19 incomplets)
+[14/04/2026 15:50:09]   → Envoi de 48 contrats (GRUPO_TEYEZ) vers ANAPEC_GLOBAL...
+[14/04/2026 15:51:14]   ✅ GRUPO_TEYEZ: +48 créés, ↻0 mis à jour, ✗0 erreurs
+[14/04/2026 15:51:15] 
+━━━ SIGARMOR ━━━
+[14/04/2026 15:51:15]   📋 SIGARMOR: 24 contrats (21 complets, 3 incomplets)
+[14/04/2026 15:51:15]   → Envoi de 24 contrats (SIGARMOR) vers ANAPEC_GLOBAL...
+[14/04/2026 15:51:49]   ✅ SIGARMOR: +24 créés, ↻0 mis à jour, ✗0 erreurs
+[14/04/2026 15:51:50] 
+━━━ EIM ━━━
+[14/04/2026 15:51:50]   ⚠️  EIM: contrats.json introuvable → ignoré
+[14/04/2026 15:51:50] 
+━━━ KIRKOS ━━━
+[14/04/2026 15:51:50]   📋 KIRKOS: 176 contrats (100 complets, 76 incomplets)
+[14/04/2026 15:51:50]   → Envoi de 176 contrats (KIRKOS) vers ANAPEC_GLOBAL...
+[14/04/2026 15:56:31]   ❌ Exception (KIRKOS): fetch failed
+[14/04/2026 15:56:32] 
+━━━ KIRKOS_GUARD ━━━
+[14/04/2026 15:56:33]   📋 KIRKOS_GUARD: 197 contrats (151 complets, 46 incomplets)
+[14/04/2026 15:56:33]   → Envoi de 197 contrats (KIRKOS_GUARD) vers ANAPEC_GLOBAL...
+[14/04/2026 16:00:12]   ❌ Exception (KIRKOS_GUARD): fetch failed
+[14/04/2026 16:00:14] 
+━━━ NEISS ━━━
+[14/04/2026 16:00:14]   📋 NEISS: 152 contrats (24 complets, 128 incomplets)
+[14/04/2026 16:00:14]   → Envoi de 152 contrats (NEISS) vers ANAPEC_GLOBAL...
+[14/04/2026 16:03:41]   ✅ NEISS: +152 créés, ↻0 mis à jour, ✗0 erreurs
+[14/04/2026 16:03:43] 
+━━━ NORIA_BIANCA ━━━
+[14/04/2026 16:03:43]   📋 NORIA_BIANCA: 1 contrats (0 complets, 1 incomplets)
+[14/04/2026 16:03:43]   → Envoi de 1 contrats (NORIA_BIANCA) vers ANAPEC_GLOBAL...
+[14/04/2026 16:03:49]   ✅ NORIA_BIANCA: +1 créés, ↻0 mis à jour, ✗0 erreurs
+[14/04/2026 16:03:51] 
+━━━ CQ_SERVICE ━━━
+[14/04/2026 16:03:51]   ⚠️  CQ_SERVICE: contrats.json introuvable → ignoré
+[14/04/2026 16:03:51] 
+╔══════════════════════════════════════════════════════╗
+[14/04/2026 16:03:51] ║  TOTAL TRAITÉ  : 598 contrats
+[14/04/2026 16:03:51] ║  +225 créés  ↻0 mis à jour  ✗373 erreurs
+[14/04/2026 16:03:51] ╚══════════════════════════════════════════════════════╝
+
