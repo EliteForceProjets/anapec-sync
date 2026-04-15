@@ -9,6 +9,7 @@
     "start": "node scraper_anapec.mjs && node sync_weekly.mjs"
   },
   "dependencies": {
+    "pdf-lib": "^1.17.1",
     "puppeteer": "^24.40.0"
   }
 }

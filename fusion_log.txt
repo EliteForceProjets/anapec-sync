@@ -45,3 +45,50 @@
 [14/04/2026 16:03:51] ║  +225 créés  ↻0 mis à jour  ✗373 erreurs
 [14/04/2026 16:03:51] ╚══════════════════════════════════════════════════════╝
 
+[15/04/2026 10:58:08] 
+╔══════════════════════════════════════════════════════╗
+[15/04/2026 10:58:08] ║   FUSION_TAB v8 — Regroupement 8 sociétés → ANAPEC_GLOBAL ║
+[15/04/2026 10:58:08] ╚══════════════════════════════════════════════════════╝
+
+[15/04/2026 10:58:08] 
+━━━ GRUPO_TEYEZ ━━━
+[15/04/2026 10:58:08]   📋 GRUPO_TEYEZ: 48 contrats (48 complets, 0 incomplets)
+[15/04/2026 10:58:08]   → Envoi de 48 contrats (GRUPO_TEYEZ) vers ANAPEC_GLOBAL...
+[15/04/2026 10:59:26]   ✅ GRUPO_TEYEZ: +1 créés, ↻47 mis à jour, ✗0 erreurs
+[15/04/2026 10:59:28] 
+━━━ SIGARMOR ━━━
+[15/04/2026 10:59:28]   📋 SIGARMOR: 24 contrats (24 complets, 0 incomplets)
+[15/04/2026 10:59:28]   → Envoi de 24 contrats (SIGARMOR) vers ANAPEC_GLOBAL...
+[15/04/2026 11:00:05]   ✅ SIGARMOR: +0 créés, ↻24 mis à jour, ✗0 erreurs
+[15/04/2026 11:00:07] 
+━━━ EIM ━━━
+[15/04/2026 11:00:07]   ⚠️  EIM: contrats.json introuvable → ignoré
+[15/04/2026 11:00:07] 
+━━━ KIRKOS ━━━
+[15/04/2026 11:00:07]   📋 KIRKOS: 176 contrats (176 complets, 0 incomplets)
+[15/04/2026 11:00:07]   → Envoi de 176 contrats (KIRKOS) vers ANAPEC_GLOBAL...
+[15/04/2026 11:04:21]   ✅ KIRKOS: +31 créés, ↻145 mis à jour, ✗0 erreurs
+[15/04/2026 11:04:22] 
+━━━ KIRKOS_GUARD ━━━
+[15/04/2026 11:04:23]   📋 KIRKOS_GUARD: 197 contrats (197 complets, 0 incomplets)
+[15/04/2026 11:04:23]   → Envoi de 197 contrats (KIRKOS_GUARD) vers ANAPEC_GLOBAL...
+[15/04/2026 11:08:09]   ❌ Exception (KIRKOS_GUARD): fetch failed
+[15/04/2026 11:08:11] 
+━━━ NEISS ━━━
+[15/04/2026 11:08:11]   📋 NEISS: 152 contrats (152 complets, 0 incomplets)
+[15/04/2026 11:08:11]   → Envoi de 152 contrats (NEISS) vers ANAPEC_GLOBAL...
+[15/04/2026 11:12:26]   ✅ NEISS: +45 créés, ↻107 mis à jour, ✗0 erreurs
+[15/04/2026 11:12:28] 
+━━━ NORIA_BIANCA ━━━
+[15/04/2026 11:12:28]   📋 NORIA_BIANCA: 1 contrats (1 complets, 0 incomplets)
+[15/04/2026 11:12:28]   → Envoi de 1 contrats (NORIA_BIANCA) vers ANAPEC_GLOBAL...
+[15/04/2026 11:12:35]   ✅ NORIA_BIANCA: +1 créés, ↻0 mis à jour, ✗0 erreurs
+[15/04/2026 11:12:37] 
+━━━ CQ_SERVICE ━━━
+[15/04/2026 11:12:37]   ⚠️  CQ_SERVICE: contrats.json introuvable → ignoré
+[15/04/2026 11:12:37] 
+╔══════════════════════════════════════════════════════╗
+[15/04/2026 11:12:37] ║  TOTAL TRAITÉ  : 598 contrats
+[15/04/2026 11:12:37] ║  +78 créés  ↻323 mis à jour  ✗197 erreurs
+[15/04/2026 11:12:37] ╚══════════════════════════════════════════════════════╝
+

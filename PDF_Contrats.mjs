@@ -1,27 +1,30 @@
 // ============================================================
 // PDF_Contrats.mjs — 1 PDF par contrat non signé
-//
-// FONCTIONNEMENT :
-//   1. Lit les fichiers ci_*.html pour détecter les non signés
-//   2. Se connecte à ANAPEC avec les vrais credentials
-//   3. Navigue vers /edition_ci/ID (vrai rendu ANAPEC avec logo)
-//   4. Génère 1 PDF par contrat → C:\anapec\PDF\SOCIETE\REF.pdf
+// v8 - FIXES:
+//   1. cleanPuppeteerProfiles() sans await (bug SyntaxError corrigé)
+//   2. isUnsigned() détecte signatures arabes ET françaises
+//   3. Login ANAPEC corrigé (même méthode que scraper v7)
+//   4. Restart browser toutes les 40 pages (anti-crash)
+//   5. Détection SESSION_EXPIRED avec reconnexion auto
 //
 // USAGE :
-//   node C:\anapec\PDF_Contrats.mjs              ← toutes sociétés
-//   node C:\anapec\PDF_Contrats.mjs SIGARMOR     ← une société
-//   node C:\anapec\PDF_Contrats.mjs KIRKOS NEISS ← plusieurs
+//   node C:\anapec\PDF_Contrats.mjs
+//   node C:\anapec\PDF_Contrats.mjs SIGARMOR
+//   node C:\anapec\PDF_Contrats.mjs KIRKOS NEISS
 // ============================================================
 
 import puppeteer from 'puppeteer';
-import { readFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
+import { readFileSync, existsSync, readdirSync, mkdirSync, unlinkSync } from 'fs';
 import { join } from 'path';
+import { tmpdir } from 'os';
 
-const BASE_URL  = 'https://www.anapec.org/sigec-app-rv/fr/entreprises';
-const BASE_DIR  = 'C:\\anapec';
-const PDF_DIR   = join(BASE_DIR, 'PDF');       // C:\anapec\PDF\
+const HOME_URL = 'https://www.anapec.org/sigec-app-rv/';
+const BASE_URL = 'https://www.anapec.org/sigec-app-rv/fr/entreprises';
+const BASE_DIR = 'C:\\anapec';
+const PDF_DIR  = join(BASE_DIR, 'PDF');
 
-// 8 sociétés avec credentials
+const RESTART_EVERY = 40;
+
 const SOCIETES = [
   { nom: 'GRUPO_TEYEZ',  email: 'grupoteyez@gmail.com',          password: '123456' },
   { nom: 'SIGARMOR',     email: 'sigarmorgroup@gmail.com',        password: '123456' },
@@ -34,137 +37,203 @@ const SOCIETES = [
 ];
 
 // ─────────────────────────────────────────────────────────────
-// Détecter contrat non signé (cases signature vides)
+// Nettoyer lockfiles Puppeteer orphelins (fonction SYNC)
 // ─────────────────────────────────────────────────────────────
-function isUnsigned(html) {
-  // Fichier trop petit = template vide, pas de contenu
-  if (html.length < 15000) return false;
-
-  // Zone signature française : L'employeur | Le stagiaire | VISA ANAPEC
-  const sigIdxFr = html.search(/L.employeur[\s\S]{0,150}Le stagiaire/i);
-  if (sigIdxFr >= 0) {
-    const zone = html.substring(sigIdxFr, sigIdxFr + 800);
-    const tdAll = zone.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
-    const sigCells = tdAll.slice(3, 6);
-    const contents = sigCells.map(td =>
-      td.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '').replace(/\s+/g, '').trim()
-    );
-    if (sigCells.length >= 2) {
-      return contents.every(c => c.length === 0);
+function cleanPuppeteerProfiles() {
+  try {
+    const tmp = tmpdir();
+    const dirs = readdirSync(tmp).filter(d => d.startsWith('puppeteer_dev_'));
+    for (const dir of dirs) {
+      const lockfile = join(tmp, dir, 'lockfile');
+      if (existsSync(lockfile)) {
+        try { unlinkSync(lockfile); } catch(e) {}
+      }
     }
-  }
-
-  // Zone signature arabe
-  const sigIdxAr = html.search(/توقيع[\s\S]{0,100}توقيع/i);
-  if (sigIdxAr >= 0) {
-    const zone = html.substring(sigIdxAr, sigIdxAr + 600);
-    const tdAll = zone.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
-    const sigCells = tdAll.slice(2, 5);
-    const contents = sigCells.map(td =>
-      td.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '').replace(/\s+/g, '').trim()
-    );
-    if (sigCells.length >= 1) {
-      return contents.every(c => c.length === 0);
-    }
-  }
-
-  // "Fait à........ le........" présent mais pas de signature
-  if (html.match(/Fait\s+[àa]\s*[.……]+/i)) return true;
-
-  return false;
+  } catch(e) {}
 }
 
 // ─────────────────────────────────────────────────────────────
-// Extraire l'ID numérique depuis le nom de fichier
-// ci_1562940.html → 1562940
+// Lancer le browser Edge
+// ─────────────────────────────────────────────────────────────
+async function launchBrowser() {
+  cleanPuppeteerProfiles();
+  await new Promise(r => setTimeout(r, 1000));
+  return puppeteer.launch({
+    headless: false,
+    executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+    args: [
+      '--no-sandbox', '--disable-setuid-sandbox', '--ignore-certificate-errors',
+      '--window-size=1400,900', '--start-minimized',
+      '--disable-blink-features=AutomationControlled',
+      '--no-first-run', '--no-default-browser-check'
+    ],
+    defaultViewport: { width: 1400, height: 900 }
+  });
+}
+
+async function closeBrowser(browser) {
+  try { await browser.close(); } catch(e) {}
+  await new Promise(r => setTimeout(r, 2000));
+  cleanPuppeteerProfiles();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Login ANAPEC (même méthode que scraper v7)
+// ─────────────────────────────────────────────────────────────
+async function loginAnapec(browser, email, password) {
+  const page = await browser.newPage();
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+  });
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+
+  await page.goto(HOME_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+  await new Promise(r => setTimeout(r, 4000));
+
+  // Radio Employeur
+  try {
+    await page.waitForSelector('#radio_1', { timeout: 5000 });
+    await page.click('#radio_1');
+  } catch(e) {
+    await page.evaluate(() => {
+      const all = document.querySelectorAll('input[type="radio"]');
+      if (all.length >= 2) all[1].click();
+    });
+  }
+  await new Promise(r => setTimeout(r, 2000));
+
+  const userSel = '#user, input[name="data[cherch_empl][identifiant]"], input[name="data[Entreprise][identifiant]"]';
+  await page.waitForSelector(userSel, { visible: true, timeout: 10000 });
+  await page.click(userSel, { clickCount: 3 });
+  await page.type(userSel, email, { delay: 50 });
+
+  const passSel = '#pass, input[name="data[cherch_empl][mot_pass]"], input[name="data[Entreprise][mot_pass]"]';
+  await page.waitForSelector(passSel, { visible: true, timeout: 5000 });
+  await page.click(passSel, { clickCount: 3 });
+  await page.type(passSel, password, { delay: 50 });
+
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 30000 }).catch(() => {}),
+    page.keyboard.press('Enter')
+  ]);
+  await new Promise(r => setTimeout(r, 3000));
+
+  const isConnected = await page.evaluate(() =>
+    document.body.textContent.includes('Déconnexion') ||
+    document.body.textContent.includes('Bienvenue') ||
+    document.body.textContent.includes('Votre espace')
+  );
+
+  if (!isConnected) { await page.close(); return null; }
+  return page;
+}
+
+// ─────────────────────────────────────────────────────────────
+// isArabicContent
+// ─────────────────────────────────────────────────────────────
+function isArabicContent(text) {
+  const arabicChars = (text.match(/[\u0600-\u06FF]/g) || []).length;
+  const totalNonSpace = text.replace(/\s/g, '').length;
+  if (totalNonSpace === 0) return false;
+  if (arabicChars / totalNonSpace > 0.05) return true;
+  return text.includes('لمدة') || text.includes('مبلغها') ||
+         text.includes('تعيين') || text.includes('المتدرب');
+}
+
+function isArabicHtml(html) {
+  return isArabicContent(html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '));
+}
+
+// ─────────────────────────────────────────────────────────────
+// isUnsigned — v8: ARABE + FRANÇAIS
+// ─────────────────────────────────────────────────────────────
+function isUnsigned(html) {
+  if (html.length < 15000) return false;
+
+  const arabic = isArabicHtml(html);
+
+  if (arabic) {
+    const tables = html.match(/<table[\s\S]*?<\/table>/gi) || [];
+    for (const table of tables) {
+      if (!table.match(/المشغل|المتدرب/i)) continue;
+      const cells = table.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
+      if (cells.length < 2) continue;
+      const contentCells = cells.filter(td => {
+        const h = td.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '').trim();
+        return !h.match(/المشغل|المتدرب|تأشيرة/);
+      });
+      if (contentCells.length === 0) continue;
+      const allEmpty = contentCells.every(td => {
+        const c = td.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '').replace(/\s+/g, '').trim();
+        return c.length === 0;
+      });
+      if (allEmpty) return true;
+    }
+    return false;
+  } else {
+    const sigIdxFr = html.search(/L.employeur[\s\S]{0,150}Le stagiaire/i);
+    if (sigIdxFr >= 0) {
+      const zone = html.substring(sigIdxFr, sigIdxFr + 800);
+      const tdAll = zone.match(/<td[^>]*>([\s\S]*?)<\/td>/gi) || [];
+      const sigCells = tdAll.slice(3, 6);
+      const contents = sigCells.map(td =>
+        td.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '').replace(/\s+/g, '').trim()
+      );
+      if (sigCells.length >= 2) return contents.every(c => c.length === 0);
+    }
+    if (html.match(/Fait\s+[àa]\s*[.……]+/i)) return true;
+    return false;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// extractId / extractRef
 // ─────────────────────────────────────────────────────────────
 function extractId(filename) {
   const m = filename.match(/ci_(\d+)\.html/);
   return m ? m[1] : null;
 }
 
-// ─────────────────────────────────────────────────────────────
-// Extraire la référence contrat depuis le HTML
-// ─────────────────────────────────────────────────────────────
 function extractRef(html) {
   const m = html.match(/\b([A-Z]{0,3}\d{8,}\/\d+)\b/);
   return m ? m[1].replace(/\//g, '-') : 'REF_INCONNUE';
 }
 
 // ─────────────────────────────────────────────────────────────
-// Se connecter à ANAPEC
-// ─────────────────────────────────────────────────────────────
-async function login(page, email, password) {
-  await page.goto(`${BASE_URL}/login`, { waitUntil: 'networkidle2', timeout: 30000 });
-
-  // Remplir email
-  await page.waitForSelector('input[type="email"], input[name="email"], input[id*="email"]', { timeout: 10000 });
-  const emailInput = await page.$('input[type="email"]') ||
-                     await page.$('input[name="email"]') ||
-                     await page.$('input[id*="email"]');
-  if (emailInput) {
-    await emailInput.click({ clickCount: 3 });
-    await emailInput.type(email);
-  }
-
-  // Remplir mot de passe
-  const pwInput = await page.$('input[type="password"]');
-  if (pwInput) {
-    await pwInput.click({ clickCount: 3 });
-    await pwInput.type(password);
-  }
-
-  // Soumettre
-  await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 20000 }),
-    page.keyboard.press('Enter'),
-  ]);
-
-  // Vérifier connexion
-  const url = page.url();
-  const isLoggedIn = !url.includes('login') && !url.includes('connexion');
-  return isLoggedIn;
-}
-
-// ─────────────────────────────────────────────────────────────
-// Générer le PDF d'un contrat
+// Générer le PDF d'un contrat depuis ANAPEC
 // ─────────────────────────────────────────────────────────────
 async function generatePdf(page, ciId, outputPath) {
-  const url = `${BASE_URL}/edition_ci/${ciId}`;
+  await page.goto(`${BASE_URL}/edition_ci/${ciId}`, { waitUntil: 'networkidle2', timeout: 30000 });
 
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+  // Détecter session expirée
+  const currentUrl = page.url();
+  if (currentUrl.includes('login') || currentUrl === HOME_URL || !currentUrl.includes('edition_ci')) {
+    throw new Error('SESSION_EXPIRED');
+  }
 
-  // Attendre que le contenu soit chargé
   try {
     await page.waitForFunction(
       () => {
         const el = document.querySelector('.printable, .arriereprintable');
         return el && el.innerHTML && el.innerHTML.length > 2000;
       },
-      { timeout: 8000 }
+      { timeout: 15000 }
     );
   } catch(e) {
     await new Promise(r => setTimeout(r, 2000));
   }
 
-  // Masquer les éléments non imprimables (boutons, alertes, nav)
   await page.evaluate(() => {
-    // Masquer boutons et messages
     document.querySelectorAll(
       '.noPrint, button, .alert, nav, header, footer, #Print, ' +
       '.btn, [class*="btn-"], .navbar, .sidebar'
     ).forEach(el => el.style.display = 'none');
-
-    // Afficher la zone imprimable
     document.querySelectorAll('.printable, .arriereprintable')
       .forEach(el => el.style.display = 'block');
   });
 
-  // Générer le PDF
   await page.pdf({
-    path: outputPath,
-    format: 'A4',
-    printBackground: true,
+    path: outputPath, format: 'A4', printBackground: true,
     margin: { top: '10mm', bottom: '10mm', left: '10mm', right: '10mm' },
   });
 }
@@ -173,7 +242,6 @@ async function generatePdf(page, ciId, outputPath) {
 // MAIN
 // ─────────────────────────────────────────────────────────────
 async function main() {
-  // Filtrer sociétés via args CLI
   const args = process.argv.slice(2).map(a => a.toUpperCase());
   const societes = args.length > 0
     ? SOCIETES.filter(s => args.includes(s.nom))
@@ -185,22 +253,12 @@ async function main() {
   }
 
   console.log('\n╔══════════════════════════════════════════════════╗');
-  console.log('║  PDF_Contrats — 1 PDF par contrat non signé      ║');
+  console.log('║  PDF_Contrats v8 — 1 PDF par contrat non signé   ║');
   console.log('╚══════════════════════════════════════════════════╝\n');
 
-  // Créer dossier PDF principal
   if (!existsSync(PDF_DIR)) mkdirSync(PDF_DIR, { recursive: true });
 
-  // Lancer Puppeteer
-  const browser = await puppeteer.launch({
-    headless: false,   // ← visible pour voir la progression
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    defaultViewport: { width: 1200, height: 900 }
-  });
-
-  let totalGenerated = 0;
-  let totalSkipped   = 0;
-  let totalErrors    = 0;
+  let totalGenerated = 0, totalSkipped = 0, totalErrors = 0;
 
   for (const societe of societes) {
     const societeDir = join(BASE_DIR, societe.nom);
@@ -209,15 +267,12 @@ async function main() {
       continue;
     }
 
-    // Trouver les fichiers HTML non signés
-    const files = readdirSync(societeDir)
-      .filter(f => f.startsWith('ci_') && f.endsWith('.html'));
-
+    const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
     const unsignedFiles = [];
     for (const file of files) {
       const html = readFileSync(join(societeDir, file), 'utf8');
       if (isUnsigned(html)) {
-        const id  = extractId(file);
+        const id = extractId(file);
         const ref = extractRef(html);
         if (id) unsignedFiles.push({ file, id, ref });
       }
@@ -230,51 +285,75 @@ async function main() {
 
     console.log(`\n━━━ ${societe.nom} — ${unsignedFiles.length} contrats non signés`);
 
-    // Créer dossier PDF/SOCIETE
     const societeOutDir = join(PDF_DIR, societe.nom);
     if (!existsSync(societeOutDir)) mkdirSync(societeOutDir, { recursive: true });
 
-    // Ouvrir un onglet et se connecter
-    const page = await browser.newPage();
-    page.setDefaultNavigationTimeout(30000);
-
-    const loggedIn = await login(page, societe.email, societe.password);
-    if (!loggedIn) {
+    let browser = await launchBrowser();
+    let page = await loginAnapec(browser, societe.email, societe.password);
+    if (!page) {
       console.log(`  ❌ Connexion échouée pour ${societe.email}`);
-      await page.close();
+      await closeBrowser(browser);
       continue;
     }
     console.log(`  ✅ Connecté: ${societe.email}`);
 
-    // Générer les PDFs
-    for (const { file, id, ref } of unsignedFiles) {
+    let pdfCount = 0;
+
+    for (const { id, ref } of unsignedFiles) {
       const pdfPath = join(societeOutDir, `${ref}.pdf`);
 
-      // Sauter si déjà généré
       if (existsSync(pdfPath)) {
         process.stdout.write(`  ⏭  ${ref}.pdf (déjà existant)\n`);
         totalSkipped++;
         continue;
       }
 
+      // Restart browser préventif
+      if (pdfCount > 0 && pdfCount % RESTART_EVERY === 0) {
+        console.log(`  🔄 Restart browser préventif (${pdfCount} PDFs)...`);
+        await closeBrowser(browser);
+        await new Promise(r => setTimeout(r, 3000));
+        browser = await launchBrowser();
+        page = await loginAnapec(browser, societe.email, societe.password);
+        if (!page) { console.log(`  ❌ Reconnexion échouée`); break; }
+        console.log(`  ✅ Reconnecté`);
+      }
+
       try {
         process.stdout.write(`  ⏳ ${ref}...`);
         await generatePdf(page, id, pdfPath);
         process.stdout.write(` ✅\n`);
-        totalGenerated++;
-        await new Promise(r => setTimeout(r, 500));
+        totalGenerated++; pdfCount++;
+        await new Promise(r => setTimeout(r, 600));
       } catch(e) {
-        process.stdout.write(` ❌ ${e.message.substring(0,60)}\n`);
-        totalErrors++;
+        if (e.message === 'SESSION_EXPIRED') {
+          process.stdout.write(` 🔄 session expirée → reconnexion...\n`);
+          await closeBrowser(browser);
+          browser = await launchBrowser();
+          page = await loginAnapec(browser, societe.email, societe.password);
+          if (page) {
+            try {
+              await generatePdf(page, id, pdfPath);
+              console.log(`  ✅ ${ref} (retry ok)`);
+              totalGenerated++; pdfCount++;
+            } catch(e2) {
+              console.log(`  ❌ ${ref}: ${e2.message.substring(0,60)}`);
+              totalErrors++;
+            }
+          } else {
+            console.log(`  ❌ Reconnexion impossible`);
+            totalErrors++; break;
+          }
+        } else {
+          process.stdout.write(` ❌ ${e.message.substring(0,60)}\n`);
+          totalErrors++;
+        }
       }
     }
 
-    await page.close();
+    await closeBrowser(browser);
   }
 
-  await browser.close();
-
-  // Résumé
   console.log('\n╔══════════════════════════════════════════════════╗');
   console.log(`║  ✅ Générés  : ${String(totalGenerated).padEnd(33)}║`);
   console.log(`║  ⏭  Existants: ${String(totalSkipped).padEnd(33)}║`);
@@ -288,7 +367,4 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error('❌ ERREUR CRITIQUE:', e.message);
-  process.exit(1);
-});
+main().catch(e => { console.error('❌ ERREUR CRITIQUE:', e.message); process.exit(1); });

@@ -1,5 +1,41 @@
 [
   {
+    "ref": "AI1504261109403/1",
+    "date_sig": "---",
+    "date_fin": "---",
+    "etat": "Projet",
+    "type": "CI",
+    "cin": "ID110913",
+    "detail_id": "1576954"
+  },
+  {
+    "ref": "1504261109145/1",
+    "date_sig": "---",
+    "date_fin": "---",
+    "etat": "Projet",
+    "type": "CI",
+    "cin": "ID110913",
+    "detail_id": "1576520"
+  },
+  {
+    "ref": "AI1504261109097/1",
+    "date_sig": "15/04/2026",
+    "date_fin": "14/04/2028",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "JH66335",
+    "detail_id": "1576398"
+  },
+  {
+    "ref": "AI1504261109095/1",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
+    "type": "CI",
+    "cin": "CD959796",
+    "detail_id": "1576396"
+  },
+  {
     "ref": "AI1004261107027/1",
     "date_sig": "10/04/2026",
     "date_fin": "10/04/2027",
@@ -63,46 +99,37 @@
     "detail_id": "1573172"
   },
   {
-    "ref": "AI0904261106513/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
-    "type": "CI",
-    "cin": "ID110913",
-    "detail_id": "1572674"
-  },
-  {
     "ref": "AI0904261106476/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CC36686",
     "detail_id": "1572611"
   },
   {
     "ref": "AI0904261106467/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "C636905",
     "detail_id": "1572601"
   },
   {
     "ref": "AI0904261106453/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD664943",
     "detail_id": "1572588"
   },
   {
     "ref": "AI0904261106444/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "14/04/2028",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD569796",
     "detail_id": "1572578"
@@ -217,18 +244,18 @@
   },
   {
     "ref": "AI0604261104812/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD557426",
     "detail_id": "1569329"
   },
   {
     "ref": "AI0604261104810/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "15/04/2027",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD486340",
     "detail_id": "1569325"
@@ -244,9 +271,9 @@
   },
   {
     "ref": "AI0604261104802/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "14/04/2028",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD529609",
     "detail_id": "1569316"
@@ -262,9 +289,9 @@
   },
   {
     "ref": "AI0604261104730/1",
-    "date_sig": "---",
-    "date_fin": "---",
-    "etat": "Projet",
+    "date_sig": "15/04/2026",
+    "date_fin": "14/04/2028",
+    "etat": "Validé & Signé",
     "type": "CI",
     "cin": "CD749221",
     "detail_id": "1569210"
