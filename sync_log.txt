@@ -1183,3 +1183,1426 @@
 [14/04/2026 11:38:30]   ❌ contrats.json introuvable
 [14/04/2026 11:38:32] 
 ━━━ Push données vers GitHub ━━━
+[15/04/2026 00:44:03] ✅ Données pushées vers GitHub
+[15/04/2026 00:44:03] 
+╔══════════════════════════════════════════════════╗
+[15/04/2026 00:44:03] ║  FIN: +0 créés, ↻446 mis à jour, ✗152 erreurs  ║
+[15/04/2026 00:44:03] ╚══════════════════════════════════════════════════╝
+
+[15/04/2026 01:18:08] 
+╔══════════════════════════════════════════════════╗
+[15/04/2026 01:18:08] ║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║
+[15/04/2026 01:18:08] ║  VERSION: Bilingue Arabe + Français v5           ║
+[15/04/2026 01:18:08] ╚══════════════════════════════════════════════════╝
+[15/04/2026 01:18:08] 
+━━━ GRUPO_TEYEZ (grupoteyez@gmail.com) ━━━
+[15/04/2026 01:18:08]   Scraping ANAPEC...
+[15/04/2026 01:18:09] === Scraping ANAPEC: grupoteyez@gmail.com → C:\anapec\GRUPO_TEYEZ ===
+[15/04/2026 01:18:11] Chargement page ANAPEC...
+[15/04/2026 01:18:24] Connexion...
+[15/04/2026 01:18:29] ✅ Connecté !
+[15/04/2026 01:18:33]   📄 Page 1: +10 contrats (total: 10) → suite
+[15/04/2026 01:18:36]   📄 Page 2: +10 contrats (total: 20) → suite
+[15/04/2026 01:18:39]   📄 Page 3: +10 contrats (total: 30) → suite
+[15/04/2026 01:18:42]   📄 Page 4: +10 contrats (total: 40) → suite
+[15/04/2026 01:18:45]   📄 Page 5: +8 contrats (total: 48) → dernière page
+[15/04/2026 01:18:45] 48 contrats trouvés (5 pages)
+[15/04/2026 01:18:45] ✅ contrats.json sauvegardé
+[15/04/2026 01:18:45] ⏭ ci_1567973.html
+[15/04/2026 01:18:45] ⏭ ci_1567961.html
+[15/04/2026 01:18:45] ⏭ ci_1566826.html
+[15/04/2026 01:18:45] ⏭ ci_1564903.html
+[15/04/2026 01:18:45] ⏭ ci_1564768.html
+[15/04/2026 01:18:45] ⏭ ci_1564759.html
+[15/04/2026 01:18:45] ⏭ ci_1564737.html
+[15/04/2026 01:18:45] ⏭ ci_1564323.html
+[15/04/2026 01:18:45] ⏭ ci_1564313.html
+[15/04/2026 01:18:45] ⏭ ci_1563863.html
+[15/04/2026 01:18:47] ✅ ci_1563817.html
+[15/04/2026 01:18:49] ✅ ci_1563782.html
+[15/04/2026 01:18:51] ✅ ci_1552016.html
+[15/04/2026 01:18:53] ✅ ci_1551987.html
+[15/04/2026 01:18:55] ✅ ci_1541046.html
+[15/04/2026 01:18:57] ✅ ci_1536684.html
+[15/04/2026 01:18:58] ✅ ci_1536671.html
+[15/04/2026 01:19:00] ✅ ci_1535672.html
+[15/04/2026 01:19:02] ✅ ci_1535645.html
+[15/04/2026 01:19:04] ✅ ci_1535366.html
+[15/04/2026 01:19:06] ✅ ci_1535317.html
+[15/04/2026 01:19:08] ✅ ci_1491005.html
+[15/04/2026 01:19:10] ✅ ci_1448555.html
+[15/04/2026 01:19:12] ✅ ci_1378285.html
+[15/04/2026 01:19:13] ✅ ci_1349791.html
+[15/04/2026 01:19:15] ✅ ci_1337169.html
+[15/04/2026 01:19:17] ✅ ci_1321857.html
+[15/04/2026 01:19:19] ✅ ci_1314112.html
+[15/04/2026 01:19:21] ✅ ci_1311284.html
+[15/04/2026 01:19:23] ✅ ci_1310950.html
+[15/04/2026 01:19:25] ✅ ci_1277990.html
+[15/04/2026 01:19:26] ✅ ci_1258282.html
+[15/04/2026 01:19:28] ✅ ci_1258269.html
+[15/04/2026 01:19:30] ✅ ci_1257831.html
+[15/04/2026 01:19:32] ✅ ci_1254198.html
+[15/04/2026 01:19:34] ✅ ci_1223119.html
+[15/04/2026 01:19:36] ✅ ci_1154761.html
+[15/04/2026 01:19:37] ✅ ci_1147725.html
+[15/04/2026 01:19:39] ✅ ci_1127083.html
+[15/04/2026 01:19:41] ✅ ci_1109526.html
+[15/04/2026 01:19:43] ✅ ci_1109510.html
+[15/04/2026 01:19:45] ✅ ci_1064412.html
+[15/04/2026 01:19:47] ✅ ci_1062131.html
+[15/04/2026 01:19:49] ✅ ci_1055295.html
+[15/04/2026 01:19:51] ✅ ci_1055192.html
+[15/04/2026 01:19:53] ✅ ci_1044958.html
+[15/04/2026 01:19:54] ✅ ci_1036199.html
+[15/04/2026 01:19:56] ✅ ci_1018437.html
+[15/04/2026 01:19:57] === Terminé: 38 nouveaux, 10 existants, 0 erreurs ===
+[15/04/2026 01:19:59]   ✅ Scraping terminé
+[15/04/2026 01:19:59]   48 contrats trouvés
+[15/04/2026 01:20:00]   ⚠️  AI0304261103942/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0304261103931/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0204261103436/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3103261102396/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3103261102303/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3103261102293/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3103261102281/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3003261101999/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3003261101984/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3003261101714/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3003261101702/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI3003261101675/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ✅ AI0503261094286/1: sal="2600" dur="20" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI0503261094258/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ⚠️  AI1302261087217/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0902261084245/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0902261084234/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0602261083692/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0602261083676/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0602261083523/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ⚠️  AI0602261083500/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:20:00]   ✅ AI1111251053126/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI1208251027517/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI120225985237/1: sal="2445" dur="21" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI131124964704/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI111024955781/1: sal="3000" dur="24" poste="ASSISTANTE LOGISTIQUE"
+[15/04/2026 01:20:00]   ✅ AI050924945483/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI120824941385/1: sal="3000" dur="24" poste="AGENT LOGISTIQUE"
+[15/04/2026 01:20:00]   ✅ AI010824939365/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI010824939127/1: sal="3500" dur="24" poste="Livreur"
+[15/04/2026 01:20:00]   ✅ AI150424916832/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI140224904313/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI140224904300/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI130224904080/1: sal="2300" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   ✅ AI050224901691/1: sal="3000" dur="24" poste="CHARGE DE STACK"
+[15/04/2026 01:20:00]   ✅ AI011123881163/1: sal="3000" dur="24" poste="Agent Administratif"
+[15/04/2026 01:20:00]   ✅ AI040423837803/1: sal="2800" dur="24" poste="chargé de stock"
+[15/04/2026 01:20:00]   ✅ AI100323833355/1: sal="2800" dur="24" poste="Coursier"
+[15/04/2026 01:20:00]   ✅ AI120123820467/1: sal="2500" dur="24" poste="Agent Administratif"
+[15/04/2026 01:20:00]   ✅ AI071122807504/1: sal="3000" dur="24" poste="assistant gestion stock"
+[15/04/2026 01:20:00]   ✅ AI071122807491/1: sal="2500" dur="24" poste="Assistante de direction"
+[15/04/2026 01:20:00]   ✅ AI130622777294/1: sal="2800" dur="24" poste="Coursier"
+[15/04/2026 01:20:00]   ✅ AI070622775585/1: sal="2800" dur="24" poste="Coursier"
+[15/04/2026 01:20:00]   ✅ AI130522770236/1: sal="3000" dur="24" poste="Aide comptable"
+[15/04/2026 01:20:00]   ✅ AI130522770208/1: sal="3000" dur="24" poste="Aide comptable"
+[15/04/2026 01:20:00]   ✅ AI060422763265/1: sal="3000" dur="24" poste="ASSISTANTE RESSOURCES HUMAINES"
+[15/04/2026 01:20:00]   ✅ AI070322757376/1: sal="3000" dur="20" poste="CHARGEE DES APPELS D'OFFRES"
+[15/04/2026 01:20:00]   ✅ AI140122746122/1: sal="2500" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:20:00]   Envoi de 48 contrats vers Lambda (GRUPO_TEYEZ)...
+[15/04/2026 01:21:10]   ✅ +0 créés, ↻48 mis à jour, ✗0 erreurs
+[15/04/2026 01:21:12] 
+━━━ SIGARMOR (sigarmorgroup@gmail.com) ━━━
+[15/04/2026 01:21:12]   Scraping ANAPEC...
+[15/04/2026 01:21:12] === Scraping ANAPEC: sigarmorgroup@gmail.com → C:\anapec\SIGARMOR ===
+[15/04/2026 01:21:14] Chargement page ANAPEC...
+[15/04/2026 01:21:27] Connexion...
+[15/04/2026 01:21:32] ✅ Connecté !
+[15/04/2026 01:21:35]   📄 Page 1: +10 contrats (total: 10) → suite
+[15/04/2026 01:21:38]   📄 Page 2: +10 contrats (total: 20) → suite
+[15/04/2026 01:21:41]   📄 Page 3: +4 contrats (total: 24) → dernière page
+[15/04/2026 01:21:41] 24 contrats trouvés (3 pages)
+[15/04/2026 01:21:41] ✅ contrats.json sauvegardé
+[15/04/2026 01:21:41] ⏭ ci_1562940.html
+[15/04/2026 01:21:41] ⏭ ci_1554916.html
+[15/04/2026 01:21:41] ⏭ ci_1551240.html
+[15/04/2026 01:21:41] ⏭ ci_1551238.html
+[15/04/2026 01:21:42] ✅ ci_1539936.html
+[15/04/2026 01:21:44] ✅ ci_1539857.html
+[15/04/2026 01:21:45] ⏭ ci_1388571.html
+[15/04/2026 01:21:45] ⏭ ci_1358437.html
+[15/04/2026 01:21:45] ⏭ ci_1358222.html
+[15/04/2026 01:21:45] ⏭ ci_1350653.html
+[15/04/2026 01:21:46] ✅ ci_1255511.html
+[15/04/2026 01:21:48] ✅ ci_1254100.html
+[15/04/2026 01:21:49] ✅ ci_1246409.html
+[15/04/2026 01:21:51] ✅ ci_1244305.html
+[15/04/2026 01:21:53] ✅ ci_1217469.html
+[15/04/2026 01:21:55] ✅ ci_1180671.html
+[15/04/2026 01:21:57] ✅ ci_1147660.html
+[15/04/2026 01:21:59] ✅ ci_1129170.html
+[15/04/2026 01:22:00] ✅ ci_1110372.html
+[15/04/2026 01:22:02] ✅ ci_1091110.html
+[15/04/2026 01:22:04] ✅ ci_1081618.html
+[15/04/2026 01:22:06] ✅ ci_1027452.html
+[15/04/2026 01:22:08] ✅ ci_1015670.html
+[15/04/2026 01:22:10] ✅ ci_1015669.html
+[15/04/2026 01:22:10] === Terminé: 16 nouveaux, 8 existants, 0 erreurs ===
+[15/04/2026 01:22:13]   ✅ Scraping terminé
+[15/04/2026 01:22:13]   24 contrats trouvés
+[15/04/2026 01:22:13]   ✅ NO2703261101262/1: sal="2500" dur="21" poste="chargée d'appel d'offre"
+[15/04/2026 01:22:13]   ⚠️  AI1003261096338/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:22:13]   ✅ NO0403261093717/1: sal="3500" dur="24" poste="CHARGER LOGISTIQUE"
+[15/04/2026 01:22:13]   ✅ NO0403261093716/1: sal="2500" dur="24" poste="ASSISTANTE ADMINISTRATIVE"
+[15/04/2026 01:22:13]   ⚠️  AI1202261086508/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:22:13]   ⚠️  AI1202261086452/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:22:13]   ✅ AI060325991464/1: sal="2800" dur="24" poste="HOTESSE D'ACCUEIL"
+[15/04/2026 01:22:13]   ✅ AI101224971091/1: sal="2800" dur="24" poste="HOTESSE DACCUEIL"
+[15/04/2026 01:22:13]   ✅ AI101224970902/1: sal="2800" dur="24" poste="HOTESSE D'ACCUEIL"
+[15/04/2026 01:22:13]   ✅ AI151124965387/1: sal="2300" dur="23" poste="HOTESSE D'ACCEUIL"
+[15/04/2026 01:22:13]   ✅ AI070224902627/1: sal="3000" dur="24" poste="GESTIONNAIRE DE PAIE"
+[15/04/2026 01:22:13]   ✅ AI050224901639/1: sal="3000" dur="24" poste="GESTIONNAIRE DE PAIE"
+[15/04/2026 01:22:13]   ✅ AI090124897224/1: sal="3000" dur="24" poste="gestionnaire de paie"
+[15/04/2026 01:22:13]   ✅ AI020124895814/1: sal="2200" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:22:13]   ✅ AI131023877038/1: sal="3000" dur="24" poste="COURSIER"
+[15/04/2026 01:22:13]   ✅ AI050723855815/1: sal="3000" dur="24" poste="Agent Administratif"
+[15/04/2026 01:22:13]   ✅ AI100323833312/1: sal="2500" dur="24" poste="Agent de caisse"
+[15/04/2026 01:22:13]   ✅ AI190123821666/1: sal="2800" dur="22" poste="Coursier"
+[15/04/2026 01:22:13]   ✅ AI091122808185/1: sal="5000" dur="24" poste="Agent Administratif"
+[15/04/2026 01:22:13]   ✅ AI120922794504/1: sal="3000" dur="24" poste="Assistante de gestion de stock"
+[15/04/2026 01:22:13]   ✅ AI120822788746/1: sal="4000" dur="24" poste="chargé de paie"
+[15/04/2026 01:22:13]   ✅ AI090222751814/1: sal="4000" dur="24" poste="Magasinier"
+[15/04/2026 01:22:13]   ✅ AI070122744468/1: sal="2500" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:22:13]   ✅ AI070122744467/1: sal="2500" dur="24" poste="Agent de gardiennage"
+[15/04/2026 01:22:13]   Envoi de 24 contrats vers Lambda (SIGARMOR)...
+[15/04/2026 01:22:42]   ✅ +0 créés, ↻24 mis à jour, ✗0 erreurs
+[15/04/2026 01:22:44] 
+━━━ EIM (ecoleimanagement@gmail.com) ━━━
+[15/04/2026 01:22:44]   Scraping ANAPEC...
+[15/04/2026 01:22:45] === Scraping ANAPEC: ecoleimanagement@gmail.com → C:\anapec\EIM ===
+[15/04/2026 01:22:46] Chargement page ANAPEC...
+[15/04/2026 01:23:00] Connexion...
+[15/04/2026 01:23:08] ❌ Connexion échouée
+[15/04/2026 01:23:10]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[15/04/2026 01:23:10]   Tentative avec données existantes...
+[15/04/2026 01:23:10]   ❌ contrats.json introuvable
+[15/04/2026 01:23:12] 
+━━━ KIRKOS (groupekirkos@gmail.com) ━━━
+[15/04/2026 01:23:12]   Scraping ANAPEC...
+[15/04/2026 01:23:13] === Scraping ANAPEC: groupekirkos@gmail.com → C:\anapec\KIRKOS ===
+[15/04/2026 01:23:14] Chargement page ANAPEC...
+[15/04/2026 01:23:27] Connexion...
+[15/04/2026 01:23:33] ✅ Connecté !
+[15/04/2026 01:23:37]   📄 Page 1: +10 contrats (total: 10) → suite
+[15/04/2026 01:23:40]   📄 Page 2: +10 contrats (total: 20) → suite
+[15/04/2026 01:23:42]   📄 Page 3: +10 contrats (total: 30) → suite
+[15/04/2026 01:23:45]   📄 Page 4: +10 contrats (total: 40) → suite
+[15/04/2026 01:23:48]   📄 Page 5: +10 contrats (total: 50) → suite
+[15/04/2026 01:23:51]   📄 Page 6: +10 contrats (total: 60) → suite
+[15/04/2026 01:23:53]   📄 Page 7: +10 contrats (total: 70) → suite
+[15/04/2026 01:23:56]   📄 Page 8: +10 contrats (total: 80) → suite
+[15/04/2026 01:23:59]   📄 Page 9: +10 contrats (total: 90) → suite
+[15/04/2026 01:24:02]   📄 Page 10: +10 contrats (total: 100) → suite
+[15/04/2026 01:24:04]   📄 Page 11: +10 contrats (total: 110) → suite
+[15/04/2026 01:24:07]   📄 Page 12: +10 contrats (total: 120) → suite
+[15/04/2026 01:24:10]   📄 Page 13: +10 contrats (total: 130) → suite
+[15/04/2026 01:24:13]   📄 Page 14: +10 contrats (total: 140) → suite
+[15/04/2026 01:24:15]   📄 Page 15: +9 contrats (total: 149) → suite
+[15/04/2026 01:24:18]   📄 Page 16: +9 contrats (total: 158) → suite
+[15/04/2026 01:24:21]   📄 Page 17: +10 contrats (total: 168) → suite
+[15/04/2026 01:24:25]   📄 Page 18: +8 contrats (total: 176) → dernière page
+[15/04/2026 01:24:25] 176 contrats trouvés (18 pages)
+[15/04/2026 01:24:25] ✅ contrats.json sauvegardé
+[15/04/2026 01:24:25] ⏭ ci_1573519.html
+[15/04/2026 01:24:25] ⏭ ci_1573186.html
+[15/04/2026 01:24:25] ⏭ ci_1573174.html
+[15/04/2026 01:24:25] ⏭ ci_1573173.html
+[15/04/2026 01:24:25] ⏭ ci_1573171.html
+[15/04/2026 01:24:25] ⏭ ci_1573169.html
+[15/04/2026 01:24:25] ⏭ ci_1572705.html
+[15/04/2026 01:24:25] ⏭ ci_1572479.html
+[15/04/2026 01:24:25] ⏭ ci_1567224.html
+[15/04/2026 01:24:25] ⏭ ci_1567203.html
+[15/04/2026 01:24:27] ✅ ci_1567167.html
+[15/04/2026 01:24:29] ✅ ci_1566954.html
+[15/04/2026 01:24:31] ✅ ci_1566945.html
+[15/04/2026 01:24:32] ✅ ci_1566932.html
+[15/04/2026 01:24:34] ✅ ci_1566925.html
+[15/04/2026 01:24:36] ✅ ci_1566920.html
+[15/04/2026 01:24:38] ✅ ci_1566919.html
+[15/04/2026 01:24:40] ✅ ci_1566910.html
+[15/04/2026 01:24:42] ✅ ci_1566907.html
+[15/04/2026 01:24:44] ✅ ci_1566906.html
+[15/04/2026 01:24:46] ✅ ci_1566896.html
+[15/04/2026 01:24:48] ✅ ci_1566895.html
+[15/04/2026 01:24:50] ✅ ci_1566890.html
+[15/04/2026 01:24:52] ✅ ci_1566885.html
+[15/04/2026 01:24:54] ✅ ci_1566881.html
+[15/04/2026 01:24:56] ✅ ci_1566880.html
+[15/04/2026 01:24:58] ✅ ci_1566870.html
+[15/04/2026 01:24:59] ✅ ci_1566864.html
+[15/04/2026 01:25:01] ✅ ci_1566856.html
+[15/04/2026 01:25:03] ✅ ci_1566849.html
+[15/04/2026 01:25:05] ✅ ci_1566843.html
+[15/04/2026 01:25:07] ✅ ci_1566841.html
+[15/04/2026 01:25:09] ✅ ci_1566840.html
+[15/04/2026 01:25:11] ✅ ci_1566829.html
+[15/04/2026 01:25:12] ✅ ci_1566825.html
+[15/04/2026 01:25:14] ✅ ci_1566799.html
+[15/04/2026 01:25:16] ✅ ci_1566780.html
+[15/04/2026 01:25:18] ✅ ci_1566744.html
+[15/04/2026 01:25:20] ✅ ci_1566729.html
+[15/04/2026 01:25:21] ✅ ci_1566717.html
+[15/04/2026 01:25:23] ✅ ci_1566707.html
+[15/04/2026 01:25:25] ✅ ci_1566684.html
+[15/04/2026 01:25:27] ✅ ci_1566667.html
+[15/04/2026 01:25:29] ✅ ci_1566640.html
+[15/04/2026 01:25:31] ✅ ci_1566586.html
+[15/04/2026 01:25:32] ✅ ci_1566561.html
+[15/04/2026 01:25:34] ✅ ci_1566543.html
+[15/04/2026 01:25:36] ✅ ci_1566530.html
+[15/04/2026 01:25:38] ✅ ci_1553435.html
+[15/04/2026 01:25:40] ✅ ci_1552557.html
+[15/04/2026 01:25:40] 🔄 Restart browser préventif (40 téléchargements effectués)...
+[15/04/2026 01:25:48] Chargement page ANAPEC...
+[15/04/2026 01:26:00] Connexion...
+[15/04/2026 01:26:05] ✅ Connecté !
+[15/04/2026 01:26:07] ✅ ci_1552555.html
+[15/04/2026 01:26:09] ✅ ci_1552551.html
+[15/04/2026 01:26:11] ✅ ci_1552550.html
+[15/04/2026 01:26:12] ✅ ci_1552549.html
+[15/04/2026 01:26:14] ✅ ci_1552548.html
+[15/04/2026 01:26:16] ✅ ci_1552547.html
+[15/04/2026 01:26:18] ✅ ci_1552546.html
+[15/04/2026 01:26:20] ✅ ci_1552545.html
+[15/04/2026 01:26:22] ✅ ci_1552544.html
+[15/04/2026 01:26:24] ✅ ci_1552543.html
+[15/04/2026 01:26:25] ✅ ci_1552542.html
+[15/04/2026 01:26:27] ✅ ci_1552539.html
+[15/04/2026 01:26:29] ✅ ci_1552538.html
+[15/04/2026 01:26:31] ✅ ci_1552537.html
+[15/04/2026 01:26:33] ✅ ci_1552532.html
+[15/04/2026 01:26:35] ✅ ci_1552531.html
+[15/04/2026 01:26:37] ✅ ci_1552528.html
+[15/04/2026 01:26:39] ✅ ci_1552527.html
+[15/04/2026 01:26:41] ✅ ci_1552518.html
+[15/04/2026 01:26:43] ✅ ci_1541320.html
+[15/04/2026 01:26:45] ✅ ci_1540314.html
+[15/04/2026 01:26:46] ✅ ci_1540312.html
+[15/04/2026 01:26:48] ✅ ci_1540307.html
+[15/04/2026 01:26:50] ✅ ci_1540302.html
+[15/04/2026 01:26:52] ✅ ci_1540296.html
+[15/04/2026 01:26:54] ✅ ci_1540293.html
+[15/04/2026 01:26:56] ✅ ci_1540289.html
+[15/04/2026 01:26:58] ✅ ci_1540288.html
+[15/04/2026 01:26:59] ✅ ci_1518727.html
+[15/04/2026 01:27:01] ✅ ci_1416665.html
+[15/04/2026 01:27:03] ✅ ci_1368412.html
+[15/04/2026 01:27:05] ✅ ci_1364748.html
+[15/04/2026 01:27:07] ✅ ci_1335936.html
+[15/04/2026 01:27:09] ✅ ci_1334397.html
+[15/04/2026 01:27:11] ✅ ci_1311045.html
+[15/04/2026 01:27:12] ✅ ci_1283625.html
+[15/04/2026 01:27:14] ✅ ci_1277554.html
+[15/04/2026 01:27:16] ✅ ci_1263898.html
+[15/04/2026 01:27:18] ✅ ci_1217391.html
+[15/04/2026 01:27:20] ✅ ci_1199009.html
+[15/04/2026 01:27:20] 🔄 Restart browser préventif (80 téléchargements effectués)...
+[15/04/2026 01:27:28] Chargement page ANAPEC...
+[15/04/2026 01:27:40] Connexion...
+[15/04/2026 01:27:46] ✅ Connecté !
+[15/04/2026 01:27:47] ✅ ci_1171806.html
+[15/04/2026 01:27:49] ✅ ci_1171486.html
+[15/04/2026 01:27:51] ✅ ci_1161817.html
+[15/04/2026 01:27:53] ✅ ci_1156852.html
+[15/04/2026 01:27:54] ✅ ci_979309.html
+[15/04/2026 01:27:56] ✅ ci_960995.html
+[15/04/2026 01:27:58] ✅ ci_913828.html
+[15/04/2026 01:28:00] ✅ ci_874131.html
+[15/04/2026 01:28:02] ✅ ci_803147.html
+[15/04/2026 01:28:04] ✅ ci_747992.html
+[15/04/2026 01:28:06] ✅ ci_732592.html
+[15/04/2026 01:28:07] ✅ ci_682337.html
+[15/04/2026 01:28:09] ✅ ci_662112.html
+[15/04/2026 01:28:11] ✅ ci_636220.html
+[15/04/2026 01:28:12]   ❌ Erreur scraping: spawnSync C:\windows\system32\cmd.exe ETIMEDOUT
+[15/04/2026 01:28:12]   Tentative avec données existantes...
+[15/04/2026 01:28:12]   176 contrats trouvés
+[15/04/2026 01:28:13]   ✅ AI1004261107036/1: sal="1600" dur="24" poste="AGENT DE NETTOYAGE"
+[15/04/2026 01:28:13]   ✅ AI0904261106879/1: sal="3160" dur="20" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106868/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106867/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106865/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106862/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106541/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0904261106384/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103627/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103624/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103622/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  0204261103536/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103534/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103526/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103521/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103519/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103518/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103508/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103506/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103505/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103499/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ✅ 0204261103498/1: sal="1600" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103493/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103488/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103485/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103484/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103477/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103471/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103463/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103460/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103453/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103451/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103450/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103440/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103435/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103413/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103399/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103374/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103358/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103348/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103338/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103323/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103311/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103296/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103262/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103251/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103240/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0204261103229/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0703261095302/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094650/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094648/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094644/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094643/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094642/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094641/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094640/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094639/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094638/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094637/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094636/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094635/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094634/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094633/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094632/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094631/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094630/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094626/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094625/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0503261094623/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1402261087421/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086819/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086817/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13] ✅ ci_635610.html
+[15/04/2026 01:28:13]   ⚠️  AI1202261086808/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086805/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086802/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086798/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI1202261086797/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI0601261071692/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ✅ AI1405251007720/1: sal="2770" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:28:13]   ✅ AI150125978494/1: sal="4000" dur="24" poste="LIVREUR"
+[15/04/2026 01:28:13]   ✅ AI030125975817/1: sal="3500" dur="24" poste="ASSISTANTE DEVLOPPEMENT"
+[15/04/2026 01:28:13]   ✅ AI091024954963/1: sal="3000" dur="24" poste="GESTIONNAIRE DE PAIE"
+[15/04/2026 01:28:13]   ✅ AI071024953830/1: sal="2770" dur="24" poste="AGENT DE GUARDIENNAGE"
+[15/04/2026 01:28:13]   ✅ AI010824939185/1: sal="4000" dur="24" poste="Magasinier"
+[15/04/2026 01:28:13]   ✅ AI030524920340/1: sal="2500" dur="24" poste="Assistante Administrative"
+[15/04/2026 01:28:13]   ✅ AI120417456665/1: sal="2770" dur="24" poste="Agent de gardiennage"
+[15/04/2026 01:28:13]   ✅ AI040324907946/1: sal="2500" dur="24" poste="AGENT ADMINISTRATIF"
+[15/04/2026 01:28:13]   ✅ AI131023876970/1: sal="3000" dur="24" poste="AIDE MAGASINIER"
+[15/04/2026 01:28:13]   ✅ AI300823866216/1: sal="2770" dur="22" poste="Agent d'entretien"
+[15/04/2026 01:28:13]   ✅ AI050623850006/1: sal="3000" dur="24" poste="chargée de stock"
+[15/04/2026 01:28:13]   ✅ AI201216437871/2: sal="3000" dur="21" poste="agent administratif"
+[15/04/2026 01:28:13]   ✅ AI030523843177/1: sal="3500" dur="19" poste="agent administratif"
+[15/04/2026 01:28:13]   ✅ AI100423839398/1: sal="2770" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:28:13]   ✅ AI060921720139/1: sal="2300" dur="24" poste="Agent de surveillance"
+[15/04/2026 01:28:13]   ✅ AI100621708508/1: sal="2300" dur="24" poste="Agent de surveillance"
+[15/04/2026 01:28:13]   ✅ AI201216437871/1: sal="2500" dur="24" poste="Agent d'accueil"
+[15/04/2026 01:28:13]   ✅ AI120820654143/1: sal="2700" dur="24" poste="Magasinier"
+[15/04/2026 01:28:13]   ✅ AI011019606465/1: sal="2500" dur="24" poste="Agent de sécurité et de surveillance"
+[15/04/2026 01:28:13]   ✅ AI040319570002/1: sal="1600" dur="18" poste="Agent d'entretien"
+[15/04/2026 01:28:13]   ✅ AI121218557612/1: sal="2000" dur="24" poste="Agent d'entretien urbain"
+[15/04/2026 01:28:13]   ✅ AI020618525489/1: sal="2000" dur="24" poste="Agent d'entretien urbain"
+[15/04/2026 01:28:13]   ✅ AI080318511651/1: sal="2000" dur="24" poste="Employé d'entretien (collectivité)"
+[15/04/2026 01:28:13]   ✅ AI161117492903/1: sal="2000" dur="24" poste="Employé d'entretien (collectivité)"
+[15/04/2026 01:28:13]   ⚠️  AI141117492381/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI130415346692/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI050315340992/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI030315340569/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI160215338325/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI081014319285/6: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI081014319285/5: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI081014319285/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI081014319285/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI040614303745/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI030314291689/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI111013272235/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290513255347/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290513255347/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI240613258781/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI190613258200/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI040613256237/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290113272830/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290113272830/5: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290113272830/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI290113272830/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI190612244884/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI020812249939/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AN040909126725/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI230211185914/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:13]   ⚠️  AI020812249939/11: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249939/9: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN060409113531/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249939/12: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249939/8: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN05110764618/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249940/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249939/7: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249939/4: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020812249940/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI301111218621/4: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI301111218621/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI210112225990/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI290711204533/11: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI301111218621/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI301111218621/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI230211185914/4: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI290711204533/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI290711204533/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI230211185914/7: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI230211185914/6: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI020611198194/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI130710162080/11: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI130710162080/14: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI130710162080/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI130710162080/8: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI300710163890/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI130710162080/9: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AI240910169155/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN031209136383/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN040909126725/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN040909126725/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN080509116109/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN080509116109/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN030609118620/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN210109106666/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN050209108072/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN050209108072/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN250209110133/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN050209108072/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN051208102701/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN21040880586/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN14040879870/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN27060887297/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN21040880587/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN21040880587/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   ⚠️  AN05110764609/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:28:14]   Envoi de 176 contrats vers Lambda (KIRKOS)...
+[15/04/2026 01:28:15] ✅ ci_368369.html
+[15/04/2026 01:28:17] ✅ ci_361578.html
+[15/04/2026 01:28:19] ✅ ci_361051.html
+[15/04/2026 01:28:21] ✅ ci_358325.html
+[15/04/2026 01:28:22] ✅ ci_354302.html
+[15/04/2026 01:28:24] ✅ ci_354300.html
+[15/04/2026 01:28:26] ✅ ci_350007.html
+[15/04/2026 01:28:28] ✅ ci_350002.html
+[15/04/2026 01:28:30] ✅ ci_312214.html
+[15/04/2026 01:28:32] ✅ ci_294704.html
+[15/04/2026 01:28:33] ✅ ci_268610.html
+[15/04/2026 01:28:35] ✅ ci_260709.html
+[15/04/2026 01:28:37] ✅ ci_254595.html
+[15/04/2026 01:28:39] ✅ ci_250973.html
+[15/04/2026 01:28:41] ✅ ci_250157.html
+[15/04/2026 01:28:43] ✅ ci_247812.html
+[15/04/2026 01:28:45] ✅ ci_238711.html
+[15/04/2026 01:28:47] ✅ ci_235126.html
+[15/04/2026 01:28:49] ✅ ci_221461.html
+[15/04/2026 01:28:50] ✅ ci_220943.html
+[15/04/2026 01:28:52] ✅ ci_220544.html
+[15/04/2026 01:28:55] ✅ ci_213753.html
+[15/04/2026 01:28:57] ✅ ci_207751.html
+[15/04/2026 01:28:59] ✅ ci_203911.html
+[15/04/2026 01:29:00] ✅ ci_202622.html
+[15/04/2026 01:29:01] 🔄 Restart browser préventif (120 téléchargements effectués)...
+[15/04/2026 01:29:08] Chargement page ANAPEC...
+[15/04/2026 01:29:22] Connexion...
+[15/04/2026 01:29:28] ✅ Connecté !
+[15/04/2026 01:29:30] ✅ ci_202620.html
+[15/04/2026 01:29:32] ✅ ci_201545.html
+[15/04/2026 01:29:33] ✅ ci_200562.html
+[15/04/2026 01:29:35] ✅ ci_195918.html
+[15/04/2026 01:29:37] ✅ ci_192547.html
+[15/04/2026 01:29:39] ✅ ci_190343.html
+[15/04/2026 01:29:41] ✅ ci_190296.html
+[15/04/2026 01:29:43] ✅ ci_189176.html
+[15/04/2026 01:29:45] ✅ ci_175255.html
+[15/04/2026 01:29:47] ✅ ci_172479.html
+[15/04/2026 01:29:48] ✅ ci_172478.html
+[15/04/2026 01:29:50] ✅ ci_163291.html
+[15/04/2026 01:29:52] ✅ ci_152117.html
+[15/04/2026 01:29:54] ✅ ci_148568.html
+[15/04/2026 01:29:56] ✅ ci_143501.html
+[15/04/2026 01:29:58] ✅ ci_141657.html
+[15/04/2026 01:30:00] ✅ ci_139036.html
+[15/04/2026 01:30:02] ✅ ci_139028.html
+[15/04/2026 01:30:03] ✅ ci_137523.html
+[15/04/2026 01:30:05] ✅ ci_137522.html
+[15/04/2026 01:30:07] ✅ ci_129908.html
+[15/04/2026 01:30:09] ✅ ci_119030.html
+[15/04/2026 01:30:11] ✅ ci_109936.html
+[15/04/2026 01:30:13] ✅ ci_95369.html
+[15/04/2026 01:30:15] ✅ ci_94893.html
+[15/04/2026 01:30:17] ✅ ci_93562.html
+[15/04/2026 01:30:19] ✅ ci_93428.html
+[15/04/2026 01:30:20] ✅ ci_92892.html
+[15/04/2026 01:30:22] ✅ ci_65849.html
+[15/04/2026 01:30:24] ✅ ci_62016.html
+[15/04/2026 01:30:26] ✅ ci_62014.html
+[15/04/2026 01:30:28] ✅ ci_57087.html
+[15/04/2026 01:30:30] ✅ ci_57085.html
+[15/04/2026 01:30:32] ✅ ci_47303.html
+[15/04/2026 01:30:34] ✅ ci_44073.html
+[15/04/2026 01:30:35] ✅ ci_43434.html
+[15/04/2026 01:30:37] ✅ ci_43433.html
+[15/04/2026 01:30:39] ✅ ci_41813.html
+[15/04/2026 01:30:41] ✅ ci_41196.html
+[15/04/2026 01:30:43] ✅ ci_29746.html
+[15/04/2026 01:30:44] 🔄 Restart browser préventif (160 téléchargements effectués)...
+[15/04/2026 01:30:51] Chargement page ANAPEC...
+[15/04/2026 01:31:06] Connexion...
+[15/04/2026 01:31:11] ✅ Connecté !
+[15/04/2026 01:31:13] ✅ ci_23321.html
+[15/04/2026 01:31:14] ✅ ci_22390.html
+[15/04/2026 01:31:16] ✅ ci_21939.html
+[15/04/2026 01:31:18] ✅ ci_19795.html
+[15/04/2026 01:31:20] ✅ ci_19794.html
+[15/04/2026 01:31:24]   ✅ +0 créés, ↻175 mis à jour, ✗1 erreurs
+[15/04/2026 01:31:24] ✅ ci_2806.html
+[15/04/2026 01:31:25] === Terminé: 166 nouveaux, 10 existants, 0 erreurs ===
+[15/04/2026 01:31:26] 
+━━━ KIRKOS_GUARD (groupekirkosguarduim@gmail.com) ━━━
+[15/04/2026 01:31:26]   Scraping ANAPEC...
+[15/04/2026 01:31:26] === Scraping ANAPEC: groupekirkosguarduim@gmail.com → C:\anapec\KIRKOS_GUARD ===
+[15/04/2026 01:31:28] Chargement page ANAPEC...
+[15/04/2026 01:31:40] Connexion...
+[15/04/2026 01:31:47] ✅ Connecté !
+[15/04/2026 01:31:50]   📄 Page 1: +10 contrats (total: 10) → suite
+[15/04/2026 01:31:53]   📄 Page 2: +10 contrats (total: 20) → suite
+[15/04/2026 01:31:55]   📄 Page 3: +10 contrats (total: 30) → suite
+[15/04/2026 01:31:58]   📄 Page 4: +10 contrats (total: 40) → suite
+[15/04/2026 01:32:01]   📄 Page 5: +10 contrats (total: 50) → suite
+[15/04/2026 01:32:04]   📄 Page 6: +10 contrats (total: 60) → suite
+[15/04/2026 01:32:06]   📄 Page 7: +10 contrats (total: 70) → suite
+[15/04/2026 01:32:09]   📄 Page 8: +10 contrats (total: 80) → suite
+[15/04/2026 01:32:12]   📄 Page 9: +10 contrats (total: 90) → suite
+[15/04/2026 01:32:14]   📄 Page 10: +10 contrats (total: 100) → suite
+[15/04/2026 01:32:17]   📄 Page 11: +10 contrats (total: 110) → suite
+[15/04/2026 01:32:20]   📄 Page 12: +10 contrats (total: 120) → suite
+[15/04/2026 01:32:23]   📄 Page 13: +10 contrats (total: 130) → suite
+[15/04/2026 01:32:26]   📄 Page 14: +10 contrats (total: 140) → suite
+[15/04/2026 01:32:28]   📄 Page 15: +10 contrats (total: 150) → suite
+[15/04/2026 01:32:31]   📄 Page 16: +10 contrats (total: 160) → suite
+[15/04/2026 01:32:34]   📄 Page 17: +10 contrats (total: 170) → suite
+[15/04/2026 01:32:37]   📄 Page 18: +10 contrats (total: 180) → suite
+[15/04/2026 01:32:39]   📄 Page 19: +10 contrats (total: 190) → suite
+[15/04/2026 01:32:42]   📄 Page 20: +7 contrats (total: 197) → dernière page
+[15/04/2026 01:32:42] 197 contrats trouvés (20 pages)
+[15/04/2026 01:32:42] ✅ contrats.json sauvegardé
+[15/04/2026 01:32:42] ⏭ ci_1573507.html
+[15/04/2026 01:32:42] ⏭ ci_1573187.html
+[15/04/2026 01:32:42] ⏭ ci_1573185.html
+[15/04/2026 01:32:42] ⏭ ci_1573179.html
+[15/04/2026 01:32:42] ⏭ ci_1573176.html
+[15/04/2026 01:32:42] ⏭ ci_1573175.html
+[15/04/2026 01:32:42] ⏭ ci_1573172.html
+[15/04/2026 01:32:42] ⏭ ci_1572674.html
+[15/04/2026 01:32:42] ⏭ ci_1572611.html
+[15/04/2026 01:32:42] ⏭ ci_1572601.html
+[15/04/2026 01:32:44] ✅ ci_1572588.html
+[15/04/2026 01:32:46] ✅ ci_1572578.html
+[15/04/2026 01:32:48] ✅ ci_1569785.html
+[15/04/2026 01:32:50] ✅ ci_1569783.html
+[15/04/2026 01:32:51] ✅ ci_1569768.html
+[15/04/2026 01:32:53] ✅ ci_1569757.html
+[15/04/2026 01:32:55] ✅ ci_1569745.html
+[15/04/2026 01:32:57] ✅ ci_1569726.html
+[15/04/2026 01:32:59] ✅ ci_1569702.html
+[15/04/2026 01:33:01] ✅ ci_1569680.html
+[15/04/2026 01:33:03] ✅ ci_1569670.html
+[15/04/2026 01:33:04] ✅ ci_1569626.html
+[15/04/2026 01:33:06] ✅ ci_1569339.html
+[15/04/2026 01:33:08] ✅ ci_1569334.html
+[15/04/2026 01:33:10] ✅ ci_1569329.html
+[15/04/2026 01:33:12] ✅ ci_1569325.html
+[15/04/2026 01:33:14] ✅ ci_1569320.html
+[15/04/2026 01:33:16] ✅ ci_1569316.html
+[15/04/2026 01:33:18] ✅ ci_1569273.html
+[15/04/2026 01:33:20] ✅ ci_1569210.html
+[15/04/2026 01:33:22] ✅ ci_1567606.html
+[15/04/2026 01:33:23] ✅ ci_1567593.html
+[15/04/2026 01:33:25] ✅ ci_1566836.html
+[15/04/2026 01:33:27] ✅ ci_1566830.html
+[15/04/2026 01:33:29] ✅ ci_1566828.html
+[15/04/2026 01:33:31] ✅ ci_1566797.html
+[15/04/2026 01:33:33] ✅ ci_1566793.html
+[15/04/2026 01:33:35] ✅ ci_1566769.html
+[15/04/2026 01:33:37] ✅ ci_1566752.html
+[15/04/2026 01:33:38] ✅ ci_1566735.html
+[15/04/2026 01:33:40] ✅ ci_1566721.html
+[15/04/2026 01:33:42] ✅ ci_1566712.html
+[15/04/2026 01:33:44] ✅ ci_1554655.html
+[15/04/2026 01:33:46] ✅ ci_1553450.html
+[15/04/2026 01:33:48] ✅ ci_1552737.html
+[15/04/2026 01:33:49] ✅ ci_1552727.html
+[15/04/2026 01:33:52] ✅ ci_1552279.html
+[15/04/2026 01:33:53] ✅ ci_1552115.html
+[15/04/2026 01:33:55] ✅ ci_1541095.html
+[15/04/2026 01:33:57] ✅ ci_1539983.html
+[15/04/2026 01:33:58] 🔄 Restart browser préventif (40 téléchargements effectués)...
+[15/04/2026 01:34:05] Chargement page ANAPEC...
+[15/04/2026 01:34:18] Connexion...
+[15/04/2026 01:34:23] ✅ Connecté !
+[15/04/2026 01:34:25] ✅ ci_1539839.html
+[15/04/2026 01:34:27] ✅ ci_1539791.html
+[15/04/2026 01:34:29] ✅ ci_1539757.html
+[15/04/2026 01:34:30] ✅ ci_1539708.html
+[15/04/2026 01:34:32] ✅ ci_1538859.html
+[15/04/2026 01:34:34] ✅ ci_1536492.html
+[15/04/2026 01:34:36] ✅ ci_1532046.html
+[15/04/2026 01:34:38] ✅ ci_1531413.html
+[15/04/2026 01:34:40] ✅ ci_1509529.html
+[15/04/2026 01:34:42] ✅ ci_1506056.html
+[15/04/2026 01:34:44] ✅ ci_1505807.html
+[15/04/2026 01:34:46] ✅ ci_1491282.html
+[15/04/2026 01:34:47] ✅ ci_1491046.html
+[15/04/2026 01:34:49] ✅ ci_1474446.html
+[15/04/2026 01:34:51] ✅ ci_1474244.html
+[15/04/2026 01:34:53] ✅ ci_1416514.html
+[15/04/2026 01:34:55] ✅ ci_1416330.html
+[15/04/2026 01:34:57] ✅ ci_1416313.html
+[15/04/2026 01:34:59] ✅ ci_1401834.html
+[15/04/2026 01:35:01] ✅ ci_1401820.html
+[15/04/2026 01:35:03] ✅ ci_1399093.html
+[15/04/2026 01:35:05] ✅ ci_1392699.html
+[15/04/2026 01:35:06] ✅ ci_1350503.html
+[15/04/2026 01:35:08] ✅ ci_1349813.html
+[15/04/2026 01:35:10] ✅ ci_1349812.html
+[15/04/2026 01:35:12] ✅ ci_1334437.html
+[15/04/2026 01:35:14] ✅ ci_1330772.html
+[15/04/2026 01:35:16] ✅ ci_1322146.html
+[15/04/2026 01:35:18] ✅ ci_1313795.html
+[15/04/2026 01:35:20] ✅ ci_1312972.html
+[15/04/2026 01:35:21] ✅ ci_1275892.html
+[15/04/2026 01:35:23] ✅ ci_1275891.html
+[15/04/2026 01:35:25] ✅ ci_1268615.html
+[15/04/2026 01:35:27] ✅ ci_1238496.html
+[15/04/2026 01:35:29] ✅ ci_1238481.html
+[15/04/2026 01:35:31] ✅ ci_1237087.html
+[15/04/2026 01:35:33] ✅ ci_1199696.html
+[15/04/2026 01:35:35] ✅ ci_1184218.html
+[15/04/2026 01:35:37] ✅ ci_1183276.html
+[15/04/2026 01:35:38] ✅ ci_1182120.html
+[15/04/2026 01:35:39] 🔄 Restart browser préventif (80 téléchargements effectués)...
+[15/04/2026 01:35:46] Chargement page ANAPEC...
+[15/04/2026 01:35:59] Connexion...
+[15/04/2026 01:36:04] ✅ Connecté !
+[15/04/2026 01:36:06] ✅ ci_1175166.html
+[15/04/2026 01:36:08] ✅ ci_1165466.html
+[15/04/2026 01:36:10] ✅ ci_1165406.html
+[15/04/2026 01:36:12] ✅ ci_1164812.html
+[15/04/2026 01:36:13] ✅ ci_1146745.html
+[15/04/2026 01:36:15] ✅ ci_1146706.html
+[15/04/2026 01:36:17] ✅ ci_1144361.html
+[15/04/2026 01:36:19] ✅ ci_1143936.html
+[15/04/2026 01:36:21] ✅ ci_1143934.html
+[15/04/2026 01:36:23] ✅ ci_1143933.html
+[15/04/2026 01:36:24] ✅ ci_1118704.html
+[15/04/2026 01:36:26]   ❌ Erreur scraping: spawnSync C:\windows\system32\cmd.exe ETIMEDOUT
+[15/04/2026 01:36:26]   Tentative avec données existantes...
+[15/04/2026 01:36:26]   197 contrats trouvés
+[15/04/2026 01:36:26]   ⚠️  AI1004261107027/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0904261106880/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106878/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0904261106875/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106871/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106870/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106866/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106513/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106476/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106467/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0904261106453/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0904261106444/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0704261105047/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0704261105045/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0704261105030/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0704261105021/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0704261105015/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0704261105003/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0704261104990/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0704261104974/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0704261104967/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0704261104933/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0604261104820/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0604261104817/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0604261104812/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0604261104810/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ 0604261104806/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI0604261104802/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  0604261104765/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0604261104730/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0304261103722/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0304261103713/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103446/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103441/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103439/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103412/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0204261103406/1: sal="2700" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103391/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103377/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103365/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103352/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0204261103343/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI1003261096168/1: sal="2600" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0703261095314/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0603261094781/1: sal="2500" dur="23" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0603261094774/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0503261094448/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0503261094344/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1302261087245/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1202261086540/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1202261086439/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1202261086402/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1202261086377/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1202261086334/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI1102261085766/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI0902261084092/1: sal="2500" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI0302261081178/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ⚠️  AI0202261080779/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI1112251065354/1: sal="3046" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI0612251062868/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI0512251062723/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ⚠️  AI1111251053309/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:26]   ✅ AI1111251053162/1: sal="2200" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:26]   ✅ AI1010251042760/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI1010251042640/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI1305251007657/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI1305251007516/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI1305251007495/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI100425999517/1: sal="2200" dur="24" poste="AGENT DE SECURITE"
+[15/04/2026 01:36:26]   ✅ AI100425999511/1: sal="2100" dur="24" poste="AGENT DE SECURITE"
+[15/04/2026 01:36:26]   ✅ AI040425997921/1: sal="3160" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI140325994132/1: sal="3160" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:26]   ✅ AI151124965252/1: sal="2902" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI131124964725/1: sal="2902" dur="24" poste="Agent de Gardiennage"
+[15/04/2026 01:36:26]   ✅ AI131124964724/1: sal="2902" dur="24" poste="Agent de gardiennage"
+[15/04/2026 01:36:26]   ✅ AI071024953866/1: sal="3500" dur="24" poste="Assistante comptable"
+[15/04/2026 01:36:26]   ✅ AI280924951238/1: sal="2200" dur="24" poste="Agent de sécurité et de surveillance"
+[15/04/2026 01:36:26]   ✅ AI050924945624/1: sal="2200" dur="24" poste="Agent de sécurité et de surveillance"
+[15/04/2026 01:36:26]   ✅ AI090824941159/1: sal="3000" dur="24" poste="ASSISTANT RESSOURCES HUMAINES"
+[15/04/2026 01:36:26]   ✅ AI070824940488/1: sal="2902" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:26]   ✅ AI040424915495/1: sal="3000" dur="24" poste="GESTIONNAIRE DE PAIE"
+[15/04/2026 01:36:26]   ✅ AI040424915494/1: sal="3000" dur="24" poste="GESTIONNAIRE DE PAIE"
+[15/04/2026 01:36:26]   ✅ AI130324910987/1: sal="2500" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:26]   ✅ AI111223891634/1: sal="2500" dur="24" poste="ASSISTANTE ADMINISTRATIVE"
+[15/04/2026 01:36:26]   ✅ AI111223891619/1: sal="2500" dur="24" poste="Agent Administratif"
+[15/04/2026 01:36:26]   ✅ AI071223890779/1: sal="2500" dur="24" poste="Agent Administratif"
+[15/04/2026 01:36:26]   ✅ AI140518522759/4: sal="2350" dur="24" poste="Agent de sécurité"
+[15/04/2026 01:36:27]   ✅ AI140723857922/1: sal="2638" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:27]   ✅ AI120723857456/1: sal="2350" dur="24" poste="AGENT DE GARDIENNAGE"
+[15/04/2026 01:36:27]   ✅ AI100723856726/1: sal="2638" dur="22" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI130623852351/1: sal="2769.88" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI150523845745/1: sal="2770.05" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI150523845698/1: sal="2400" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI110523845331/1: sal="2500" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI080323832738/1: sal="2350" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI080323832705/1: sal="2350" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI020323831225/1: sal="2400" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI010323830997/1: sal="2638" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI010323830995/1: sal="2400" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI010323830994/1: sal="2638" dur="24" poste="agent de gardiennage"
+[15/04/2026 01:36:27]   ✅ AI091222814257/1: sal="2200" dur="24" poste="Agent de gardiennage"
+[15/04/2026 01:36:27]   ⚠️  AI091222814169/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI091222814164/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI091222814126/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI091122808203/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI071122807511/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  031122806880/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI291022805848/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI141022802831/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI111022801615/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI111022801489/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI111022801464/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795520/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795458/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795448/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795358/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795325/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795295/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140922795293/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI130922794670/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794467/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794435/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794422/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794317/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794308/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794270/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120922794242/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI080922793727/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI080922793720/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI080922793705/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110822788677/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110822788677/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110822788676/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110822788676/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110822788676/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI070222751241/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI201120672405/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI101121733079/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI061021725864/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI061021725860/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI061021725856/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI061021725855/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI040821716070/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060721712266/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI050721712031/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI080621707778/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI050621707267/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI130421698895/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI050421697099/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110321693040/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110321693037/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110321693033/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110321693018/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI110321692882/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140518522759/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140518522759/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140720651104/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI190620647550/5: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI190620647550/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI190620647550/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI190620647550/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/6: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/5: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/4: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI060520644115/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120320641844/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI101219623831/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI011119615026/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI011019606471/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140319572099/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI140518522759/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI070319570857/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI070319570856/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120918539493/5: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120918539493/4: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120918539493/3: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120918539493/2: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566518/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566510/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566507/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566505/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566501/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120219566500/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI121218557703/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI121218557664/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI120918539493/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI240418519509/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI230218509469/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI241017488075/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI051017483604/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI080817474550/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI150517461650/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI050517460335/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI070217445591/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   ⚠️  AI310117444719/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:36:27]   Envoi de 197 contrats vers Lambda (KIRKOS_GUARD)...
+[15/04/2026 01:36:28] ✅ ci_1118584.html
+[15/04/2026 01:36:30] ✅ ci_1118538.html
+[15/04/2026 01:36:32] ✅ ci_1110408.html
+[15/04/2026 01:36:34] ✅ ci_1109540.html
+[15/04/2026 01:36:35] ✅ ci_1108542.html
+[15/04/2026 01:36:37] ✅ ci_1107160.html
+[15/04/2026 01:36:39] ✅ ci_1102697.html
+[15/04/2026 01:36:41] ✅ ci_1100956.html
+[15/04/2026 01:36:43] ✅ ci_1100786.html
+[15/04/2026 01:36:45] ✅ ci_1100756.html
+[15/04/2026 01:36:46] ✅ ci_1092517.html
+[15/04/2026 01:36:48] ✅ ci_1092456.html
+[15/04/2026 01:36:50] ✅ ci_1092434.html
+[15/04/2026 01:36:52] ✅ ci_1092307.html
+[15/04/2026 01:36:54] ✅ ci_1092274.html
+[15/04/2026 01:36:55] ✅ ci_1092235.html
+[15/04/2026 01:36:57] ✅ ci_1092233.html
+[15/04/2026 01:36:59] ✅ ci_1091404.html
+[15/04/2026 01:37:01] ✅ ci_1091059.html
+[15/04/2026 01:37:03] ✅ ci_1091013.html
+[15/04/2026 01:37:04] ✅ ci_1090993.html
+[15/04/2026 01:37:06] ✅ ci_1090807.html
+[15/04/2026 01:37:08] ✅ ci_1090776.html
+[15/04/2026 01:37:10] ✅ ci_1090725.html
+[15/04/2026 01:37:12] ✅ ci_1090682.html
+[15/04/2026 01:37:14] ✅ ci_1089920.html
+[15/04/2026 01:37:15] ✅ ci_1089897.html
+[15/04/2026 01:37:17] ✅ ci_1089864.html
+[15/04/2026 01:37:18] 🔄 Restart browser préventif (120 téléchargements effectués)...
+[15/04/2026 01:37:25] Chargement page ANAPEC...
+[15/04/2026 01:37:38] Connexion...
+[15/04/2026 01:37:43] ✅ Connecté !
+[15/04/2026 01:37:45] ✅ ci_1081523.html
+[15/04/2026 01:37:47] ✅ ci_1081522.html
+[15/04/2026 01:37:49] ✅ ci_1081521.html
+[15/04/2026 01:37:50] ✅ ci_1081520.html
+[15/04/2026 01:37:52] ✅ ci_1081519.html
+[15/04/2026 01:37:54] ✅ ci_1026637.html
+[15/04/2026 01:37:56] ✅ ci_1012014.html
+[15/04/2026 01:37:58] ✅ ci_997630.html
+[15/04/2026 01:38:00] ✅ ci_987945.html
+[15/04/2026 01:38:01] ✅ ci_987940.html
+[15/04/2026 01:38:03] ✅ ci_987928.html
+[15/04/2026 01:38:05] ✅ ci_987925.html
+[15/04/2026 01:38:07] ✅ ci_971864.html
+[15/04/2026 01:38:09] ✅ ci_966326.html
+[15/04/2026 01:38:10] ✅ ci_966000.html
+[15/04/2026 01:38:12] ✅ ci_960032.html
+[15/04/2026 01:38:14] ✅ ci_959373.html
+[15/04/2026 01:38:16] ✅ ci_947746.html
+[15/04/2026 01:38:18] ✅ ci_944716.html
+[15/04/2026 01:38:20] ✅ ci_938803.html
+[15/04/2026 01:38:21] ✅ ci_938796.html
+[15/04/2026 01:38:23] ✅ ci_938788.html
+[15/04/2026 01:38:25] ✅ ci_938763.html
+[15/04/2026 01:38:27] ✅ ci_938583.html
+[15/04/2026 01:38:29] ✅ ci_904437.html
+[15/04/2026 01:38:30] ✅ ci_882397.html
+[15/04/2026 01:38:32] ✅ ci_868954.html
+[15/04/2026 01:38:34] ✅ ci_868891.html
+[15/04/2026 01:38:36] ✅ ci_868879.html
+[15/04/2026 01:38:38] ✅ ci_868310.html
+[15/04/2026 01:38:40] ✅ ci_868284.html
+[15/04/2026 01:38:42] ✅ ci_859868.html
+[15/04/2026 01:38:43] ✅ ci_859855.html
+[15/04/2026 01:38:45] ✅ ci_859853.html
+[15/04/2026 01:38:47] ✅ ci_859851.html
+[15/04/2026 01:38:49] ✅ ci_859844.html
+[15/04/2026 01:38:51] ✅ ci_859833.html
+[15/04/2026 01:38:53] ✅ ci_856078.html
+[15/04/2026 01:38:54] ✅ ci_830362.html
+[15/04/2026 01:38:56] ✅ ci_816085.html
+[15/04/2026 01:38:57] 🔄 Restart browser préventif (160 téléchargements effectués)...
+[15/04/2026 01:39:04] Chargement page ANAPEC...
+[15/04/2026 01:39:17] Connexion...
+[15/04/2026 01:39:22] ✅ Connecté !
+[15/04/2026 01:39:24] ✅ ci_803153.html
+[15/04/2026 01:39:26] ✅ ci_750725.html
+[15/04/2026 01:39:28] ✅ ci_750411.html
+[15/04/2026 01:39:30] ✅ ci_749033.html
+[15/04/2026 01:39:32] ✅ ci_749032.html
+[15/04/2026 01:39:34] ✅ ci_748011.html
+[15/04/2026 01:39:35] ✅ ci_748006.html
+[15/04/2026 01:39:37] ✅ ci_748004.html
+[15/04/2026 01:39:39] ✅ ci_748003.html
+[15/04/2026 01:39:41] ✅ ci_743205.html
+[15/04/2026 01:39:43] ✅ ci_743197.html
+[15/04/2026 01:39:45] ✅ ci_743194.html
+[15/04/2026 01:39:47] ✅ ci_743192.html
+[15/04/2026 01:39:49] ✅ ci_743187.html
+[15/04/2026 01:39:51] ✅ ci_743185.html
+[15/04/2026 01:39:53] ✅ ci_732728.html
+[15/04/2026 01:39:55] ✅ ci_732657.html
+[15/04/2026 01:39:55]   ✅ +0 créés, ↻196 mis à jour, ✗1 erreurs
+[15/04/2026 01:39:56] ✅ ci_725300.html
+[15/04/2026 01:39:57] 
+━━━ NEISS (neissinvest@gmail.com) ━━━
+[15/04/2026 01:39:57]   Scraping ANAPEC...
+[15/04/2026 01:39:57] === Scraping ANAPEC: neissinvest@gmail.com → C:\anapec\NEISS ===
+[15/04/2026 01:39:58] ✅ ci_673485.html
+[15/04/2026 01:39:59] Chargement page ANAPEC...
+[15/04/2026 01:40:00] ✅ ci_658862.html
+[15/04/2026 01:40:02] ✅ ci_629662.html
+[15/04/2026 01:40:05] ✅ ci_622747.html
+[15/04/2026 01:40:07] ✅ ci_609748.html
+[15/04/2026 01:40:08] ✅ ci_589885.html
+[15/04/2026 01:40:10] ✅ ci_587922.html
+[15/04/2026 01:40:12] ✅ ci_566358.html
+[15/04/2026 01:40:13] Connexion...
+[15/04/2026 01:40:14] ✅ ci_565062.html
+[15/04/2026 01:40:15] === Terminé: 187 nouveaux, 10 existants, 0 erreurs ===
+[15/04/2026 01:40:20] ✅ Connecté !
+[15/04/2026 01:40:23]   📄 Page 1: +10 contrats (total: 10) → suite
+[15/04/2026 01:40:26]   📄 Page 2: +10 contrats (total: 20) → suite
+[15/04/2026 01:40:29]   📄 Page 3: +10 contrats (total: 30) → suite
+[15/04/2026 01:40:32]   📄 Page 4: +10 contrats (total: 40) → suite
+[15/04/2026 01:40:34]   📄 Page 5: +10 contrats (total: 50) → suite
+[15/04/2026 01:40:37]   📄 Page 6: +10 contrats (total: 60) → suite
+[15/04/2026 01:40:40]   📄 Page 7: +10 contrats (total: 70) → suite
+[15/04/2026 01:40:43]   📄 Page 8: +10 contrats (total: 80) → suite
+[15/04/2026 01:40:46]   📄 Page 9: +10 contrats (total: 90) → suite
+[15/04/2026 01:40:48]   📄 Page 10: +10 contrats (total: 100) → suite
+[15/04/2026 01:40:51]   📄 Page 11: +10 contrats (total: 110) → suite
+[15/04/2026 01:40:54]   📄 Page 12: +10 contrats (total: 120) → suite
+[15/04/2026 01:40:57]   📄 Page 13: +10 contrats (total: 130) → suite
+[15/04/2026 01:40:59]   📄 Page 14: +10 contrats (total: 140) → suite
+[15/04/2026 01:41:02]   📄 Page 15: +10 contrats (total: 150) → suite
+[15/04/2026 01:41:05]   📄 Page 16: +2 contrats (total: 152) → dernière page
+[15/04/2026 01:41:05] 152 contrats trouvés (16 pages)
+[15/04/2026 01:41:05] ✅ contrats.json sauvegardé
+[15/04/2026 01:41:05] ⏭ ci_1572499.html
+[15/04/2026 01:41:05] ⏭ ci_1560042.html
+[15/04/2026 01:41:05] ⏭ ci_1560040.html
+[15/04/2026 01:41:05] ⏭ ci_1560039.html
+[15/04/2026 01:41:05] ⏭ ci_1560038.html
+[15/04/2026 01:41:05] ⏭ ci_1560037.html
+[15/04/2026 01:41:05] ⏭ ci_1560036.html
+[15/04/2026 01:41:05] ⏭ ci_1560035.html
+[15/04/2026 01:41:05] ⏭ ci_1560033.html
+[15/04/2026 01:41:05] ⏭ ci_1560032.html
+[15/04/2026 01:41:06] ✅ ci_1560031.html
+[15/04/2026 01:41:08] ✅ ci_1560030.html
+[15/04/2026 01:41:10] ✅ ci_1555201.html
+[15/04/2026 01:41:12] ✅ ci_1555197.html
+[15/04/2026 01:41:13] ✅ ci_1555196.html
+[15/04/2026 01:41:15] ✅ ci_1555193.html
+[15/04/2026 01:41:17] ✅ ci_1555192.html
+[15/04/2026 01:41:19] ✅ ci_1555191.html
+[15/04/2026 01:41:21] ✅ ci_1555187.html
+[15/04/2026 01:41:23] ✅ ci_1555186.html
+[15/04/2026 01:41:24] ✅ ci_1555142.html
+[15/04/2026 01:41:26] ✅ ci_1555141.html
+[15/04/2026 01:41:28] ✅ ci_1555139.html
+[15/04/2026 01:41:30] ✅ ci_1555138.html
+[15/04/2026 01:41:32] ✅ ci_1555137.html
+[15/04/2026 01:41:34] ✅ ci_1555135.html
+[15/04/2026 01:41:35] ✅ ci_1555132.html
+[15/04/2026 01:41:37] ✅ ci_1555130.html
+[15/04/2026 01:41:39] ✅ ci_1555126.html
+[15/04/2026 01:41:41] ✅ ci_1555110.html
+[15/04/2026 01:41:43] ✅ ci_1554925.html
+[15/04/2026 01:41:45] ✅ ci_1553954.html
+[15/04/2026 01:41:46] ✅ ci_1552341.html
+[15/04/2026 01:41:48] ✅ ci_1552309.html
+[15/04/2026 01:41:50] ✅ ci_1552282.html
+[15/04/2026 01:41:52] ✅ ci_1552257.html
+[15/04/2026 01:41:54] ✅ ci_1552200.html
+[15/04/2026 01:41:55] ✅ ci_1552152.html
+[15/04/2026 01:41:57] ✅ ci_1552110.html
+[15/04/2026 01:41:59] ✅ ci_1552080.html
+[15/04/2026 01:42:01] ✅ ci_1552050.html
+[15/04/2026 01:42:03] ✅ ci_1552033.html
+[15/04/2026 01:42:05] ✅ ci_1551981.html
+[15/04/2026 01:42:07] ✅ ci_1551946.html
+[15/04/2026 01:42:09] ✅ ci_1551850.html
+[15/04/2026 01:42:10] ✅ ci_1551763.html
+[15/04/2026 01:42:12] ✅ ci_1549439.html
+[15/04/2026 01:42:15] ✅ ci_1549437.html
+[15/04/2026 01:42:16] ✅ ci_1549434.html
+[15/04/2026 01:42:18] ✅ ci_1549432.html
+[15/04/2026 01:42:19] 🔄 Restart browser préventif (40 téléchargements effectués)...
+[15/04/2026 01:42:26] Chargement page ANAPEC...
+[15/04/2026 01:42:39] Connexion...
+[15/04/2026 01:42:46] ✅ Connecté !
+[15/04/2026 01:42:48] ✅ ci_1549431.html
+[15/04/2026 01:42:50] ✅ ci_1549428.html
+[15/04/2026 01:42:52] ✅ ci_1549426.html
+[15/04/2026 01:42:54] ✅ ci_1549424.html
+[15/04/2026 01:42:56] ✅ ci_1549421.html
+[15/04/2026 01:42:58] ✅ ci_1549418.html
+[15/04/2026 01:42:59] ✅ ci_1549414.html
+[15/04/2026 01:43:01] ✅ ci_1549411.html
+[15/04/2026 01:43:03] ✅ ci_1549407.html
+[15/04/2026 01:43:05] ✅ ci_1549402.html
+[15/04/2026 01:43:07] ✅ ci_1549400.html
+[15/04/2026 01:43:09] ✅ ci_1549396.html
+[15/04/2026 01:43:11] ✅ ci_1549393.html
+[15/04/2026 01:43:13] ✅ ci_1549389.html
+[15/04/2026 01:43:15] ✅ ci_1549386.html
+[15/04/2026 01:43:17] ✅ ci_1549383.html
+[15/04/2026 01:43:18] ✅ ci_1549378.html
+[15/04/2026 01:43:20] ✅ ci_1549376.html
+[15/04/2026 01:43:22] ✅ ci_1549372.html
+[15/04/2026 01:43:24] ✅ ci_1549370.html
+[15/04/2026 01:43:26] ✅ ci_1549366.html
+[15/04/2026 01:43:28] ✅ ci_1549361.html
+[15/04/2026 01:43:30] ✅ ci_1549358.html
+[15/04/2026 01:43:32] ✅ ci_1549357.html
+[15/04/2026 01:43:33] ✅ ci_1549354.html
+[15/04/2026 01:43:35] ✅ ci_1549350.html
+[15/04/2026 01:43:37] ✅ ci_1549347.html
+[15/04/2026 01:43:39] ✅ ci_1549344.html
+[15/04/2026 01:43:41] ✅ ci_1549341.html
+[15/04/2026 01:43:43] ✅ ci_1549337.html
+[15/04/2026 01:43:45] ✅ ci_1549335.html
+[15/04/2026 01:43:47] ✅ ci_1549327.html
+[15/04/2026 01:43:49] ✅ ci_1549324.html
+[15/04/2026 01:43:51] ✅ ci_1549321.html
+[15/04/2026 01:43:52] ✅ ci_1549314.html
+[15/04/2026 01:43:54] ✅ ci_1549311.html
+[15/04/2026 01:43:56] ✅ ci_1549309.html
+[15/04/2026 01:43:58] ✅ ci_1549308.html
+[15/04/2026 01:44:00] ✅ ci_1549307.html
+[15/04/2026 01:44:02] ✅ ci_1549305.html
+[15/04/2026 01:44:03] 🔄 Restart browser préventif (80 téléchargements effectués)...
+[15/04/2026 01:44:10] Chargement page ANAPEC...
+[15/04/2026 01:44:23] Connexion...
+[15/04/2026 01:44:28] ✅ Connecté !
+[15/04/2026 01:44:29] ✅ ci_1549303.html
+[15/04/2026 01:44:31] ✅ ci_1549300.html
+[15/04/2026 01:44:33] ✅ ci_1549292.html
+[15/04/2026 01:44:35] ✅ ci_1549288.html
+[15/04/2026 01:44:37] ✅ ci_1549285.html
+[15/04/2026 01:44:38] ✅ ci_1549283.html
+[15/04/2026 01:44:40] ✅ ci_1549282.html
+[15/04/2026 01:44:42] ✅ ci_1549278.html
+[15/04/2026 01:44:44] ✅ ci_1549276.html
+[15/04/2026 01:44:46] ✅ ci_1549272.html
+[15/04/2026 01:44:48] ✅ ci_1549267.html
+[15/04/2026 01:44:50] ✅ ci_1549263.html
+[15/04/2026 01:44:52] ✅ ci_1549251.html
+[15/04/2026 01:44:54] ✅ ci_1549244.html
+[15/04/2026 01:44:55] ✅ ci_1549239.html
+[15/04/2026 01:44:57]   ❌ Erreur scraping: spawnSync C:\windows\system32\cmd.exe ETIMEDOUT
+[15/04/2026 01:44:57]   Tentative avec données existantes...
+[15/04/2026 01:44:57]   152 contrats trouvés
+[15/04/2026 01:44:57]   ⚠️  AI0904261106389/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099705/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099703/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099702/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099701/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099700/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099699/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099698/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099696/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099695/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099694/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1903261099693/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096592/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57] ✅ ci_1541057.html
+[15/04/2026 01:44:57]   ⚠️  AI1003261096587/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096584/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096583/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096582/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096581/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096580/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096531/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096530/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096527/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096526/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096525/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096523/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096520/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096518/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096514/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096501/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI1003261096347/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ✅ AI0903261095684/1: sal="1600" dur="24" poste="AGENT DE NETTOYAGE"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094500/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094469/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094451/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094438/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094403/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094367/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094339/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094324/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094308/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094294/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094252/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094219/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094141/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0503261094087/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092715/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092713/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092710/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092709/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092707/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092705/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092702/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092700/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092698/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092696/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092693/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092691/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092688/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092684/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092683/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092680/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092677/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092674/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092673/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092671/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092667/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092665/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:57]   ⚠️  AI0303261092662/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092661/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092656/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092652/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092648/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092647/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092644/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092641/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092637/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092634/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092631/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092628/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092627/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092620/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092617/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092614/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092612/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092609/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092607/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092605/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092603/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092601/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092599/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092597/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092594/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092589/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092586/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092584/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092583/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092579/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092577/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092574/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092570/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092566/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092555/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092548/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0303261092543/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087226/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087220/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087204/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087203/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087196/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087190/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087093/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087074/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087065/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1302261087056/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086825/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086824/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086823/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086822/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086818/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086816/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086811/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086807/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086803/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086801/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  1202261086796/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086794/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086575/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1202261086080/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI0702261083729/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1309251032765/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1206251014708/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI1205251007075/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI130225985785/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI021224968741/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI141124965179/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI050324908374/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI080224902960/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI080224902834/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI080224902827/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI080224902821/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI090823863247/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI130522770198/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI100321692553/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI120520644317/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI110420643539/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI090420643311/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI040420643182/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI040420643181/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI120320641751/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI120320641748/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   ⚠️  AI050719591040/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:44:58]   Envoi de 152 contrats vers Lambda (NEISS)...
+[15/04/2026 01:44:59] ✅ ci_1541050.html
+[15/04/2026 01:45:01] ✅ ci_1541021.html
+[15/04/2026 01:45:03] ✅ ci_1541020.html
+[15/04/2026 01:45:04] ✅ ci_1541009.html
+[15/04/2026 01:45:06] ✅ ci_1541000.html
+[15/04/2026 01:45:08] ✅ ci_1540822.html
+[15/04/2026 01:45:10] ✅ ci_1540792.html
+[15/04/2026 01:45:12] ✅ ci_1540776.html
+[15/04/2026 01:45:14] ✅ ci_1540763.html
+[15/04/2026 01:45:15] ✅ ci_1540320.html
+[15/04/2026 01:45:17] ✅ ci_1540319.html
+[15/04/2026 01:45:19] ✅ ci_1540318.html
+[15/04/2026 01:45:21] ✅ ci_1540317.html
+[15/04/2026 01:45:23] ✅ ci_1540313.html
+[15/04/2026 01:45:25] ✅ ci_1540311.html
+[15/04/2026 01:45:27] ✅ ci_1540306.html
+[15/04/2026 01:45:29] ✅ ci_1540298.html
+[15/04/2026 01:45:30] ✅ ci_1540294.html
+[15/04/2026 01:45:32] ✅ ci_1540292.html
+[15/04/2026 01:45:34] ✅ ci_1540287.html
+[15/04/2026 01:45:36] ✅ ci_1540285.html
+[15/04/2026 01:45:38] ✅ ci_1540030.html
+[15/04/2026 01:45:40] ✅ ci_1539363.html
+[15/04/2026 01:45:41] ✅ ci_1535757.html
+[15/04/2026 01:45:42] 🔄 Restart browser préventif (120 téléchargements effectués)...
+[15/04/2026 01:45:49] Chargement page ANAPEC...
+[15/04/2026 01:46:03] Connexion...
+[15/04/2026 01:46:09] ✅ Connecté !
+[15/04/2026 01:46:11] ✅ ci_1458668.html
+[15/04/2026 01:46:13] ✅ ci_1427602.html
+[15/04/2026 01:46:15] ✅ ci_1415668.html
+[15/04/2026 01:46:16] ✅ ci_1379110.html
+[15/04/2026 01:46:18] ✅ ci_1355310.html
+[15/04/2026 01:46:20] ✅ ci_1350404.html
+[15/04/2026 01:46:22] ✅ ci_1264760.html
+[15/04/2026 01:46:24] ✅ ci_1256074.html
+[15/04/2026 01:46:26] ✅ ci_1255857.html
+[15/04/2026 01:46:28] ✅ ci_1255849.html
+[15/04/2026 01:46:30] ✅ ci_1255843.html
+[15/04/2026 01:46:31] ✅ ci_1193263.html
+[15/04/2026 01:46:33] ✅ ci_1055159.html
+[15/04/2026 01:46:35] ✅ ci_938081.html
+[15/04/2026 01:46:37] ✅ ci_859875.html
+[15/04/2026 01:46:39] ✅ ci_858742.html
+[15/04/2026 01:46:41] ✅ ci_858494.html
+[15/04/2026 01:46:43] ✅ ci_858347.html
+[15/04/2026 01:46:45] ✅ ci_858346.html
+[15/04/2026 01:46:47] ✅ ci_855935.html
+[15/04/2026 01:46:49] ✅ ci_855929.html
+[15/04/2026 01:46:50] ✅ ci_778503.html
+[15/04/2026 01:46:51] === Terminé: 142 nouveaux, 10 existants, 0 erreurs ===
+[15/04/2026 01:47:42]   ✅ +0 créés, ↻152 mis à jour, ✗0 erreurs
+[15/04/2026 01:47:44] 
+━━━ NORIA_BIANCA (yelgartili@groupekirkos.ma) ━━━
+[15/04/2026 01:47:44]   Scraping ANAPEC...
+[15/04/2026 01:47:44] === Scraping ANAPEC: yelgartili@groupekirkos.ma → C:\anapec\NORIA_BIANCA ===
+[15/04/2026 01:47:46] Chargement page ANAPEC...
+[15/04/2026 01:48:00] Connexion...
+[15/04/2026 01:48:05] ✅ Connecté !
+[15/04/2026 01:48:09]   📄 Page 1: +1 contrats (total: 1) → dernière page
+[15/04/2026 01:48:09] 1 contrats trouvés (1 pages)
+[15/04/2026 01:48:09] ✅ contrats.json sauvegardé
+[15/04/2026 01:48:09] ⏭ ci_1490723.html
+[15/04/2026 01:48:09] === Terminé: 0 nouveaux, 1 existants, 0 erreurs ===
+[15/04/2026 01:48:11]   ✅ Scraping terminé
+[15/04/2026 01:48:11]   1 contrats trouvés
+[15/04/2026 01:48:11]   ⚠️  AL1011251052956/1: [poste,salaire,durée] sal="?" dur="?" poste="?"
+[15/04/2026 01:48:11]   Envoi de 1 contrats vers Lambda (NORIA_BIANCA)...
+[15/04/2026 01:48:13]   ✅ +0 créés, ↻1 mis à jour, ✗0 erreurs
+[15/04/2026 01:48:15] 
+━━━ CQ_SERVICE (info.cqservice@gmail.com) ━━━
+[15/04/2026 01:48:15]   Scraping ANAPEC...
+[15/04/2026 01:48:16] === Scraping ANAPEC: info.cqservice@gmail.com → C:\anapec\CQ_SERVICE ===
+[15/04/2026 01:48:17] Chargement page ANAPEC...
+[15/04/2026 01:48:31] Connexion...
+[15/04/2026 01:48:36] ✅ Connecté !
+[15/04/2026 01:48:40]   ⛔ Page 1: aucun contrat → arrêt
+[15/04/2026 01:48:40] 0 contrats trouvés (1 pages)
+[15/04/2026 01:48:40] ❌ 0 contrats
+[15/04/2026 01:48:42]   ❌ Erreur scraping: Command failed: node C:\anapec\scraper_anapec.mjs
+[15/04/2026 01:48:42]   Tentative avec données existantes...
+[15/04/2026 01:48:42]   ❌ contrats.json introuvable
+[15/04/2026 01:48:44] 
+━━━ Push données vers GitHub ━━━
