@@ -1,7 +1,7 @@
 // ============================================================
 // scraper_anapec.mjs - Scraping automatique ANAPEC
-// Supporte multi-sociétés via variables d'environnement
-// v6 - Fix: restart browser toutes les 50 pages CI + détection session expirée
+// v7 - FIX: conserver detail_id dans contrats.json
+//          + restart browser préventif + détection session
 // ============================================================
 
 import puppeteer from 'puppeteer';
@@ -18,10 +18,8 @@ const HOME_URL   = 'https://www.anapec.org/sigec-app-rv/';
 const BASE_URL   = 'https://www.anapec.org/sigec-app-rv/fr/entreprises';
 const LOG_FILE   = join(IS_GITHUB ? '.' : 'C:\\anapec', 'sync_log.txt');
 
-// Nombre de fichiers CI téléchargés avant restart browser
 const RESTART_EVERY = 40;
 
-// Créer le dossier si inexistant
 if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
 
 function log(msg) {
@@ -33,7 +31,6 @@ function log(msg) {
   } catch(e) {}
 }
 
-// Nettoyer les profils Puppeteer verrouillés dans %TEMP%
 function cleanPuppeteerProfiles() {
   if (IS_GITHUB) return;
   try {
@@ -50,7 +47,7 @@ function cleanPuppeteerProfiles() {
 
 async function launchBrowser() {
   cleanPuppeteerProfiles();
-  await new Promise(r => setTimeout(r, 1000)); // laisser OS libérer les handles
+  await new Promise(r => setTimeout(r, 1000));
 
   const launchOptions = IS_GITHUB ? {
     headless: true,
@@ -88,7 +85,6 @@ async function loginAndGetPage(browser) {
   await page.goto(HOME_URL, { waitUntil: 'networkidle2', timeout: 60000 });
   await new Promise(r => setTimeout(r, 4000));
 
-  // Radio Employeur
   try {
     await page.waitForSelector('#radio_1', { timeout: 5000 });
     await page.click('#radio_1');
@@ -100,13 +96,11 @@ async function loginAndGetPage(browser) {
   }
   await new Promise(r => setTimeout(r, 2000));
 
-  // Email
   const userSel = '#user, input[name="data[cherch_empl][identifiant]"], input[name="data[Entreprise][identifiant]"]';
   await page.waitForSelector(userSel, { visible: true, timeout: 10000 });
   await page.click(userSel, { clickCount: 3 });
   await page.type(userSel, EMAIL, { delay: 50 });
 
-  // Password
   const passSel = '#pass, input[name="data[cherch_empl][mot_pass]"], input[name="data[Entreprise][mot_pass]"]';
   await page.waitForSelector(passSel, { visible: true, timeout: 5000 });
   await page.click(passSel, { clickCount: 3 });
@@ -134,12 +128,10 @@ async function loginAndGetPage(browser) {
   return page;
 }
 
-// Vérifier si la session est toujours active (pas de redirect login)
 async function isSessionAlive(page) {
   try {
     const url = page.url();
     const bodyText = await page.evaluate(() => document.body.textContent).catch(() => '');
-    // Si on est sur la page de login ou si "Déconnexion" a disparu → session morte
     if (url.includes('login') || url === HOME_URL) return false;
     if (bodyText.includes('Session expirée') || bodyText.includes('Veuillez vous connecter')) return false;
     return true;
@@ -149,7 +141,6 @@ async function isSessionAlive(page) {
 }
 
 async function scrapeCiPage(page, detailId, outFile) {
-  // Vérifier session avant chaque téléchargement
   const alive = await isSessionAlive(page);
   if (!alive) throw new Error('SESSION_EXPIRED');
 
@@ -158,13 +149,11 @@ async function scrapeCiPage(page, detailId, outFile) {
     timeout: 30000
   });
 
-  // Détecter redirect vers login immédiatement
   const currentUrl = page.url();
   if (currentUrl.includes('login') || currentUrl === HOME_URL || !currentUrl.includes('edition_ci')) {
     throw new Error('SESSION_EXPIRED');
   }
 
-  // Attendre chargement AJAX du contenu
   try {
     await page.waitForFunction(
       () => {
@@ -174,13 +163,11 @@ async function scrapeCiPage(page, detailId, outFile) {
       { timeout: 30000 }
     );
   } catch(e) {
-    // Timeout → sauvegarder quand même et vérifier taille
     await new Promise(r => setTimeout(r, 2000));
   }
 
   const htmlContent = await page.content();
 
-  // Deuxième vérification session (parfois redirect silencieux)
   if (htmlContent.includes('data[Entreprise][identifiant]') || htmlContent.length < 5000) {
     throw new Error('SESSION_EXPIRED');
   }
@@ -199,7 +186,6 @@ async function scrapeCiPage(page, detailId, outFile) {
 async function main() {
   log(`=== Scraping ANAPEC: ${EMAIL} → ${OUT_DIR} ===`);
 
-  // Phase 1 : Récupérer la liste des contrats
   let browser = await launchBrowser();
   let page;
 
@@ -210,7 +196,6 @@ async function main() {
     process.exit(1);
   }
 
-  // Page contrats — PAGINATION ROBUSTE
   await page.goto(`${BASE_URL}/visualiser_contrat`, { waitUntil: 'networkidle2', timeout: 30000 });
   await new Promise(r => setTimeout(r, 2000));
   await page.waitForSelector('table', { timeout: 15000 }).catch(() => {});
@@ -239,7 +224,7 @@ async function main() {
         etat:      cells[3]?.innerText?.trim() || '',
         type:      cells[4]?.innerText?.trim() || '',
         cin:       cells[5]?.innerText?.trim() || '',
-        detail_id: detailId
+        detail_id: detailId   // ← FIX v7: conservé dans contrats.json
       });
     });
     return result;
@@ -291,14 +276,12 @@ async function main() {
     process.exit(1);
   }
 
-  const contractsClean = contracts.map(({ detail_id, ...c }) => c);
-  writeFileSync(join(OUT_DIR, 'contrats.json'), JSON.stringify(contractsClean, null, 2), 'utf8');
-  log('✅ contrats.json sauvegardé');
+  // FIX v7: conserver detail_id dans contrats.json (ne plus le supprimer)
+  writeFileSync(join(OUT_DIR, 'contrats.json'), JSON.stringify(contracts, null, 2), 'utf8');
+  log('✅ contrats.json sauvegardé (avec detail_id)');
 
-  // Phase 2 : Télécharger les fiches CI
-  // On redémarre le browser tous les RESTART_EVERY téléchargements pour éviter les crashes
   let scraped = 0, skipped = 0, errors = 0;
-  let downloadCount = 0; // compteur depuis dernier restart
+  let downloadCount = 0;
 
   for (let i = 0; i < contracts.length; i++) {
     const contract = contracts[i];
@@ -307,7 +290,6 @@ async function main() {
 
     const outFile = join(OUT_DIR, `ci_${detailId}.html`);
 
-    // Vérifier si fichier valide existant
     if (existsSync(outFile)) {
       const age = (Date.now() - statSync(outFile).mtimeMs) / 3600000;
       const size = statSync(outFile).size;
@@ -319,7 +301,6 @@ async function main() {
       if (size < 25000) log(`♻ ci_${detailId}.html (${size} bytes trop petit → re-téléchargement)`);
     }
 
-    // Restart browser preventif tous les RESTART_EVERY téléchargements
     if (downloadCount > 0 && downloadCount % RESTART_EVERY === 0) {
       log(`🔄 Restart browser préventif (${downloadCount} téléchargements effectués)...`);
       await closeBrowser(browser);
@@ -334,7 +315,6 @@ async function main() {
       }
     }
 
-    // Tentative de téléchargement avec retry si session expirée
     let attempts = 0;
     const maxAttempts = 2;
 
@@ -344,7 +324,7 @@ async function main() {
         scraped++;
         downloadCount++;
         await new Promise(r => setTimeout(r, 600));
-        break; // succès
+        break;
       } catch(e) {
         attempts++;
 
@@ -355,7 +335,7 @@ async function main() {
           browser = await launchBrowser();
           try {
             page = await loginAndGetPage(browser);
-            downloadCount = 0; // reset compteur après reconnexion
+            downloadCount = 0;
           } catch(loginErr) {
             log(`❌ Échec reconnexion: ${loginErr.message}`);
             errors++;

@@ -5,7 +5,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SH176322"
+    "cin": "SH176322",
+    "detail_id": "1567973"
   },
   {
     "ref": "AI0304261103931/1",
@@ -13,7 +14,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SH125090"
+    "cin": "SH125090",
+    "detail_id": "1567961"
   },
   {
     "ref": "AI0204261103436/1",
@@ -21,7 +23,8 @@
     "date_fin": "---",
     "etat": "Projet",
     "type": "CI",
-    "cin": "SH75397"
+    "cin": "SH75397",
+    "detail_id": "1566826"
   },
   {
     "ref": "AI3103261102396/1",
@@ -29,7 +32,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SH166427"
+    "cin": "SH166427",
+    "detail_id": "1564903"
   },
   {
     "ref": "AI3103261102303/1",
@@ -37,7 +41,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "JA72148"
+    "cin": "JA72148",
+    "detail_id": "1564768"
   },
   {
     "ref": "AI3103261102293/1",
@@ -45,7 +50,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "A783109"
+    "cin": "A783109",
+    "detail_id": "1564759"
   },
   {
     "ref": "AI3103261102281/1",
@@ -53,7 +59,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SJ28857"
+    "cin": "SJ28857",
+    "detail_id": "1564737"
   },
   {
     "ref": "AI3003261101999/1",
@@ -61,7 +68,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SH104682"
+    "cin": "SH104682",
+    "detail_id": "1564323"
   },
   {
     "ref": "AI3003261101984/1",
@@ -69,7 +77,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "JB327850"
+    "cin": "JB327850",
+    "detail_id": "1564313"
   },
   {
     "ref": "AI3003261101714/1",
@@ -77,7 +86,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "SH98950"
+    "cin": "SH98950",
+    "detail_id": "1563863"
   },
   {
     "ref": "AI3003261101702/1",
@@ -85,7 +95,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "N162087"
+    "cin": "N162087",
+    "detail_id": "1563817"
   },
   {
     "ref": "AI3003261101675/1",
@@ -93,7 +104,8 @@
     "date_fin": "07/04/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "EE424231"
+    "cin": "EE424231",
+    "detail_id": "1563782"
   },
   {
     "ref": "AI0503261094286/1",
@@ -101,7 +113,8 @@
     "date_fin": "11/11/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BH615082"
+    "cin": "BH615082",
+    "detail_id": "1552016"
   },
   {
     "ref": "AI0503261094258/1",
@@ -109,7 +122,8 @@
     "date_fin": "05/03/2028",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BF14532"
+    "cin": "BF14532",
+    "detail_id": "1551987"
   },
   {
     "ref": "AI1302261087217/1",
@@ -117,7 +131,8 @@
     "date_fin": "13/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "IA88052"
+    "cin": "IA88052",
+    "detail_id": "1541046"
   },
   {
     "ref": "AI0902261084245/1",
@@ -125,7 +140,8 @@
     "date_fin": "12/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "HH62106"
+    "cin": "HH62106",
+    "detail_id": "1536684"
   },
   {
     "ref": "AI0902261084234/1",
@@ -133,7 +149,8 @@
     "date_fin": "09/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "JD44308"
+    "cin": "JD44308",
+    "detail_id": "1536671"
   },
   {
     "ref": "AI0602261083692/1",
@@ -141,7 +158,8 @@
     "date_fin": "09/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "Q214338"
+    "cin": "Q214338",
+    "detail_id": "1535672"
   },
   {
     "ref": "AI0602261083676/1",
@@ -149,7 +167,8 @@
     "date_fin": "09/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BB245367"
+    "cin": "BB245367",
+    "detail_id": "1535645"
   },
   {
     "ref": "AI0602261083523/1",
@@ -157,7 +176,8 @@
     "date_fin": "09/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "HH221826"
+    "cin": "HH221826",
+    "detail_id": "1535366"
   },
   {
     "ref": "AI0602261083500/1",
@@ -165,7 +185,8 @@
     "date_fin": "09/02/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BK676440"
+    "cin": "BK676440",
+    "detail_id": "1535317"
   },
   {
     "ref": "AI1111251053126/1",
@@ -173,7 +194,8 @@
     "date_fin": "12/11/2027",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BL104741"
+    "cin": "BL104741",
+    "detail_id": "1491005"
   },
   {
     "ref": "AI1208251027517/1",
@@ -181,7 +203,8 @@
     "date_fin": "15/09/2027",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BJ374945"
+    "cin": "BJ374945",
+    "detail_id": "1448555"
   },
   {
     "ref": "AI120225985237/1",
@@ -189,7 +212,8 @@
     "date_fin": "29/11/2026",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BH635726"
+    "cin": "BH635726",
+    "detail_id": "1378285"
   },
   {
     "ref": "AI131124964704/1",
@@ -197,7 +221,8 @@
     "date_fin": "14/11/2026",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BA10214"
+    "cin": "BA10214",
+    "detail_id": "1349791"
   },
   {
     "ref": "AI111024955781/1",
@@ -205,7 +230,8 @@
     "date_fin": "14/10/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK715182"
+    "cin": "BK715182",
+    "detail_id": "1337169"
   },
   {
     "ref": "AI050924945483/1",
@@ -213,7 +239,8 @@
     "date_fin": "10/09/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BB47709"
+    "cin": "BB47709",
+    "detail_id": "1321857"
   },
   {
     "ref": "AI120824941385/1",
@@ -221,7 +248,8 @@
     "date_fin": "13/08/2026",
     "etat": "Validé & Signé",
     "type": "CI",
-    "cin": "BH640526"
+    "cin": "BH640526",
+    "detail_id": "1314112"
   },
   {
     "ref": "AI010824939365/1",
@@ -229,7 +257,8 @@
     "date_fin": "12/08/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BH618960"
+    "cin": "BH618960",
+    "detail_id": "1311284"
   },
   {
     "ref": "AI010824939127/1",
@@ -237,7 +266,8 @@
     "date_fin": "02/08/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "U193937"
+    "cin": "U193937",
+    "detail_id": "1310950"
   },
   {
     "ref": "AI150424916832/1",
@@ -245,7 +275,8 @@
     "date_fin": "19/04/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BW8788"
+    "cin": "BW8788",
+    "detail_id": "1277990"
   },
   {
     "ref": "AI140224904313/1",
@@ -253,7 +284,8 @@
     "date_fin": "13/02/2026",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "BK685050"
+    "cin": "BK685050",
+    "detail_id": "1258282"
   },
   {
     "ref": "AI140224904300/1",
@@ -261,7 +293,8 @@
     "date_fin": "13/02/2026",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "BK387064"
+    "cin": "BK387064",
+    "detail_id": "1258269"
   },
   {
     "ref": "AI130224904080/1",
@@ -269,7 +302,8 @@
     "date_fin": "22/02/2026",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "BJ457360"
+    "cin": "BJ457360",
+    "detail_id": "1257831"
   },
   {
     "ref": "AI050224901691/1",
@@ -277,7 +311,8 @@
     "date_fin": "06/02/2026",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "GA198505"
+    "cin": "GA198505",
+    "detail_id": "1254198"
   },
   {
     "ref": "AI011123881163/1",
@@ -285,7 +320,8 @@
     "date_fin": "06/11/2025",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BJ466609"
+    "cin": "BJ466609",
+    "detail_id": "1223119"
   },
   {
     "ref": "AI040423837803/1",
@@ -293,7 +329,8 @@
     "date_fin": "09/04/2025",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK648496"
+    "cin": "BK648496",
+    "detail_id": "1154761"
   },
   {
     "ref": "AI100323833355/1",
@@ -301,7 +338,8 @@
     "date_fin": "12/03/2025",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK671812"
+    "cin": "BK671812",
+    "detail_id": "1147725"
   },
   {
     "ref": "AI120123820467/1",
@@ -309,7 +347,8 @@
     "date_fin": "12/01/2025",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK710997"
+    "cin": "BK710997",
+    "detail_id": "1127083"
   },
   {
     "ref": "AI071122807504/1",
@@ -317,7 +356,8 @@
     "date_fin": "09/11/2024",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK286531"
+    "cin": "BK286531",
+    "detail_id": "1109526"
   },
   {
     "ref": "AI071122807491/1",
@@ -325,7 +365,8 @@
     "date_fin": "09/11/2024",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "HH24396"
+    "cin": "HH24396",
+    "detail_id": "1109510"
   },
   {
     "ref": "AI130622777294/1",
@@ -333,7 +374,8 @@
     "date_fin": "12/06/2024",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "BK699754"
+    "cin": "BK699754",
+    "detail_id": "1064412"
   },
   {
     "ref": "AI070622775585/1",
@@ -341,7 +383,8 @@
     "date_fin": "12/06/2024",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "MD16440"
+    "cin": "MD16440",
+    "detail_id": "1062131"
   },
   {
     "ref": "AI130522770236/1",
@@ -349,7 +392,8 @@
     "date_fin": "12/05/2024",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BK614949"
+    "cin": "BK614949",
+    "detail_id": "1055295"
   },
   {
     "ref": "AI130522770208/1",
@@ -357,7 +401,8 @@
     "date_fin": "12/05/2024",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BH592836"
+    "cin": "BH592836",
+    "detail_id": "1055192"
   },
   {
     "ref": "AI060422763265/1",
@@ -365,7 +410,8 @@
     "date_fin": "13/04/2024",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "DB27246"
+    "cin": "DB27246",
+    "detail_id": "1044958"
   },
   {
     "ref": "AI070322757376/1",
@@ -373,7 +419,8 @@
     "date_fin": "28/11/2023",
     "etat": "Resilié",
     "type": "CI",
-    "cin": "BB160764"
+    "cin": "BB160764",
+    "detail_id": "1036199"
   },
   {
     "ref": "AI140122746122/1",
@@ -381,6 +428,7 @@
     "date_fin": "14/01/2024",
     "etat": "Recruté CDI",
     "type": "CI",
-    "cin": "BE893604"
+    "cin": "BE893604",
+    "detail_id": "1018437"
   }
 ]

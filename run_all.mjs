@@ -1,7 +1,10 @@
 // ============================================================
 // run_all.mjs - Pipeline complet pour les 8 sociétés
-// CORRIGÉ v5: FIX CRITIQUE - extraire section .printable
-//             avant suppression des scripts JS
+// v7 - FIX DÉFINITIF:
+//   1. Mapping direct par detail_id (ci_XXXXX.html) → plus de
+//      recherche de ref dans le texte HTML (source du bug)
+//   2. Regex durée corrigée pour format "(1) 24 شهرا"
+//   3. Fallback robuste par CIN si detail_id absent
 // ============================================================
 
 import { execSync } from 'child_process';
@@ -33,33 +36,20 @@ function log(msg) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// extractPrintable — FIX CRITIQUE v5
-//
-// PROBLÈME DIAGNOSTIQUÉ : le texte arabe (لمدة, مبلغها, تعيين)
-// existe DANS LE CODE JAVASCRIPT inline du fichier HTML (dans
-// des variables encodées). Quand on retire les <script> en premier
-// puis on cherche le texte → RIEN. Mais si on ne retire pas les
-// scripts → on matche dans le JS au lieu du contenu réel.
-//
-// SOLUTION : extraire d'abord la section <div class="printable">
-// qui contient UNIQUEMENT le contenu du contrat, puis parser.
-// Si pas de .printable → fallback sur le body sans scripts.
+// extractPrintable — extrait la section du contrat uniquement
 // ─────────────────────────────────────────────────────────────
 function extractPrintable(html) {
-  // Stratégie 1 : trouver <div class="printable"> via indexOf
-  // Le regex [\s\S]*? fermait trop tôt sur les gros fichiers
+  // Cherche div.printable OU div.arriereprintable
   const tagMatch = html.match(/<div[^>]*class=["'][^"']*printable[^"']*["'][^>]*>/i);
   if (tagMatch) {
     const startIdx = html.indexOf(tagMatch[0]);
     if (startIdx >= 0) {
       const after = html.slice(startIdx + tagMatch[0].length);
-      // Prendre jusqu'à </body> ou fin
       const endIdx = after.search(/<\/body>/i);
       return endIdx > 0 ? after.slice(0, endIdx) : after;
     }
   }
-
-  // Stratégie 2 : <body> sans scripts
+  // Fallback : body sans scripts
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   const body = bodyMatch ? bodyMatch[1] : html;
   return body.replace(/<script[\s\S]*?<\/script>/gi, '');
@@ -85,10 +75,9 @@ function htmlToText(html) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// parseDetail v5 — utilise extractPrintable
+// parseDetail v7 — extraction robuste arabe + français
 // ─────────────────────────────────────────────────────────────
 function parseDetail(html) {
-  // FIX v5 : extraire la section printable AVANT tout traitement
   const printable = extractPrintable(html);
   const text = htmlToText(printable);
 
@@ -106,9 +95,6 @@ function parseDetail(html) {
   };
 
   if (isFrench) {
-    // ════════════════════════════════════════════════════════
-    // FRANÇAIS
-    // ════════════════════════════════════════════════════════
     return {
       agence:     find(/Agence\s*:\s*([^\n<]{3,60})/i),
       nom_entrep: find(/Nom\s+ou\s+raison\s+sociale\s*[:\u00a0]+\s*([^\n<]{2,80})/i),
@@ -143,8 +129,6 @@ function parseDetail(html) {
       })(),
       cnss_agent: find(/immatriculation\s+.+C\.N\.S\.S[^:]*:\s*(\d{6,12})/i),
       niveau:     find(/Niveau\s+d.instruction[^:]*:\s*([^\n<]{3,80})/i),
-
-      // POSTE français
       poste: (() => {
         const m1 = text.match(/affecter\s+au\s+poste\s+de\s+(?:travail\s+)?([^\n.<]{3,80})/i);
         if (m1) return m1[1].trim().replace(/\s*\.$/, '');
@@ -154,8 +138,6 @@ function parseDetail(html) {
         if (m3) return m3[1].trim();
         return '';
       })(),
-
-      // DURÉE française : "Pour une durée de (1) 23 mois"
       duree: (() => {
         const m1 = text.match(/dur[eé]e\s+de\s+\(\d+\)\s+(\d+)\s+mois/i);
         if (m1) return m1[1];
@@ -167,8 +149,6 @@ function parseDetail(html) {
         if (m4) return m4[1];
         return '';
       })(),
-
-      // SALAIRE français : "fixé à 2500 DH (entre 1600 et 6000 DH)"
       salaire: (() => {
         const m1 = text.match(/fix[eé]\s+[àa]\s+([\d\s.,]+?)\s*DH/i);
         if (m1) { const v=m1[1].replace(/\s/g,'').replace(',','.'); if(parseFloat(v)>=1000&&parseFloat(v)<=20000) return v; }
@@ -182,10 +162,7 @@ function parseDetail(html) {
 
   } else {
     // ════════════════════════════════════════════════════════
-    // ARABE — FIX v5 :
-    // Le salaire contient "&nbsp;" : "مبلغها في &nbsp;1600 درهم"
-    // → après htmlToText, &nbsp; devient espace normal ✅
-    // La durée est dans la section printable, pas dans le JS ✅
+    // ARABE - v7 FIX: regex durée corrigée pour format "(1) 24 شهرا"
     // ════════════════════════════════════════════════════════
     return {
       agence:     find(/الوكالة\s*:\s*([^\n|]{3,60})/),
@@ -199,7 +176,6 @@ function parseDetail(html) {
       rc:         find(/رقم القيد في السجل التجاري[^:\n]*:\s*(\d+)/),
       cnss_empl:  find(/رقم الانخراط[^:\n]*:\s*(\d+)/),
       forme_jur:  find(/النظام القانوني[^:\n]*:\s*([^\n]{3,60})/),
-
       nom_agent: (() => {
         const s1 = find(/الاسم العائلي\s*(?:والشخصي)?\s*[:\u00a0]+\s*([^\n]{2,40})/);
         if (s1) return s1.trim().split(/\s+/)[0] || s1;
@@ -216,14 +192,12 @@ function parseDetail(html) {
         if (s2) { const p=s2.trim().split(/\s+/); return p.length>1?p.slice(1).join(' '):''; }
         return '';
       })(),
-
       nationalite: find(/الجنسية[^:\n]*:\s*([^\n]{3,30})/),
       cin:         text.match(/\b([A-Z]{1,2}\d{5,8})\b/)?.[1] || '',
       cnss_agent:  find(/رقم التسجيل بالصندوق[^:\n]*:\s*(\d{6,12})/),
       niveau:      find(/المستوى التعليمي[^:\n]*:\s*([^\n]{3,60})/),
 
-      // POSTE arabe : "تعيينه (ها) :الشغل AGENT DE NETTOYAGE"
-      // Minuscules ou majuscules → flag i + toUpperCase()
+      // POSTE arabe
       poste: (() => {
         const m1 = text.match(/تعيين[^\n:]*:\s*(?:الشغل\s*)?([A-Za-z][A-Za-z\s''\u2019\-]{3,60})/i);
         if (m1) return m1[1].trim().replace(/\s*[.،]\s*$/, '').toUpperCase();
@@ -234,32 +208,30 @@ function parseDetail(html) {
         return '';
       })(),
 
-      // DURÉE arabe : "لمدة 1 12 شهرا (12 شهرا غير قابلة للتجديد)"
-      // FIX v5 : le texte vient de la section printable uniquement
-      // → plus de confusion avec le JS
-      // Le &nbsp; entre "في" et "1600" est converti en espace par htmlToText
+      // DURÉE arabe v7 - FIX: gère "(1) 24 شهرا" ET "1 24 شهرا" ET "24 شهرا"
       duree: (() => {
-        // "لمدة [note] [duree] شهر" — note = 1 chiffre
-        const m1 = text.match(/لمدة\s+(\d)\s+(\d+)\s+شهر/);
-        if (m1) return m1[2]; // prendre le 2ème nombre = vraie durée
-        // Sans note : "لمدة 12 شهرا"
-        const m2 = text.match(/لمدة\s+(\d+)\s+شهر/);
-        if (m2) return m2[1];
+        // Format avec parenthèses: "لمدة (1) 24 شهرا" (NOTE le chiffre entre parenthèses)
+        const m_par = text.match(/لمدة\s+\(\d+\)\s+(\d+)\s+شهر/);
+        if (m_par) return m_par[1];
+        // Format sans parenthèses avec note: "لمدة 1 24 شهرا"
+        const m_note = text.match(/لمدة\s+\d\s+(\d{2})\s+شهر/);
+        if (m_note) return m_note[1];
+        // Format simple: "لمدة 24 شهرا"
+        const m_simple = text.match(/لمدة\s+(\d+)\s+شهر/);
+        if (m_simple) return m_simple[1];
+        // Parenthèse de confirmation: "(24 شهرا غير قابلة للتجديد)"
+        const m_conf = text.match(/\((\d+)\s+شهر[اً]?\s+غير\s+قابلة/);
+        if (m_conf) return m_conf[1];
         // المدة : X
-        const m3 = find(/المدة[^:\n]*:\s*(\d+)/);
-        if (m3) return m3;
-        // "(12 شهرا غير قابلة)" — parenthèse de confirmation
-        const m4 = text.match(/\((\d+)\s+شهر[اً]?\s+غير\s+قابلة/);
-        if (m4) return m4[1];
+        const m_mda = find(/المدة[^:\n]*:\s*(\d+)/);
+        if (m_mda) return m_mda;
         return '';
       })(),
 
-      // SALAIRE arabe : "مبلغها في  1600 درهم"
-      // FIX v5 : le &nbsp; est converti en espace par htmlToText
-      // → \s+ capture l'espace même s'il y en a plusieurs
+      // SALAIRE arabe v7 - robuste
       salaire: (() => {
-        // "مبلغها في [espaces] XXXX درهم"
-        const m1 = text.match(/مبلغها\s+في\s+([\d.,]+)\s*درهم/);
+        // "مبلغها في [espaces multiples] XXXX درهم"
+        const m1 = text.match(/مبلغها\s+في\s+[\s]*([\d.,]+)\s*درهم/);
         if (m1) return m1[1].replace(',','.');
         // "في XXXX درهم" générique
         const m2 = text.match(/في\s+([\d.,]{3,9})\s*درهم/);
@@ -308,28 +280,10 @@ async function processSociete(societe) {
   if (!existsSync(societeDir)) mkdirSync(societeDir, { recursive: true });
   log(`\n━━━ ${societe.nom} (${societe.email}) ━━━`);
 
-  // Supprimer cache HTML invalide
-  const existingHtml = existsSync(societeDir)
-    ? readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'))
-    : [];
-  let deleted = 0;
-  for (const file of existingHtml) {
-    try {
-      const c = readFileSync(join(societeDir, file), 'utf8');
-      if (isFrenchHtml(c)) {
-        const p = parseDetail(c);
-        if (!p.nom_entrep && !p.nom_agent && !p.salaire && !p.poste) {
-          unlinkSync(join(societeDir, file)); deleted++;
-        }
-      }
-    } catch(e) {}
-  }
-  if (deleted > 0) log(`  🗑️ ${deleted} fichiers invalides supprimés`);
-
   log(`  Scraping ANAPEC...`);
   try {
     const env = { ...process.env, ANAPEC_EMAIL: societe.email, ANAPEC_PASSWORD: societe.password, ANAPEC_OUT_DIR: societeDir };
-    execSync(`node C:\\anapec\\scraper_anapec.mjs`, { stdio:'inherit', timeout:300000, env });
+    execSync(`node C:\\anapec\\scraper_anapec.mjs`, { stdio:'inherit', timeout:600000, env });
     log(`  ✅ Scraping terminé`);
   } catch(e) {
     log(`  ❌ Erreur scraping: ${e.message.substring(0,100)}`);
@@ -343,37 +297,64 @@ async function processSociete(societe) {
   log(`  ${baseContracts.length} contrats trouvés`);
   if (baseContracts.length === 0) return {created:0,updated:0,errors:0};
 
-  // Construire les maps
+  // ─────────────────────────────────────────────────────────────
+  // FIX v7: Mapping DIRECT par detail_id
+  // ci_1566868.html → contrat avec detail_id="1566868"
+  // Beaucoup plus fiable que de chercher la ref dans le texte HTML
+  // ─────────────────────────────────────────────────────────────
+  const detailIdMap = {}; // detail_id → parseDetail result
+  const cinMap = {};      // CIN → parseDetail result (fallback)
+
   const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
-  const detailMap = {};
-  const cinMap    = {};
 
   for (const file of files) {
-    const html = readFileSync(join(societeDir, file), 'utf8');
-    const detail = parseDetail(html);
-    const cleanText = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
+    // Extraire le detail_id depuis le nom de fichier (ci_1566868.html → "1566868")
+    const fileId = file.replace('ci_', '').replace('.html', '');
+    try {
+      const html = readFileSync(join(societeDir, file), 'utf8');
+      const detail = parseDetail(html);
+      detailIdMap[fileId] = detail;
 
-    // Mapping par toutes les refs trouvées
-    const refs = [...cleanText.matchAll(/\b([A-Z]{0,3}\d{8,}\/\d+)\b/g)].map(m=>m[1]);
-    for (let ref of [...new Set(refs)]) {
-      if (ref.match(/^I\d/)) ref = 'A' + ref;
-      detailMap[ref] = detail;
-      detailMap[ref.replace(/^A/,'')] = detail;
-      if (ref.startsWith('NO')) detailMap[ref.slice(2)] = detail;
-      if (ref.startsWith('NI')) detailMap[ref.slice(2)] = detail;
-      if (ref.startsWith('AL')) detailMap[ref.slice(2)] = detail;
-    }
-    // Mapping par CIN
-    const cins = [...cleanText.matchAll(/\b([A-Z]{1,2}\d{5,8})\b/g)].map(m=>m[1]);
-    for (const cin of [...new Set(cins)]) cinMap[cin] = detail;
+      // Fallback CIN
+      if (detail.cin) cinMap[detail.cin] = detail;
+
+      // Fallback aussi par refs trouvées dans le texte (compatibilité ancienne)
+      const cleanText = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
+      const refs = [...cleanText.matchAll(/\b([A-Z]{0,3}\d{8,}\/\d+)\b/g)].map(m=>m[1]);
+      for (let ref of [...new Set(refs)]) {
+        if (ref.match(/^I\d/)) ref = 'A' + ref;
+        detailIdMap['ref_' + ref] = detail;
+        detailIdMap['ref_' + ref.replace(/^A/,'')] = detail;
+        if (ref.startsWith('NO')) detailIdMap['ref_' + ref.slice(2)] = detail;
+        if (ref.startsWith('NI')) detailIdMap['ref_' + ref.slice(2)] = detail;
+        if (ref.startsWith('AL')) detailIdMap['ref_' + ref.slice(2)] = detail;
+      }
+    } catch(e) {}
   }
 
   const contracts = baseContracts.map(c => {
+    // Méthode 1: mapping direct par detail_id (le plus fiable)
+    const detailId = c.detail_id || '';
+    let detail = detailId ? detailIdMap[detailId] : null;
+
+    // Méthode 2: fallback par ref dans le texte HTML
+    if (!detail || (!detail.poste && !detail.salaire)) {
+      detail = detailIdMap['ref_' + c.ref]
+            || detailIdMap['ref_' + c.ref.replace(/^A/, '')]
+            || null;
+    }
+
+    // Méthode 3: fallback par CIN
+    if ((!detail || (!detail.poste && !detail.salaire)) && c.cin) {
+      detail = cinMap[c.cin] || null;
+    }
+
     const merged = {
       ref: c.ref||'', date_sig: c.date_sig||'', date_fin: c.date_fin||'',
       etat: c.etat||'', type: c.type||'', cin: c.cin||'',
-      ...(detailMap[c.ref] || cinMap[c.cin] || {})
+      ...(detail || {})
     };
+
     const missing = [];
     if (!merged.poste)   missing.push('poste');
     if (!merged.salaire) missing.push('salaire');
@@ -392,7 +373,7 @@ async function processSociete(societe) {
 async function main() {
   log('\n╔══════════════════════════════════════════════════╗');
   log('║  PIPELINE MULTI-SOCIÉTÉS ANAPEC → Monday.com    ║');
-  log('║  VERSION: Bilingue Arabe + Français v5           ║');
+  log('║  VERSION: Bilingue Arabe + Français v7           ║');
   log('╚══════════════════════════════════════════════════╝');
 
   let totalCreated=0, totalUpdated=0, totalErrors=0;
@@ -410,19 +391,18 @@ async function main() {
     await new Promise(r => setTimeout(r, 2000));
   }
 
-  // Push GitHub : stash → pull → pop → push
   log('\n━━━ Push données vers GitHub ━━━');
   try {
     const date = new Date().toLocaleString('fr-FR');
     execSync(
-      `cd C:\\anapec && git stash && git pull origin main --rebase && git stash pop && git add -A && git commit -m "Données 8 sociétés v5 - ${date}" && git push origin main`,
+      `cd C:\\anapec && git stash && git pull origin main --rebase && git stash pop && git add -A && git commit -m "Données 8 sociétés v7 - ${date}" && git push origin main`,
       { stdio:'inherit', timeout:60000 }
     );
     log('✅ Données pushées vers GitHub');
   } catch(e) {
     try {
       const date = new Date().toLocaleString('fr-FR');
-      execSync(`cd C:\\anapec && git add -A && git commit -m "v5 - ${date}" && git push origin main --force-with-lease`,
+      execSync(`cd C:\\anapec && git add -A && git commit -m "v7 - ${date}" && git push origin main --force-with-lease`,
         { stdio:'inherit', timeout:60000 });
       log('✅ Données pushées (force)');
     } catch(e2) { log(`⚠️ Git: ${e.message.substring(0,100)}`); }
