@@ -1,23 +1,25 @@
-// Lambda ANAPEC → Monday.com - Multi-sociétés
+// Lambda ANAPEC → Monday.com - Multi-sociétés v7
+// FIX DOUBLONS: pagination complète (cursor-based) pour récupérer TOUS les items
+// Sans pagination, limit:500 rate les anciens items → doublons créés
 import https from 'https';
 
 const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
 
-// Mapping société → board ID
 const BOARD_MAP = {
-  'GRUPO_TEYEZ':    process.env.MONDAY_BOARD_ID,
-  'SIGARMOR':       process.env.BOARD_SIGARMOR,
-  'EIM':            process.env.BOARD_EIM,
-  'KIRKOS':         process.env.BOARD_KIRKOS,
-  'KIRKOS_GUARD':   process.env.BOARD_KIRKOS_GUARD,
-  'NEISS':          process.env.BOARD_NEISS,
-  'NORIA_BIANCA':   process.env.BOARD_NORIA_BIANCA,
-  'CQ_SERVICE':     process.env.BOARD_CQ_SERVICE,
+  'GRUPO_TEYEZ':    process.env.BOARD_GRUPO_TEYEZ   || '5094533264',
+  'SIGARMOR':       process.env.BOARD_SIGARMOR       || '5094533195',
+  'EIM':            process.env.BOARD_EIM            || '5094406986',
+  'KIRKOS':         process.env.BOARD_KIRKOS         || '5094533165',
+  'KIRKOS_GUARD':   process.env.BOARD_KIRKOS_GUARD   || '5094532891',
+  'NEISS':          process.env.BOARD_NEISS          || '5094532791',
+  'NORIA_BIANCA':   process.env.BOARD_NORIA_BIANCA   || '5094532861',
+  'CQ_SERVICE':     process.env.BOARD_CQ_SERVICE     || '5094533129',
+  'ANAPEC_GLOBAL':  process.env.BOARD_GLOBAL         || '5094534887',
 };
 
 const COL = {
   ref:        'text_mm25bmx6',
-  etat:       'color_mm25jvb9',
+  etat:       'text_mm2cq9p4',
   type:       'text_mm25cnhq',
   date_sig:   'date_mm25j55f',
   date_fin:   'date_mm25dgst',
@@ -38,7 +40,8 @@ const COL = {
   poste:      'text_mm25x2aw',
   duree:      'numeric_mm25fr45',
   salaire:    'numeric_mm25aj7f',
-  cnss_trait: 'color_mm253wpv'
+  cnss_trait: 'color_mm253wpv',
+  email_soc:  'text_mm25cb1c',
 };
 
 function mondayQuery(query) {
@@ -57,7 +60,10 @@ function mondayQuery(query) {
     }, (res) => {
       let data = '';
       res.on('data', c => data += c);
-      res.on('end', () => resolve(JSON.parse(data)));
+      res.on('end', () => {
+        try { resolve(JSON.parse(data)); }
+        catch(e) { reject(new Error('JSON parse: ' + data.substring(0,200))); }
+      });
     });
     req.on('error', reject);
     req.write(body);
@@ -65,15 +71,43 @@ function mondayQuery(query) {
   });
 }
 
-async function getMondayItems(boardId) {
-  const data = await mondayQuery(`{
-    boards(ids: ${boardId}) {
-      items_page(limit: 500) {
-        items { id name column_values { id text } }
+// ─────────────────────────────────────────────────────────────
+// FIX v7: récupérer TOUS les items avec pagination cursor-based
+// L'ancienne version (limit:500) ratait les boards > 500 items
+// → existingId = undefined → doublon créé à chaque run
+// ─────────────────────────────────────────────────────────────
+async function getAllMondayItems(boardId) {
+  const allItems = [];
+  let cursor = null;
+  let page = 0;
+
+  do {
+    page++;
+    const cursorArg = cursor ? `, cursor: "${cursor}"` : '';
+    const data = await mondayQuery(`{
+      boards(ids: ${boardId}) {
+        items_page(limit: 500${cursorArg}) {
+          cursor
+          items { id name column_values { id text } }
+        }
       }
-    }
-  }`);
-  return data.data?.boards?.[0]?.items_page?.items || [];
+    }`);
+
+    const itemsPage = data.data?.boards?.[0]?.items_page;
+    if (!itemsPage) break;
+
+    const items = itemsPage.items || [];
+    allItems.push(...items);
+    cursor = itemsPage.cursor || null;
+
+    console.log(`  Page ${page}: +${items.length} items (total: ${allItems.length}) cursor: ${cursor ? 'oui' : 'fin'}`);
+
+    // Sécurité anti-boucle infinie
+    if (page > 50) { console.log('⚠️ Pagination stoppée à 50 pages'); break; }
+
+  } while (cursor);
+
+  return allItems;
 }
 
 async function createItem(boardId, groupId, name, cv) {
@@ -95,56 +129,52 @@ async function updateItem(boardId, itemId, cv) {
 
 function buildCV(contract) {
   const cv = {};
-  const set = (col, val) => { if (val?.toString().trim()) cv[col] = val.toString().trim(); };
+  const set    = (col, val) => { if (val?.toString().trim()) cv[col] = val.toString().trim(); };
   const setNum = (col, val) => {
     const n = parseFloat(String(val||'').replace(/[^\d.]/g,''));
     if (!isNaN(n) && n > 0) cv[col] = n;
   };
   const setDate = (col, val) => {
-    if (!val || val === '---') return;
+    if (!val || val === '---' || val === '-') return;
     const p = String(val).split('/');
     if (p.length === 3) cv[col] = { date: `${p[2]}-${p[1]}-${p[0]}` };
   };
 
-  set(COL.ref, contract.ref);
-  set(COL.type, contract.type);
-  set(COL.cin, contract.cin);
+  set(COL.ref,         contract.ref);
+  set(COL.type,        contract.type);
+  set(COL.cin,         contract.cin);
   setDate(COL.date_sig, contract.date_sig);
   setDate(COL.date_fin, contract.date_fin);
-  set(COL.agence, contract.agence);
-  set(COL.nom_entrep, contract.nom_entrep);
-  set(COL.secteur, contract.secteur);
-  set(COL.adresse, contract.adresse);
-  set(COL.rc, contract.rc);
-  set(COL.cnss_empl, contract.cnss_empl);
-  set(COL.forme_jur, contract.forme_jur);
-  set(COL.nom_agent, contract.nom_agent);
-  set(COL.prenom, contract.prenom);
+  set(COL.agence,      contract.agence);
+  set(COL.nom_entrep,  contract.nom_entrep);
+  set(COL.secteur,     contract.secteur);
+  set(COL.adresse,     contract.adresse);
+  set(COL.rc,          contract.rc);
+  set(COL.cnss_empl,   contract.cnss_empl);
+  set(COL.forme_jur,   contract.forme_jur);
+  set(COL.nom_agent,   contract.nom_agent);
+  set(COL.prenom,      contract.prenom);
   set(COL.nationalite, contract.nationalite);
-  set(COL.cnss_agent, contract.cnss_agent);
-  set(COL.niveau, contract.niveau);
-  set(COL.poste, contract.poste);
-  setNum(COL.duree, contract.duree);
-  setNum(COL.salaire, contract.salaire);
+  set(COL.cnss_agent,  contract.cnss_agent);
+  set(COL.niveau,      contract.niveau);
+  set(COL.poste,       contract.poste);
+  setNum(COL.duree,    contract.duree);
+  setNum(COL.salaire,  contract.salaire);
 
   if (contract.telephone) {
     const tel = String(contract.telephone).replace(/[^\d]/g,'').substring(0,10);
     if (tel.length >= 9) cv[COL.telephone] = { phone: tel, countryShortName: 'MA' };
   }
 
-  const etat = (contract.etat || '').toLowerCase();
-  if (etat.includes('validé') || etat.includes('signé') || etat.includes('fait')) {
-    cv[COL.etat] = { index: 1 };
-  } else {
-    cv[COL.etat] = { index: 0 };
+  if (contract.etat?.trim()) {
+    cv[COL.etat] = contract.etat.trim();
   }
 
   return cv;
 }
 
 export const handler = async (event) => {
-  console.log('=== Lambda ANAPEC → Monday Multi-Sociétés ===');
-
+  console.log('=== Lambda ANAPEC → Monday v7 ===');
   try {
     let body;
     if (event.body) {
@@ -154,82 +184,95 @@ export const handler = async (event) => {
     }
 
     const contracts = body.contracts || [];
-    const societe = body.societe || 'GRUPO_TEYEZ'; // Société par défaut
-
-    console.log(`Société: ${societe}`);
-    console.log(`${contracts.length} contrats reçus`);
+    const societe   = body.societe   || 'GRUPO_TEYEZ';
+    console.log(`Société: ${societe} | ${contracts.length} contrats`);
 
     if (contracts.length === 0) {
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({ message: 'Aucun contrat reçu', stats: { total: 0 } })
+        body: JSON.stringify({ message: 'Aucun contrat', stats: { total: 0 } })
       };
     }
 
-    // Trouver le board ID pour cette société
     const boardId = BOARD_MAP[societe];
     if (!boardId) {
       return {
         statusCode: 400,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: `Société inconnue: ${societe}. Sociétés disponibles: ${Object.keys(BOARD_MAP).join(', ')}` })
+        body: JSON.stringify({ error: `Société inconnue: ${societe}. Dispo: ${Object.keys(BOARD_MAP).join(', ')}` })
       };
     }
 
-    console.log(`Board ID: ${boardId}`);
+    console.log(`Board: ${boardId}`);
 
-    // Récupérer items Monday existants
-    const items = await getMondayItems(boardId);
-    const itemByRef = {};
+    // FIX v7: pagination complète — récupère TOUS les items sans limite
+    const items = await getAllMondayItems(boardId);
+
+    // Construire les maps de lookup (ref → itemId)
+    const itemByRef  = {};
     const itemByName = {};
     items.forEach(item => {
+      // Par nom de l'item
       itemByName[item.name] = item.id;
-      const nameClean = item.name.replace('/1','').replace('/','');
-      itemByName[nameClean] = item.id;
+      itemByName[item.name.replace('/1','').replace('/','-')] = item.id;
+
+      // Par colonne ref
       const refCol = item.column_values.find(c => c.id === COL.ref);
       if (refCol?.text) {
         itemByRef[refCol.text] = item.id;
-        itemByRef[refCol.text.replace('/1','').replace('/','')] = item.id;
+        // Variantes sans préfixe et avec tiret
+        const r = refCol.text;
+        itemByRef[r.replace(/^A/,'')] = item.id;
+        if (r.startsWith('NO')) itemByRef[r.slice(2)] = item.id;
       }
     });
 
-    console.log(`${items.length} items existants dans Monday`);
-
+    console.log(`${items.length} items chargés (toutes pages)`);
     let created = 0, updated = 0, errors = 0;
 
     for (const contract of contracts) {
-      const ref = contract.ref || '';
-      const isProjet = (contract.etat || '').toLowerCase().includes('projet') ||
-                       (contract.etat || '').toLowerCase().includes('cours');
-      const groupId = isProjet ? 'group_title' : 'topics';
+      const ref     = contract.ref || '';
+      const etatLow = (contract.etat || '').toLowerCase();
+      const isProjet = etatLow.includes('projet') || etatLow.includes('en cours') || etatLow.includes('cours');
+      const groupId  = isProjet ? 'group_title' : 'topics';
       const cv = buildCV(contract);
-      const existingId = itemByRef[ref] || itemByName[ref];
+
+      // Lookup par ref ou par nom (avec variantes)
+      const existingId =
+        itemByRef[ref] ||
+        itemByRef[ref.replace(/^A/,'')] ||
+        itemByName[ref] ||
+        itemByName[ref.replace(/\//g,'-')] ||
+        null;
 
       try {
         if (existingId) {
           await updateItem(boardId, existingId, cv);
-          console.log(`↻ Mis à jour: ${ref}`);
           updated++;
         } else {
-          await createItem(boardId, groupId, ref, cv);
-          console.log(`+ Créé: ${ref}`);
+          const result = await createItem(boardId, groupId, ref, cv);
+          // Enregistrer le nouvel item pour éviter les doublons intra-batch
+          const newId = result?.data?.create_item?.id;
+          if (newId) {
+            itemByRef[ref] = newId;
+            itemByName[ref] = newId;
+          }
           created++;
         }
         await new Promise(r => setTimeout(r, 300));
       } catch(e) {
-        console.log(`✗ Erreur ${ref}: ${e.message}`);
+        console.log(`✗ ${ref}: ${e.message}`);
         errors++;
       }
     }
 
-    const stats = { total: contracts.length, created, updated, errors, societe, boardId };
+    const stats = { total: contracts.length, created, updated, errors, societe };
     console.log(`=== FIN: ${JSON.stringify(stats)} ===`);
-
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ message: 'Synchronisation terminée', stats, date: new Date().toISOString() })
+      body: JSON.stringify({ message: 'OK', stats })
     };
 
   } catch(error) {
@@ -237,7 +280,7 @@ export const handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: error.message, stack: error.stack })
+      body: JSON.stringify({ error: error.message })
     };
   }
 };

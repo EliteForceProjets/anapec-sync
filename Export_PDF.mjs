@@ -88,11 +88,16 @@ function extractRef(html) {
 function prepareForPdf(html, ref, societe) {
   const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   const bodyContent = bodyMatch ? bodyMatch[1] : html;
-  const cleanContent = bodyContent
+  // Supprimer div#jGrowl (popup "Veuillez utiliser Recto verso")
+  // avec greedy: tout ce qui suit est scripts/popups inutiles
+  let cleanContent = bodyContent
+    .replace(/<div[^>]*id=["']jGrowl["'][^>]*>[\s\S]*/i, '')
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<button[^>]*>[\s\S]*?<\/button>/gi, '')
-    .replace(/class="noPrint"[^>]*>[\s\S]*?<\/[^>]+>/gi, '')
-    .replace(/<[^>]*id="Print"[^>]*>[\s\S]*?<\/[^>]+>/gi, '');
+    .replace(/<[^>]*id=["']Print["'][^>]*>[\s\S]*?<\/[^>]+>/gi, '')
+    .replace(/class=["']noPrint["'][^>]*>[\s\S]*?<\/[^>]+>/gi, '')
+    .replace(/<link[^>]*>/gi, '')       // supprimer CSS externes
+    .replace(/×/g, '');                  // supprimer le × du bouton close jGrowl
 
   const arabic = isArabicHtml(html);
   const dir = arabic ? 'rtl' : 'ltr';
@@ -121,12 +126,35 @@ async function generateLotPdf(browser, pages, lotNum, total) {
   <style>
     @page { size: A4; margin: 12mm 10mm; }
     body { font-family: Arial, sans-serif; font-size: 11px; color: #000; margin: 0; }
-    .contrat-page { page-break-after: always; }
-    .contrat-page:last-child { page-break-after: avoid; }
-    img { max-width: 100%; }
+    /* === 1 PAGE PAR CONTRAT === */
+    .contrat-page {
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+      /* Réduire le contenu pour tenir sur 1 page A4 */
+      font-size: 9px !important;
+      line-height: 1.3 !important;
+      max-height: 257mm; /* hauteur utile A4 avec marges */
+    }
+    .contrat-page:first-child { page-break-before: avoid; }
+    .contrat-page:last-child  { page-break-after: avoid; }
+    /* Réduire toutes les polices dans le contrat */
+    .contrat-page * {
+      font-size: 9px !important;
+      line-height: 1.3 !important;
+      margin-top: 2px !important;
+      margin-bottom: 2px !important;
+      padding-top: 1px !important;
+      padding-bottom: 1px !important;
+    }
+    .contrat-page h1, .contrat-page h2, .contrat-page h3 {
+      font-size: 10px !important;
+    }
+    img { max-width: 80px !important; max-height: 40px !important; }
     table { width: 100%; border-collapse: collapse; }
-    td, th { padding: 3px; }
-    button, .noPrint { display: none !important; }
+    td, th { padding: 2px 3px !important; font-size: 8.5px !important; }
+    button, .noPrint, #Print { display: none !important; }
     [dir="rtl"] { direction: rtl; unicode-bidi: embed; }
   </style>
 </head><body>${pages.join('\n')}</body></html>`;
@@ -214,20 +242,85 @@ async function main() {
     const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
     if (files.length === 0) { console.log(`  ⚠️  ${societe}: aucun fichier HTML`); continue; }
 
+    // ── Condition 1: état ANAPEC = Projet ou En cours (depuis contrats.json)
+    // IMPORTANT: distinguer 2 cas :
+    //   CAS A: contrats.json ABSENT → jsonChargé=false → fallback, accepte tout
+    //   CAS B: contrats.json PRÉSENT mais 0 Projet → rejette tout (société sans Projet)
+    const jsonPath = join(societeDir, 'contrats.json');
+    const etatProjetSet = new Set();
+    let jsonCharge = false; // true si contrats.json lu avec succès
+    if (existsSync(jsonPath)) {
+      try {
+        const contrats = JSON.parse(readFileSync(jsonPath, 'utf8'));
+        jsonCharge = true;
+        // FIX: NE PAS ajouter le CIN dans etatProjetSet
+        // Le CIN est partagé entre plusieurs contrats (renouvellements)
+        // → un Validé&Signé avec le même CIN qu'un Projet serait inclus à tort (faux positif)
+        // On n'utilise que detail_id et ref qui sont uniques par contrat
+        const projetsRefsSet = new Set(); // refs des contrats Projet (pour log)
+        for (const c of contrats) {
+          const etat = (c.etat || '').toLowerCase();
+          if (etat.includes('projet') || etat.includes('en cours') || etat.includes('cours')) {
+            if (c.detail_id) etatProjetSet.add(String(c.detail_id));
+            if (c.ref)       etatProjetSet.add(c.ref);
+            // CIN délibérément exclu: trop risqué (partagé entre contrats)
+            projetsRefsSet.add(c.ref || c.detail_id || '?');
+          }
+        }
+        console.log(`  📋 ${projetsRefsSet.size} contrat(s) Projet/En cours sur ${contrats.length}`);
+
+        // CAS B: json chargé mais 0 Projet → société sans contrat à générer
+        if (etatProjetSet.size === 0) {
+          console.log(`  ⏭  ${societe}: aucun contrat Projet/En cours → ignoré`);
+          continue;
+        }
+
+        // Log des contrats Projet dont le HTML est absent (non encore scrappé)
+        const htmlFiles = new Set(
+          readdirSync(societeDir)
+            .filter(f => f.startsWith('ci_') && f.endsWith('.html'))
+            .map(f => f.replace('ci_','').replace('.html',''))
+        );
+        for (const c of contrats) {
+          const etat = (c.etat || '').toLowerCase();
+          if ((etat.includes('projet') || etat.includes('en cours')) && c.detail_id) {
+            if (!htmlFiles.has(String(c.detail_id))) {
+              console.log(`  ⚠️  HTML manquant: ${c.ref} (detail_id=${c.detail_id}) → relancer scraper`);
+            }
+          }
+        }
+      } catch(e) {
+        console.log(`  ⚠️  Erreur lecture contrats.json: ${e.message}`);
+      }
+    } else {
+      console.log(`  ⚠️  contrats.json absent → filtre état désactivé`);
+    }
+
     let societeUnsigned = 0;
     process.stdout.write(`  ─── ${societe} (${files.length} fichiers) `);
 
     for (const file of files) {
       const html = readFileSync(join(societeDir, file), 'utf8');
       totalChecked++;
-      if (isUnsigned(html)) {
-        const ref = extractRef(html);
+
+      const fileId = file.replace('ci_', '').replace('.html', '');
+      const ref = extractRef(html);
+
+      // Condition 1: état Projet/En cours — uniquement par detail_id ou ref (pas CIN)
+      const etatOk = !jsonCharge ||
+                     etatProjetSet.has(fileId) ||
+                     etatProjetSet.has(ref);
+
+      // Condition 2: signatures vides dans le HTML
+      const signaturesVides = isUnsigned(html);
+
+      if (etatOk && signaturesVides) {
         allPages.push({ html, ref, societe });
         societeUnsigned++;
         if (isArabicHtml(html)) totalArabic++; else totalFrench++;
       }
     }
-    console.log(`→ ${societeUnsigned} non signés`);
+    console.log(`→ ${societeUnsigned} retenus (Projet/En cours + signatures vides)`);
   }
 
   const totalUnsigned = allPages.length;

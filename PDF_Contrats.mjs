@@ -268,15 +268,69 @@ async function main() {
     }
 
     const files = readdirSync(societeDir).filter(f => f.startsWith('ci_') && f.endsWith('.html'));
+
+    // ── Charger contrats.json pour vérifier l'état ANAPEC
+    // DEUX CAS à distinguer :
+    //   CAS A: contrats.json ABSENT → jsonCharge=false → fallback, accepte tout
+    //   CAS B: contrats.json PRÉSENT + 0 Projet → rejette tout (société sans contrat à signer)
+    const jsonPath = join(societeDir, 'contrats.json');
+    const etatProjetSet = new Set();
+    let jsonCharge = false;
+    if (existsSync(jsonPath)) {
+      try {
+        const contrats = JSON.parse(readFileSync(jsonPath, 'utf8'));
+        jsonCharge = true;
+        for (const c of contrats) {
+          const etat = (c.etat || '').toLowerCase();
+          if (etat.includes('projet') || etat.includes('en cours') || etat.includes('cours')) {
+            if (c.detail_id) etatProjetSet.add(String(c.detail_id));
+            if (c.ref)       etatProjetSet.add(c.ref);
+            // CIN délibérément exclu: partagé entre renouvellements → faux positifs
+          }
+        }
+        console.log(`  📋 ${etatProjetSet.size} contrat(s) Projet/En cours sur ${contrats.length}`);
+        // CAS B: json chargé mais 0 Projet → rien à générer
+        if (etatProjetSet.size === 0) {
+          console.log(`  ⏭  ${societe.nom}: aucun contrat Projet/En cours → ignoré`);
+          continue;
+        }
+        // Log des HTML manquants (contrats Projet non encore scrappés)
+        const htmlFiles = new Set(files.map(f => f.replace('ci_','').replace('.html','')));
+        for (const c of contrats) {
+          const etat = (c.etat || '').toLowerCase();
+          if ((etat.includes('projet') || etat.includes('en cours')) && c.detail_id) {
+            if (!htmlFiles.has(String(c.detail_id))) {
+              console.log(`  ⚠️  HTML manquant: ${c.ref} → relancer scraper pour le télécharger`);
+            }
+          }
+        }
+      } catch(e) {
+        console.log(`  ⚠️  Impossible de lire contrats.json: ${e.message}`);
+      }
+    } else {
+      console.log(`  ⚠️  contrats.json absent → filtre état désactivé`);
+    }
+
     const unsignedFiles = [];
     for (const file of files) {
       const html = readFileSync(join(societeDir, file), 'utf8');
-      if (isUnsigned(html)) {
-        const id = extractId(file);
-        const ref = extractRef(html);
+      const id  = extractId(file);
+      const ref = extractRef(html);
+
+      // Condition 1: état Projet/En cours
+      // jsonCharge=false (CAS A) → accepte tout | jsonCharge=true → vérifie le Set
+      const etatOk = !jsonCharge ||
+                     (id && etatProjetSet.has(id)) ||
+                     etatProjetSet.has(ref);
+
+      // Condition 2: signatures vides dans le HTML
+      const signaturesVides = isUnsigned(html);
+
+      if (etatOk && signaturesVides) {
         if (id) unsignedFiles.push({ file, id, ref });
       }
     }
+    console.log(`  ✅ ${unsignedFiles.length} contrats retenus (Projet/En cours + signatures vides)`);
 
     if (unsignedFiles.length === 0) {
       console.log(`\n━━━ ${societe.nom}: aucun contrat non signé`);
