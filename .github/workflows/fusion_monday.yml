@@ -1,17 +1,10 @@
 name: ANAPEC Fusion Monday
 
-# Déclenché par :
-# 1. Push sur main (après pipeline PC)
-# 2. Manuellement depuis GitHub (bouton "Run workflow")
-# 3. Schedule: dimanche 14h Maroc = 13h UTC (UTC+1 en hiver, UTC+1 été)
+# MANUEL UNIQUEMENT — ne se déclenche JAMAIS automatiquement
+# Ni au push, ni au schedule
+# Uniquement quand vous cliquez "Run workflow" dans GitHub
 on:
-  push:
-    branches: [main]
-    paths:
-      - '*/contrats.json'   # uniquement si des données changent
-  workflow_dispatch:         # déclenchement manuel
-  schedule:
-    - cron: '0 13 * * 0'    # dimanche 13h UTC = 14h Maroc (UTC+1)
+  workflow_dispatch:
 
 jobs:
   fusion-monday:
